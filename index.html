@@ -1,0 +1,1175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daniel Otero — AI Engineer & Data Scientist</title>
+  <meta name="description" content="Economist and AI Engineer specializing in LLMs, RAG architectures, and data-driven solutions for social impact.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #ffffff;
+      --bg-subtle: #f9fafb;
+      --fg: #111827;
+      --fg-muted: #6b7280;
+      --fg-light: #9ca3af;
+      --accent: #1d4ed8;
+      --accent-light: #eff6ff;
+      --border: #e5e7eb;
+      --shadow-sm: 0 1px 2px rgba(0,0,0,0.06);
+      --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--fg);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: rgba(255,255,255,0.9);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+    }
+
+    .nav-logo {
+      font-weight: 700;
+      font-size: 1rem;
+      color: var(--fg);
+      text-decoration: none;
+      letter-spacing: -0.02em;
+      flex-shrink: 0;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+      flex: 1;
+      justify-content: center;
+    }
+
+    .nav-links a {
+      color: var(--fg-muted);
+      text-decoration: none;
+      font-size: 0.875rem;
+      font-weight: 500;
+      transition: color 0.15s;
+    }
+
+    .nav-links a:hover { color: var(--fg); }
+
+    .lang-btn {
+      flex-shrink: 0;
+      background: transparent;
+      border: 1.5px solid var(--border);
+      color: var(--fg-muted);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      padding: 0.28rem 0.65rem;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.15s;
+      font-family: inherit;
+    }
+
+    .lang-btn:hover {
+      border-color: var(--fg);
+      color: var(--fg);
+    }
+
+    /* ── LAYOUT ── */
+    section { padding: 6rem 2rem; }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.75rem;
+    }
+
+    .section-title {
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+
+    .section-subtitle {
+      color: var(--fg-muted);
+      font-size: 1.05rem;
+      max-width: 540px;
+      line-height: 1.7;
+    }
+
+    /* ── HERO ── */
+    #hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding-top: 60px;
+    }
+
+    .hero-content {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .hero-photo-wrap { flex-shrink: 0; }
+
+    .hero-photo {
+      width: 260px;
+      height: 320px;
+      object-fit: cover;
+      object-position: center top;
+      border-radius: 20px;
+      display: block;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--accent-light);
+      color: var(--accent);
+      font-size: 0.78rem;
+      font-weight: 600;
+      padding: 0.35rem 0.9rem;
+      border-radius: 99px;
+      margin-bottom: 2.25rem;
+      letter-spacing: 0.01em;
+    }
+
+    .hero-badge::before {
+      content: '';
+      width: 6px; height: 6px;
+      background: var(--accent);
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .hero-name {
+      font-size: clamp(3.25rem, 8vw, 5.75rem);
+      font-weight: 700;
+      letter-spacing: -0.04em;
+      line-height: 1.0;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-roles {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      margin-bottom: 2rem;
+      font-size: 1.1rem;
+      color: var(--fg-muted);
+      font-weight: 400;
+    }
+
+    .hero-role-sep {
+      margin: 0 0.75rem;
+      color: var(--border);
+    }
+
+    .hero-bio {
+      font-size: 1.1rem;
+      color: var(--fg-muted);
+      max-width: 560px;
+      line-height: 1.8;
+      margin-bottom: 2.5rem;
+    }
+
+    .hero-ctas {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.72rem 1.5rem;
+      border-radius: 8px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.15s;
+      border: none;
+      cursor: pointer;
+      font-family: inherit;
+    }
+
+    .btn-primary { background: var(--fg); color: #fff; }
+    .btn-primary:hover { background: #1f2937; transform: translateY(-1px); }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--fg);
+      border: 1.5px solid var(--border);
+    }
+    .btn-secondary:hover { border-color: #9ca3af; transform: translateY(-1px); }
+
+    /* ── ABOUT ── */
+    #about { background: var(--bg-subtle); }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 3fr 2fr;
+      gap: 4rem;
+      align-items: start;
+      margin-top: 3rem;
+    }
+
+    .about-text p {
+      color: var(--fg-muted);
+      line-height: 1.85;
+      margin-bottom: 1.1rem;
+      font-size: 1rem;
+    }
+
+    .about-text p:last-child { margin-bottom: 0; }
+
+    .about-stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .stat-card {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.25rem;
+    }
+
+    .stat-number {
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: -0.04em;
+      color: var(--fg);
+      line-height: 1;
+    }
+
+    .stat-label {
+      font-size: 0.8rem;
+      color: var(--fg-muted);
+      margin-top: 0.4rem;
+      line-height: 1.4;
+    }
+
+    /* ── SKILLS ── */
+    #skills { background: var(--bg); }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.25rem;
+      margin-top: 3rem;
+    }
+
+    .skill-group {
+      background: var(--bg-subtle);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.5rem;
+    }
+
+    .skill-group-title {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--fg-muted);
+      margin-bottom: 0.85rem;
+    }
+
+    .skill-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+
+    .tag {
+      display: inline-block;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      color: var(--fg);
+      font-size: 0.8rem;
+      font-weight: 500;
+      padding: 0.28rem 0.65rem;
+      border-radius: 6px;
+    }
+
+    /* ── PROJECTS ── */
+    #projects { background: var(--bg-subtle); }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+      margin-top: 3rem;
+    }
+
+    .project-card {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+
+    .project-card:hover {
+      box-shadow: var(--shadow-md);
+      transform: translateY(-2px);
+    }
+
+    .project-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      margin-bottom: 0.65rem;
+      gap: 0.5rem;
+    }
+
+    .project-name {
+      font-size: 0.975rem;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      line-height: 1.3;
+    }
+
+    .badge {
+      font-size: 0.68rem;
+      font-weight: 600;
+      padding: 0.2rem 0.55rem;
+      border-radius: 99px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .badge-live   { background: #dcfce7; color: #15803d; }
+    .badge-prod   { background: #dcfce7; color: #15803d; }
+    .badge-mvp    { background: #fef9c3; color: #a16207; }
+    .badge-dev    { background: var(--accent-light); color: var(--accent); }
+    .badge-active { background: #f3e8ff; color: #7c3aed; }
+
+    .project-desc {
+      font-size: 0.875rem;
+      color: var(--fg-muted);
+      line-height: 1.72;
+      margin-bottom: 1.1rem;
+      flex: 1;
+    }
+
+    .project-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+
+    .project-tag {
+      font-size: 0.72rem;
+      font-weight: 500;
+      background: var(--bg-subtle);
+      color: var(--fg-muted);
+      padding: 0.22rem 0.55rem;
+      border-radius: 4px;
+      border: 1px solid var(--border);
+    }
+
+    /* ── EXPERIENCE ── */
+    #experience { background: var(--bg); }
+
+    .experience-list {
+      margin-top: 3rem;
+      display: flex;
+      flex-direction: column;
+      border-left: 2px solid var(--border);
+      padding-left: 2rem;
+      gap: 2.75rem;
+    }
+
+    .exp-item { position: relative; }
+
+    .exp-item::before {
+      content: '';
+      position: absolute;
+      left: -2.44rem;
+      top: 0.35rem;
+      width: 10px; height: 10px;
+      background: var(--accent);
+      border-radius: 50%;
+      border: 2px solid var(--bg);
+      box-shadow: 0 0 0 2px var(--accent);
+    }
+
+    .exp-company { font-size: 1rem; font-weight: 700; margin-bottom: 0.4rem; }
+
+    .exp-roles { list-style: none; margin-bottom: 0.6rem; }
+
+    .exp-role-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      padding: 0.15rem 0;
+      gap: 1rem;
+    }
+
+    .exp-role-name { font-size: 0.9rem; font-weight: 500; color: var(--fg); }
+
+    .exp-duration { font-size: 0.8rem; color: var(--fg-light); white-space: nowrap; flex-shrink: 0; }
+
+    .exp-desc { font-size: 0.875rem; color: var(--fg-muted); line-height: 1.75; }
+
+    /* ── PUBLICATIONS ── */
+    #publications { background: var(--bg-subtle); }
+
+    .pub-list {
+      margin-top: 3rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .pub-item {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.35rem 1.5rem;
+    }
+
+    .pub-title { font-size: 0.95rem; font-weight: 600; line-height: 1.5; margin-bottom: 0.35rem; }
+
+    .pub-meta { font-size: 0.85rem; color: var(--fg-muted); line-height: 1.5; }
+
+    .pub-link {
+      display: inline-block;
+      margin-top: 0.5rem;
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .pub-link:hover { text-decoration: underline; }
+
+    /* ── CONTACT ── */
+    #contact { background: var(--fg); padding: 7rem 2rem; }
+
+    #contact .section-label { color: #818cf8; }
+    #contact .section-title { color: #fff; }
+
+    .contact-sub {
+      color: #9ca3af;
+      font-size: 1.05rem;
+      max-width: 480px;
+      line-height: 1.75;
+      margin-top: 0.5rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .contact-links { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+
+    .contact-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.72rem 1.5rem;
+      border-radius: 8px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.15s;
+    }
+
+    .cl-primary { background: #fff; color: var(--fg); }
+    .cl-primary:hover { background: #f3f4f6; transform: translateY(-1px); }
+
+    .cl-secondary {
+      background: rgba(255,255,255,0.08);
+      color: #fff;
+      border: 1.5px solid rgba(255,255,255,0.15);
+    }
+    .cl-secondary:hover { background: rgba(255,255,255,0.14); transform: translateY(-1px); }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--fg);
+      border-top: 1px solid rgba(255,255,255,0.07);
+      padding: 1.5rem 2rem;
+      text-align: center;
+    }
+
+    footer p { font-size: 0.8rem; color: #4b5563; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .projects-grid { grid-template-columns: repeat(2, 1fr); }
+      .about-grid    { grid-template-columns: 1fr; gap: 2.5rem; }
+      .skills-grid   { grid-template-columns: 1fr; }
+      .hero-content  { grid-template-columns: 1fr; }
+      .hero-photo-wrap { order: -1; }
+      .hero-photo    { width: 140px; height: 175px; border-radius: 14px; }
+    }
+
+    @media (max-width: 640px) {
+      .nav-links     { display: none; }
+      section        { padding: 4rem 1.25rem; }
+      .hero-name     { font-size: 2.8rem; }
+      .projects-grid { grid-template-columns: 1fr; }
+      .about-stats   { grid-template-columns: 1fr 1fr; }
+      .exp-role-item { flex-direction: column; gap: 0; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav>
+  <div class="nav-inner">
+    <a href="#hero" class="nav-logo">Daniel Otero</a>
+    <ul class="nav-links">
+      <li><a href="#about"        data-i18n="nav.about">About</a></li>
+      <li><a href="#skills"       data-i18n="nav.skills">Skills</a></li>
+      <li><a href="#projects"     data-i18n="nav.projects">Projects</a></li>
+      <li><a href="#experience"   data-i18n="nav.experience">Experience</a></li>
+      <li><a href="#publications" data-i18n="nav.publications">Publications</a></li>
+      <li><a href="#contact"      data-i18n="nav.contact">Contact</a></li>
+    </ul>
+    <button id="lang-toggle" class="lang-btn" aria-label="Switch language">ES</button>
+  </div>
+</nav>
+
+<!-- ── HERO ── -->
+<section id="hero">
+  <div class="hero-content">
+    <div class="hero-text">
+      <div class="hero-badge" data-i18n="hero.badge">Open to new projects &amp; collaborations</div>
+      <h1 class="hero-name">Daniel Otero</h1>
+      <div class="hero-roles" data-i18n="hero.roles">
+        <span>AI Engineer</span>
+        <span class="hero-role-sep">·</span>
+        <span>Data Scientist</span>
+        <span class="hero-role-sep">·</span>
+        <span>Applied Researcher</span>
+      </div>
+      <p class="hero-bio" data-i18n="hero.bio">
+        I build intelligent systems at the intersection of social science and AI — LLM pipelines, RAG-powered conversational agents, and data tools that help organizations understand and act on complex information.
+      </p>
+      <div class="hero-ctas">
+        <a href="#contact" class="btn btn-primary"    data-i18n="hero.cta1">Get in touch</a>
+        <a href="#projects" class="btn btn-secondary" data-i18n="hero.cta2">View projects</a>
+      </div>
+    </div>
+    <div class="hero-photo-wrap">
+      <img src="photo.jpg" alt="Daniel Otero" class="hero-photo">
+    </div>
+  </div>
+</section>
+
+<!-- ── ABOUT ── -->
+<section id="about">
+  <div class="container">
+    <div class="section-label" data-i18n="about.label">About</div>
+    <h2 class="section-title"  data-i18n="about.title">Bridging social science and AI</h2>
+    <div class="about-grid">
+      <div class="about-text">
+        <p data-i18n="about.p1">
+          I'm an economist and computer science engineer who builds AI-powered solutions for real-world problems. My background is unusual: I started in economics and complex systems research, then moved into machine learning, NLP, and — more recently — LLM orchestration and agentic AI.
+        </p>
+        <p data-i18n="about.p2">
+          That combination means I can do the technical work <em>and</em> understand the social, organizational, and research context behind it. I've built conversational agents, multi-step data pipelines, ML clustering systems, and interactive dashboards used by organizations across Colombia and Latin America.
+        </p>
+        <p data-i18n="about.p3">
+          Currently leading data science and AI at Estudio Plural, where I design LLM-based tools for behavioral research, knowledge retrieval, and organizational intelligence. I also teach — I've run NLP workshops at Universidad del Valle and consult on applied research projects.
+        </p>
+      </div>
+      <div class="about-stats">
+        <div class="stat-card">
+          <div class="stat-number">9+</div>
+          <div class="stat-label" data-i18n="about.stat1">Years of applied research &amp; data work</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">10+</div>
+          <div class="stat-label" data-i18n="about.stat2">AI &amp; data projects built and shipped</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">4</div>
+          <div class="stat-label" data-i18n="about.stat3">Peer-reviewed publications</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">5+</div>
+          <div class="stat-label" data-i18n="about.stat4">Organizations served across LatAm</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── SKILLS ── -->
+<section id="skills">
+  <div class="container">
+    <div class="section-label" data-i18n="skills.label">Technical Stack</div>
+    <h2 class="section-title"  data-i18n="skills.title">What I work with</h2>
+    <div class="skills-grid">
+      <div class="skill-group">
+        <div class="skill-group-title" data-i18n="skills.g1">AI &amp; LLMs</div>
+        <div class="skill-tags">
+          <span class="tag">LangChain</span><span class="tag">LangGraph</span>
+          <span class="tag">RAG</span><span class="tag">Fine-tuning</span>
+          <span class="tag">Prompt Engineering</span><span class="tag">Autonomous Agents</span>
+          <span class="tag">Hugging Face</span><span class="tag">OpenRouter</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-title" data-i18n="skills.g2">Languages &amp; Data Science</div>
+        <div class="skill-tags">
+          <span class="tag">Python</span><span class="tag">R</span>
+          <span class="tag">JavaScript</span><span class="tag">Pandas</span>
+          <span class="tag">scikit-learn</span><span class="tag">Plotly</span>
+          <span class="tag">NLP / Text Mining</span><span class="tag">Network Analysis</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-title" data-i18n="skills.g3">Databases &amp; Storage</div>
+        <div class="skill-tags">
+          <span class="tag">MongoDB</span><span class="tag">PostgreSQL</span>
+          <span class="tag">Supabase</span><span class="tag">Qdrant (Vector DB)</span>
+          <span class="tag">Neo4j (Graph DB)</span><span class="tag">SQLite</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-title" data-i18n="skills.g4">Infrastructure &amp; Delivery</div>
+        <div class="skill-tags">
+          <span class="tag">FastAPI</span><span class="tag">Streamlit</span>
+          <span class="tag">Docker</span><span class="tag">GitHub Actions</span>
+          <span class="tag">n8n</span><span class="tag">Twilio</span>
+          <span class="tag">Linux / Bash</span><span class="tag">Next.js</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── PROJECTS ── -->
+<section id="projects">
+  <div class="container">
+    <div class="section-label"   data-i18n="projects.label">Work</div>
+    <h2 class="section-title"    data-i18n="projects.title">Selected projects</h2>
+    <p class="section-subtitle"  data-i18n="projects.subtitle">From production bots to deployed dashboards — a curated set of systems I've built.</p>
+    <div class="projects-grid">
+
+      <div class="project-card">
+        <div class="project-header">
+          <div class="project-name">archetypeSuite</div>
+          <span class="badge badge-live" data-i18n="badge.live">Live</span>
+        </div>
+        <p class="project-desc" data-i18n="p1.desc">
+          End-to-end ML pipeline for archetype discovery. LangGraph orchestrates ingestion → profiling → preprocessing → algorithm selection → clustering → LLM-generated narrative. 33 automated tests passing.
+        </p>
+        <div class="project-tags">
+          <span class="project-tag">Python</span><span class="project-tag">LangGraph</span>
+          <span class="project-tag">scikit-learn</span><span class="project-tag">Streamlit</span>
+          <span class="project-tag">OpenRouter</span>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-header">
+          <div class="project-name">puddleAsistant</div>
+          <span class="badge badge-prod" data-i18n="badge.prod">Production</span>
+        </div>
+        <p class="project-desc" data-i18n="p2.desc">
+          Semantic search over 6 educational documents on gender and parenting. MongoDB vector store + OpenAI embeddings. Multilingual WhatsApp bot with conversation memory in Supabase. 7 specialized agents, 1,544 processed chunks.
+        </p>
+        <div class="project-tags">
+          <span class="project-tag">RAG</span><span class="project-tag">MongoDB</span>
+          <span class="project-tag">Supabase</span><span class="project-tag">Twilio</span>
+          <span class="project-tag">Multi-agent</span>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-header">
+          <div class="project-name">Aly — WhatsApp AI Agent</div>
+          <span class="badge badge-mvp" data-i18n="badge.mvp">MVP</span>
+        </div>
+        <p class="project-desc" data-i18n="p3.desc">
+          Multilingual bot (ES/EN/PT) for Equimundo's A+P Manual. 5 sequential LLM agents: language detection → intent classification → specialized response (factual, planning, ideation, sensitive topics). Built with FastAPI + LangGraph.
+        </p>
+        <div class="project-tags">
+          <span class="project-tag">FastAPI</span><span class="project-tag">LangGraph</span>
+          <span class="project-tag">MongoDB</span><span class="project-tag">Twilio</span>
+          <span class="project-tag">Multilingual</span>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-header">
+          <div class="project-name">Document Review System</div>
+          <span class="badge badge-prod" data-i18n="badge.prod">Production</span>
+        </div>
+        <p class="project-desc" data-i18n="p4.desc">
+          5 sequential LLM agents that evaluate documents against rubrics, producing scored Word + PDF reports. Handles PDF and DOCX inputs. Configurable rubric; defaults to a 4×25pt scoring schema.
+        </p>
+        <div class="project-tags">
+          <span class="project-tag">Python</span><span class="project-tag">OpenRouter</span>
+          <span class="project-tag">Streamlit</span><span class="project-tag">pdfplumber</span>
+          <span class="project-tag">LLM Pipeline</span>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-header">
+          <div class="project-name">convocatorias-bot</div>
+          <span class="badge badge-prod" data-i18n="badge.prod">Production</span>
+        </div>
+        <p class="project-desc" data-i18n="p5.desc">
+          Automated daily scanner of 15+ funding and grant sources. Claude AI filters by organizational relevance, deduplicates results, and sends curated alerts to Slack. Runs on GitHub Actions every morning.
+        </p>
+        <div class="project-tags">
+          <span class="project-tag">Python</span><span class="project-tag">BeautifulSoup</span>
+          <span class="project-tag">Claude AI</span><span class="project-tag">Slack API</span>
+          <span class="project-tag">GitHub Actions</span>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-header">
+          <div class="project-name">SGR Dashboard</div>
+          <span class="badge badge-live" data-i18n="badge.live">Live</span>
+        </div>
+        <p class="project-desc" data-i18n="p6.desc">
+          Interactive dashboard for Colombia's General Royalties System (SGR). Real-time data from datos.gov.co via Socrata API, dynamic filters, choropleth maps, and Excel export. Deployed on Streamlit Cloud.
+        </p>
+        <div class="project-tags">
+          <span class="project-tag">Streamlit</span><span class="project-tag">pydeck</span>
+          <span class="project-tag">Plotly</span><span class="project-tag">Socrata API</span>
+          <span class="project-tag">GeoJSON</span>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-header">
+          <div class="project-name">agentChatBuilder</div>
+          <span class="badge badge-dev" data-i18n="badge.dev">In Dev</span>
+        </div>
+        <p class="project-desc" data-i18n="p7.desc">
+          No-code SaaS platform for building multi-agent chatbots with multi-channel deployment (WhatsApp, Telegram, Web). Full UI in Next.js + shadcn/ui; FastAPI backend with MongoDB Atlas and Supabase auth.
+        </p>
+        <div class="project-tags">
+          <span class="project-tag">Next.js</span><span class="project-tag">TypeScript</span>
+          <span class="project-tag">FastAPI</span><span class="project-tag">MongoDB</span>
+          <span class="project-tag">Supabase</span>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-header">
+          <div class="project-name">AMA Survey Pipeline</div>
+          <span class="badge badge-active" data-i18n="badge.active">Active</span>
+        </div>
+        <p class="project-desc" data-i18n="p8.desc">
+          Multi-city survey processing pipeline for social field research across 4 cities in Colombia, Peru, Ecuador, and Bolivia. KoboToolbox integration, validation, deduplication, LLM-generated reports, and 30+ charts for interim deliverables.
+        </p>
+        <div class="project-tags">
+          <span class="project-tag">Python</span><span class="project-tag">pandas</span>
+          <span class="project-tag">KoboToolbox</span><span class="project-tag">LLM</span>
+          <span class="project-tag">Social Research</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── EXPERIENCE ── -->
+<section id="experience">
+  <div class="container">
+    <div class="section-label" data-i18n="exp.label">Experience</div>
+    <h2 class="section-title"  data-i18n="exp.title">Where I've worked</h2>
+    <div class="experience-list">
+
+      <div class="exp-item">
+        <div class="exp-company">Estudio Plural</div>
+        <ul class="exp-roles">
+          <li class="exp-role-item">
+            <span class="exp-role-name" data-i18n="e1.role1">Data Science &amp; AI Specialist</span>
+            <span class="exp-duration">Jan 2025 – Present</span>
+          </li>
+          <li class="exp-role-item">
+            <span class="exp-role-name" data-i18n="e1.role2">Behavioral Research &amp; Analytics Lead</span>
+            <span class="exp-duration">Jun 2024 – Dec 2024</span>
+          </li>
+          <li class="exp-role-item">
+            <span class="exp-role-name" data-i18n="e1.role3">Data Analytics Consultant</span>
+            <span class="exp-duration">Dec 2023 – May 2024</span>
+          </li>
+        </ul>
+        <p class="exp-desc" data-i18n="e1.desc">
+          Leading design and deployment of ML, NLP, and LLM systems for social and behavioral analytics. Build RAG-based conversational assistants, ETL pipelines for unstructured data, and interactive dashboards for non-technical teams across research and product contexts.
+        </p>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-company">Octopus Force</div>
+        <ul class="exp-roles">
+          <li class="exp-role-item">
+            <span class="exp-role-name" data-i18n="e2.role1">Project Analyst</span>
+            <span class="exp-duration">Jan 2025 – Dec 2025</span>
+          </li>
+          <li class="exp-role-item">
+            <span class="exp-role-name" data-i18n="e2.role2">Research Leader</span>
+            <span class="exp-duration">Jul 2023 – Dec 2024</span>
+          </li>
+        </ul>
+        <p class="exp-desc" data-i18n="e2.desc">
+          Led research processes for public and business decision-making contexts. Deployed AI agents for information synthesis, built the SGR royalties monitoring dashboard, and developed an MVP multi-agent document assistant for project formulation.
+        </p>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-company">Universidad del Valle — CINARA Institute</div>
+        <ul class="exp-roles">
+          <li class="exp-role-item">
+            <span class="exp-role-name" data-i18n="e3.role1">Quantitative Analytics Lead · PUDA2022 Project</span>
+            <span class="exp-duration">Sep 2021 – Jun 2023</span>
+          </li>
+        </ul>
+        <p class="exp-desc" data-i18n="e3.desc">
+          Designed and modeled socio-environmental datasets using PCA, clustering, and spatial modeling. Developed network models and fuzzy logic systems applied to complex environmental systems.
+        </p>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-company">Tell Business Storytelling</div>
+        <ul class="exp-roles">
+          <li class="exp-role-item">
+            <span class="exp-role-name" data-i18n="e4.role1">Data Analytics Consultant</span>
+            <span class="exp-duration">Mar 2024 – Jun 2024</span>
+          </li>
+          <li class="exp-role-item">
+            <span class="exp-role-name" data-i18n="e4.role2">Data Scientist</span>
+            <span class="exp-duration">Mar 2020 – Dec 2021</span>
+          </li>
+        </ul>
+        <p class="exp-desc" data-i18n="e4.desc">
+          Social media mining, sentiment analysis, and user profiling using clustering and NLP techniques. Developed social listening reports and data-driven user personas from digital interaction data.
+        </p>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-company">CIDSE, Universidad del Valle</div>
+        <ul class="exp-roles">
+          <li class="exp-role-item">
+            <span class="exp-role-name" data-i18n="e5.role1">Research Assistant</span>
+            <span class="exp-duration">Jan 2017 – Jul 2020</span>
+          </li>
+        </ul>
+        <p class="exp-desc" data-i18n="e5.desc">
+          Data mining, citation network analysis, and semantic model development in R and Python. Advanced data visualization and co-authorship of peer-reviewed publications in economic methodology.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── PUBLICATIONS ── -->
+<section id="publications">
+  <div class="container">
+    <div class="section-label" data-i18n="pub.label">Research</div>
+    <h2 class="section-title"  data-i18n="pub.title">Publications</h2>
+    <div class="pub-list">
+
+      <div class="pub-item">
+        <div class="pub-title">The Drifting Influence of Hall's Random Walk Hypothesis on Consumption Modeling</div>
+        <div class="pub-meta">García, C., Otero, D. &amp; Salazar, B. · <em>History of Political Economy</em>, 55(1), 103–143 · 2023</div>
+        <a href="https://doi.org/10.1215/00182702-10213653" target="_blank" rel="noopener" class="pub-link">doi.org/10.1215/00182702-10213653 ↗</a>
+      </div>
+
+      <div class="pub-item">
+        <div class="pub-title">A Tale of a Tool: The Impact of Sims's Vector Autoregressions on Macroeconometrics</div>
+        <div class="pub-meta">Salazar, B. &amp; Otero, D. · <em>History of Political Economy</em>, 51(3), 557–578 · 2019</div>
+      </div>
+
+      <div class="pub-item">
+        <div class="pub-title">La revolución empírica en economía</div>
+        <div class="pub-meta">Salazar, B. &amp; Otero, D. · <em>Apuntes del CENES</em>, 38(68) · 2019</div>
+        <a href="https://doi.org/10.19053/01203053.v38.n68.2019.8792" target="_blank" rel="noopener" class="pub-link">doi.org/10.19053/01203053.v38.n68.2019.8792 ↗</a>
+      </div>
+
+      <div class="pub-item">
+        <div class="pub-title">La revolución de los nuevos clásicos: redes, influencia y metodología</div>
+        <div class="pub-meta">Salazar, B. &amp; Otero, D. · <em>Revista de Economía Institucional</em>, 17(32), 39–69 · 2015</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── CONTACT ── -->
+<section id="contact">
+  <div class="container">
+    <div class="section-label" data-i18n="contact.label">Contact</div>
+    <h2 class="section-title"  data-i18n="contact.title">Let's work together</h2>
+    <p class="contact-sub"     data-i18n="contact.sub">
+      Open to consulting, research collaborations, and new projects — especially where AI, data, and social impact intersect.
+    </p>
+    <div class="contact-links">
+      <a href="mailto:otero.r.daniel@gmail.com" class="contact-link cl-primary">otero.r.daniel@gmail.com</a>
+      <a href="https://github.com/Rodato" target="_blank" rel="noopener" class="contact-link cl-secondary">GitHub ↗</a>
+      <a href="https://www.linkedin.com/in/daniel-otero-r/" target="_blank" rel="noopener" class="contact-link cl-secondary">LinkedIn ↗</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p data-i18n="footer.text">Daniel Otero · Cali, Colombia</p>
+</footer>
+
+<script>
+  /* ── TRANSLATIONS ── */
+  const t = {
+    en: {
+      'nav.about':        'About',
+      'nav.skills':       'Skills',
+      'nav.projects':     'Projects',
+      'nav.experience':   'Experience',
+      'nav.publications': 'Publications',
+      'nav.contact':      'Contact',
+
+      'hero.badge': 'Open to new projects & collaborations',
+      'hero.roles': '<span>AI Engineer</span><span class="hero-role-sep">·</span><span>Data Scientist</span><span class="hero-role-sep">·</span><span>Applied Researcher</span>',
+      'hero.bio':   'I build intelligent systems at the intersection of social science and AI — LLM pipelines, RAG-powered conversational agents, and data tools that help organizations understand and act on complex information.',
+      'hero.cta1':  'Get in touch',
+      'hero.cta2':  'View projects',
+
+      'about.label': 'About',
+      'about.title': 'Bridging social science and AI',
+      'about.p1':    "I'm an economist and computer science engineer who builds AI-powered solutions for real-world problems. My background is unusual: I started in economics and complex systems research, then moved into machine learning, NLP, and — more recently — LLM orchestration and agentic AI.",
+      'about.p2':    "That combination means I can do the technical work <em>and</em> understand the social, organizational, and research context behind it. I've built conversational agents, multi-step data pipelines, ML clustering systems, and interactive dashboards used by organizations across Colombia and Latin America.",
+      'about.p3':    "Currently leading data science and AI at Estudio Plural, where I design LLM-based tools for behavioral research, knowledge retrieval, and organizational intelligence. I also teach — I've run NLP workshops at Universidad del Valle and consult on applied research projects.",
+      'about.stat1': 'Years of applied research & data work',
+      'about.stat2': 'AI & data projects built and shipped',
+      'about.stat3': 'Peer-reviewed publications',
+      'about.stat4': 'Organizations served across LatAm',
+
+      'skills.label': 'Technical Stack',
+      'skills.title': 'What I work with',
+      'skills.g1':    'AI & LLMs',
+      'skills.g2':    'Languages & Data Science',
+      'skills.g3':    'Databases & Storage',
+      'skills.g4':    'Infrastructure & Delivery',
+
+      'projects.label':    'Work',
+      'projects.title':    'Selected projects',
+      'projects.subtitle': 'From production bots to deployed dashboards — a curated set of systems I\'ve built.',
+
+      'badge.live':   'Live',
+      'badge.prod':   'Production',
+      'badge.mvp':    'MVP',
+      'badge.dev':    'In Dev',
+      'badge.active': 'Active',
+
+      'p1.desc': 'End-to-end ML pipeline for archetype discovery. LangGraph orchestrates ingestion → profiling → preprocessing → algorithm selection → clustering → LLM-generated narrative. 33 automated tests passing.',
+      'p2.desc': 'Semantic search over 6 educational documents on gender and parenting. MongoDB vector store + OpenAI embeddings. Multilingual WhatsApp bot with conversation memory in Supabase. 7 specialized agents, 1,544 processed chunks.',
+      'p3.desc': 'Multilingual bot (ES/EN/PT) for Equimundo\'s A+P Manual. 5 sequential LLM agents: language detection → intent classification → specialized response (factual, planning, ideation, sensitive topics). Built with FastAPI + LangGraph.',
+      'p4.desc': '5 sequential LLM agents that evaluate documents against rubrics, producing scored Word + PDF reports. Handles PDF and DOCX inputs. Configurable rubric; defaults to a 4×25pt scoring schema.',
+      'p5.desc': 'Automated daily scanner of 15+ funding and grant sources. Claude AI filters by organizational relevance, deduplicates results, and sends curated alerts to Slack. Runs on GitHub Actions every morning.',
+      'p6.desc': 'Interactive dashboard for Colombia\'s General Royalties System (SGR). Real-time data from datos.gov.co via Socrata API, dynamic filters, choropleth maps, and Excel export. Deployed on Streamlit Cloud.',
+      'p7.desc': 'No-code SaaS platform for building multi-agent chatbots with multi-channel deployment (WhatsApp, Telegram, Web). Full UI in Next.js + shadcn/ui; FastAPI backend with MongoDB Atlas and Supabase auth.',
+      'p8.desc': 'Multi-city survey processing pipeline for social field research across 4 cities in Colombia, Peru, Ecuador, and Bolivia. KoboToolbox integration, validation, deduplication, LLM-generated reports, and 30+ charts for interim deliverables.',
+
+      'exp.label': 'Experience',
+      'exp.title': "Where I've worked",
+
+      'e1.role1': 'Data Science & AI Specialist',
+      'e1.role2': 'Behavioral Research & Analytics Lead',
+      'e1.role3': 'Data Analytics Consultant',
+      'e1.desc':  'Leading design and deployment of ML, NLP, and LLM systems for social and behavioral analytics. Build RAG-based conversational assistants, ETL pipelines for unstructured data, and interactive dashboards for non-technical teams across research and product contexts.',
+
+      'e2.role1': 'Project Analyst',
+      'e2.role2': 'Research Leader',
+      'e2.desc':  'Led research processes for public and business decision-making contexts. Deployed AI agents for information synthesis, built the SGR royalties monitoring dashboard, and developed an MVP multi-agent document assistant for project formulation.',
+
+      'e3.role1': 'Quantitative Analytics Lead · PUDA2022 Project',
+      'e3.desc':  'Designed and modeled socio-environmental datasets using PCA, clustering, and spatial modeling. Developed network models and fuzzy logic systems applied to complex environmental systems.',
+
+      'e4.role1': 'Data Analytics Consultant',
+      'e4.role2': 'Data Scientist',
+      'e4.desc':  'Social media mining, sentiment analysis, and user profiling using clustering and NLP techniques. Developed social listening reports and data-driven user personas from digital interaction data.',
+
+      'e5.role1': 'Research Assistant',
+      'e5.desc':  'Data mining, citation network analysis, and semantic model development in R and Python. Advanced data visualization and co-authorship of peer-reviewed publications in economic methodology.',
+
+      'pub.label': 'Research',
+      'pub.title': 'Publications',
+
+      'contact.label': 'Contact',
+      'contact.title': "Let's work together",
+      'contact.sub':   'Open to consulting, research collaborations, and new projects — especially where AI, data, and social impact intersect.',
+
+      'footer.text': 'Daniel Otero · Cali, Colombia',
+    },
+
+    es: {
+      'nav.about':        'Sobre mí',
+      'nav.skills':       'Habilidades',
+      'nav.projects':     'Proyectos',
+      'nav.experience':   'Experiencia',
+      'nav.publications': 'Publicaciones',
+      'nav.contact':      'Contacto',
+
+      'hero.badge': 'Abierto a nuevos proyectos y colaboraciones',
+      'hero.roles': '<span>Ingeniero de IA</span><span class="hero-role-sep">·</span><span>Científico de Datos</span><span class="hero-role-sep">·</span><span>Investigador Aplicado</span>',
+      'hero.bio':   'Construyo sistemas inteligentes en la intersección de las ciencias sociales y la IA — pipelines LLM, agentes conversacionales con RAG, y herramientas de datos que ayudan a organizaciones a entender y actuar sobre información compleja.',
+      'hero.cta1':  'Escríbeme',
+      'hero.cta2':  'Ver proyectos',
+
+      'about.label': 'Sobre mí',
+      'about.title': 'Conectando ciencias sociales e IA',
+      'about.p1':    'Soy economista e ingeniero en ciencias computacionales que construye soluciones de IA para problemas reales. Mi formación es poco común: empecé en economía e investigación de sistemas complejos, y luego me moví hacia machine learning, NLP y — más recientemente — orquestación de LLMs e IA agéntica.',
+      'about.p2':    'Esa combinación significa que puedo hacer el trabajo técnico <em>y</em> entender el contexto social, organizacional e investigativo detrás. He construido agentes conversacionales, pipelines de datos multi-paso, sistemas de clustering ML y dashboards interactivos usados por organizaciones en Colombia y América Latina.',
+      'about.p3':    'Actualmente liderando ciencia de datos e IA en Estudio Plural, donde diseño herramientas basadas en LLMs para investigación comportamental, recuperación de conocimiento e inteligencia organizacional. También enseño — he dictado talleres de NLP en la Universidad del Valle y consulto en proyectos de investigación aplicada.',
+      'about.stat1': 'Años de investigación aplicada y trabajo con datos',
+      'about.stat2': 'Proyectos de IA y datos construidos y entregados',
+      'about.stat3': 'Publicaciones arbitradas',
+      'about.stat4': 'Organizaciones atendidas en Latinoamérica',
+
+      'skills.label': 'Stack Técnico',
+      'skills.title': 'Con qué trabajo',
+      'skills.g1':    'IA y LLMs',
+      'skills.g2':    'Lenguajes y Ciencia de Datos',
+      'skills.g3':    'Bases de Datos y Almacenamiento',
+      'skills.g4':    'Infraestructura y Entrega',
+
+      'projects.label':    'Trabajo',
+      'projects.title':    'Proyectos seleccionados',
+      'projects.subtitle': 'De bots en producción a dashboards desplegados — una selección de sistemas que he construido.',
+
+      'badge.live':   'Activo',
+      'badge.prod':   'Producción',
+      'badge.mvp':    'MVP',
+      'badge.dev':    'En Desarrollo',
+      'badge.active': 'Activo',
+
+      'p1.desc': 'Pipeline ML de extremo a extremo para descubrimiento de arquetipos. LangGraph orquesta ingesta → perfilado → preprocesamiento → selección de algoritmo → clustering → narrativa generada por LLM. 33 pruebas automatizadas pasando.',
+      'p2.desc': 'Búsqueda semántica sobre 6 documentos educativos de género y crianza. Vector store en MongoDB + embeddings de OpenAI. Bot WhatsApp multilingüe con memoria de conversación en Supabase. 7 agentes especializados, 1,544 fragmentos procesados.',
+      'p3.desc': 'Bot multilingüe (ES/EN/PT) para el Manual A+P de Equimundo. 5 agentes LLM secuenciales: detección de idioma → clasificación de intención → respuesta especializada (factual, planificación, ideación, temas sensibles). Construido con FastAPI + LangGraph.',
+      'p4.desc': '5 agentes LLM secuenciales que evalúan documentos contra rúbricas, produciendo reportes puntuados en Word y PDF. Acepta PDF y DOCX. Rúbrica configurable; por defecto usa un esquema de 4×25pt.',
+      'p5.desc': 'Escáner diario automatizado de 15+ fuentes de financiamiento y convocatorias. Claude AI filtra por relevancia organizacional, deduplica resultados y envía alertas curadas a Slack. Corre en GitHub Actions cada mañana.',
+      'p6.desc': 'Dashboard interactivo del Sistema General de Regalías (SGR) de Colombia. Datos en tiempo real de datos.gov.co vía Socrata API, filtros dinámicos, mapas coropléticos y exportación a Excel. Desplegado en Streamlit Cloud.',
+      'p7.desc': 'Plataforma SaaS sin código para construir chatbots multi-agente con despliegue multicanal (WhatsApp, Telegram, Web). UI completa en Next.js + shadcn/ui; backend FastAPI con MongoDB Atlas y autenticación Supabase.',
+      'p8.desc': 'Pipeline de procesamiento de encuestas en múltiples ciudades para investigación social de campo en 4 ciudades de Colombia, Perú, Ecuador y Bolivia. Integración KoboToolbox, validación, deduplicación, reportes con LLM y 30+ gráficas para entregables intermedios.',
+
+      'exp.label': 'Experiencia',
+      'exp.title': 'Dónde he trabajado',
+
+      'e1.role1': 'Científico de Datos e IA',
+      'e1.role2': 'Líder de Investigación y Analítica Comportamental',
+      'e1.role3': 'Consultor en Analítica de Datos',
+      'e1.desc':  'Liderando diseño y despliegue de sistemas ML, NLP y LLM para analítica social y comportamental. Construyo asistentes conversacionales con RAG, pipelines ETL para datos no estructurados y dashboards interactivos para equipos no técnicos en contextos de investigación y producto.',
+
+      'e2.role1': 'Analista de Proyectos',
+      'e2.role2': 'Líder de Investigación',
+      'e2.desc':  'Lideré procesos de investigación para toma de decisiones en contextos públicos y empresariales. Desplegué agentes de IA para síntesis de información, construí el dashboard de monitoreo del SGR y desarrollé un MVP de asistente multi-agente para formulación de proyectos.',
+
+      'e3.role1': 'Líder de Analítica Cuantitativa · Proyecto PUDA2022',
+      'e3.desc':  'Diseñé y modelé datos socioambientales usando PCA, clustering y modelado espacial. Desarrollé modelos de redes y sistemas de lógica difusa aplicados a sistemas ambientales complejos.',
+
+      'e4.role1': 'Consultor en Analítica de Datos',
+      'e4.role2': 'Científico de Datos',
+      'e4.desc':  'Minería de redes sociales, análisis de sentimiento y perfilado de usuarios usando clustering y técnicas de NLP. Desarrollé informes de escucha social y user personas basadas en datos de interacción digital.',
+
+      'e5.role1': 'Asistente de Investigación',
+      'e5.desc':  'Minería de datos, análisis de redes de citación y desarrollo de modelos semánticos en R y Python. Visualización avanzada de datos y coautoría de publicaciones científicas arbitradas en metodología económica.',
+
+      'pub.label': 'Investigación',
+      'pub.title': 'Publicaciones',
+
+      'contact.label': 'Contacto',
+      'contact.title': 'Trabajemos juntos',
+      'contact.sub':   'Abierto a consultoría, colaboraciones de investigación y nuevos proyectos — especialmente donde se cruzan IA, datos e impacto social.',
+
+      'footer.text': 'Daniel Otero · Cali, Colombia',
+    }
+  };
+
+  /* ── LANG LOGIC ── */
+  const btn = document.getElementById('lang-toggle');
+  let lang = localStorage.getItem('portfolio-lang') || 'en';
+
+  function applyLang(l) {
+    lang = l;
+    localStorage.setItem('portfolio-lang', l);
+    document.documentElement.lang = l;
+    btn.textContent = l === 'en' ? 'ES' : 'EN';
+    document.title = l === 'en'
+      ? 'Daniel Otero — AI Engineer & Data Scientist'
+      : 'Daniel Otero — Ingeniero de IA y Científico de Datos';
+
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.dataset.i18n;
+      if (t[l][key] !== undefined) el.innerHTML = t[l][key];
+    });
+  }
+
+  btn.addEventListener('click', () => applyLang(lang === 'en' ? 'es' : 'en'));
+  applyLang(lang);
+
+  /* ── ACTIVE NAV ── */
+  const sections = document.querySelectorAll('section[id]');
+  const links = document.querySelectorAll('.nav-links a');
+
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        links.forEach(l => {
+          const active = l.getAttribute('href') === '#' + entry.target.id;
+          l.style.color = active ? 'var(--fg)' : '';
+          l.style.fontWeight = active ? '600' : '';
+        });
+      }
+    });
+  }, { threshold: 0.4 });
+
+  sections.forEach(s => io.observe(s));
+</script>
+
+</body>
+</html>
