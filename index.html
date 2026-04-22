@@ -4,7 +4,27 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Daniel Otero — AI Engineer & Data Scientist</title>
-  <meta name="description" content="Economist and AI Engineer specializing in LLMs, RAG architectures, and data-driven solutions for social impact.">
+  <meta name="description" content="Economist & AI engineer building LLM pipelines, RAG systems, and multi-agent architectures with LangGraph. Conversational AI, data science, and applied research for organizations across LatAm.">
+  <meta name="keywords" content="AI Engineer, Data Scientist, LLM, RAG, LangGraph, LangChain, Multi-agent, Prompt Engineering, NLP, Python, Daniel Otero">
+  <meta name="author" content="Daniel Otero">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Daniel Otero — AI Engineer & Data Scientist">
+  <meta property="og:description" content="Building LLM pipelines, RAG systems, and multi-agent AI for research and product teams across Latin America.">
+  <meta property="og:image" content="photo.jpg">
+  <meta property="og:url" content="https://rodato.github.io">
+  <meta property="og:site_name" content="Daniel Otero">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Daniel Otero — AI Engineer & Data Scientist">
+  <meta name="twitter:description" content="Building LLM pipelines, RAG systems, and multi-agent AI for research and product teams across Latin America.">
+  <meta name="twitter:image" content="photo.jpg">
+
+  <!-- Favicon: inline SVG, blue circle with DO initials -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%231d4ed8'/%3E%3Ctext x='32' y='42' font-family='Inter,system-ui,sans-serif' font-size='30' font-weight='700' text-anchor='middle' fill='white'%3EDO%3C/text%3E%3C/svg%3E">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
@@ -353,12 +373,32 @@
       padding: 1.5rem;
       display: flex;
       flex-direction: column;
-      transition: box-shadow 0.2s, transform 0.2s;
+      transition: box-shadow 0.2s, transform 0.2s, border-color 0.2s;
+      color: inherit;
+      text-decoration: none;
+      position: relative;
     }
 
-    .project-card:hover {
+    a.project-card:hover {
       box-shadow: var(--shadow-md);
       transform: translateY(-2px);
+      border-color: var(--accent);
+    }
+
+    a.project-card::after {
+      content: '↗';
+      position: absolute;
+      top: 1.1rem;
+      right: 1.2rem;
+      font-size: 0.95rem;
+      color: var(--fg-light);
+      opacity: 0;
+      transition: opacity 0.2s, color 0.2s;
+    }
+
+    a.project-card:hover::after {
+      opacity: 1;
+      color: var(--accent);
     }
 
     .project-header {
@@ -395,8 +435,28 @@
       font-size: 0.875rem;
       color: var(--fg-muted);
       line-height: 1.72;
-      margin-bottom: 1.1rem;
+      margin-bottom: 0.85rem;
       flex: 1;
+    }
+
+    .project-impact {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--accent);
+      background: var(--accent-light);
+      padding: 0.4rem 0.65rem;
+      border-radius: 6px;
+      margin-bottom: 1rem;
+      line-height: 1.35;
+    }
+
+    .project-impact::before {
+      content: '↑';
+      font-weight: 700;
+      flex-shrink: 0;
     }
 
     .project-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
@@ -454,6 +514,45 @@
     .exp-duration { font-size: 0.8rem; color: var(--fg-light); white-space: nowrap; flex-shrink: 0; }
 
     .exp-desc { font-size: 0.875rem; color: var(--fg-muted); line-height: 1.75; }
+
+    .exp-bullets {
+      list-style: none;
+      margin-top: 0.55rem;
+      padding-left: 0;
+    }
+
+    .exp-bullets li {
+      font-size: 0.875rem;
+      color: var(--fg-muted);
+      line-height: 1.6;
+      padding: 0.22rem 0 0.22rem 1.1rem;
+      position: relative;
+    }
+
+    .exp-bullets li::before {
+      content: '';
+      position: absolute;
+      left: 0.2rem;
+      top: 0.7rem;
+      width: 5px;
+      height: 5px;
+      background: var(--accent);
+      border-radius: 50%;
+    }
+
+    .exp-bullets li strong {
+      color: var(--fg);
+      font-weight: 600;
+    }
+
+    .exp-bullets li code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 0.82em;
+      background: var(--bg-subtle);
+      padding: 0.05em 0.35em;
+      border-radius: 4px;
+      color: var(--fg);
+    }
 
     /* ── PUBLICATIONS ── */
     #publications { background: var(--bg-subtle); }
@@ -578,7 +677,6 @@
 <section id="hero">
   <div class="hero-content">
     <div class="hero-text">
-      <div class="hero-badge" data-i18n="hero.badge">Open to new projects &amp; collaborations</div>
       <h1 class="hero-name">Daniel Otero</h1>
       <div class="hero-roles" data-i18n="hero.roles">
         <span>AI Engineer</span>
@@ -588,7 +686,7 @@
         <span>Applied Researcher</span>
       </div>
       <p class="hero-bio" data-i18n="hero.bio">
-        I build intelligent systems at the intersection of social science and AI — LLM pipelines, RAG-powered conversational agents, and data tools that help organizations understand and act on complex information.
+        I build intelligent systems where AI meets social science — LLM pipelines, RAG-powered conversational agents, multi-agent architectures, and data tools that help research and product teams turn unstructured information into decisions.
       </p>
       <div class="hero-ctas">
         <a href="#contact" class="btn btn-primary"    data-i18n="hero.cta1">Get in touch</a>
@@ -609,31 +707,31 @@
     <div class="about-grid">
       <div class="about-text">
         <p data-i18n="about.p1">
-          I'm an economist and computer science engineer who builds AI-powered solutions for real-world problems. My background is unusual: I started in economics and complex systems research, then moved into machine learning, NLP, and — more recently — LLM orchestration and agentic AI.
+          I'm an economist and computer-science engineer (M.Sc.) building AI systems for real-world problems. My path is unusual: I started in economics, complex systems, and computational social science, then moved into machine learning and NLP, and now into LLM orchestration, agentic AI, RAG architectures, fine-tuning, and semantic embeddings.
         </p>
         <p data-i18n="about.p2">
-          That combination means I can do the technical work <em>and</em> understand the social, organizational, and research context behind it. I've built conversational agents, multi-step data pipelines, ML clustering systems, and interactive dashboards used by organizations across Colombia and Latin America.
+          That mix means I do the technical work <em>and</em> understand the social, organizational, and research context behind it. I've shipped conversational agents serving hundreds of users monthly across Latin America, ML clustering pipelines, RAG systems, and dashboards used by research and product teams.
         </p>
         <p data-i18n="about.p3">
-          Currently leading data science and AI at Estudio Plural, where I design LLM-based tools for behavioral research, knowledge retrieval, and organizational intelligence. I also teach — I've run NLP workshops at Universidad del Valle and consult on applied research projects.
+          Currently leading data science and AI at Estudio Plural, where I design LLM-based tools for behavioral research, knowledge retrieval, and organizational intelligence. I publish, teach, and consult on applied research projects when there's a good fit.
         </p>
       </div>
       <div class="about-stats">
         <div class="stat-card">
-          <div class="stat-number">9+</div>
-          <div class="stat-label" data-i18n="about.stat1">Years of applied research &amp; data work</div>
+          <div class="stat-number">700+</div>
+          <div class="stat-label" data-i18n="about.stat1">Active WhatsApp bot users / month</div>
         </div>
         <div class="stat-card">
-          <div class="stat-number">10+</div>
-          <div class="stat-label" data-i18n="about.stat2">AI &amp; data projects built and shipped</div>
+          <div class="stat-number">8</div>
+          <div class="stat-label" data-i18n="about.stat2">Countries reached with data systems</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">104K</div>
+          <div class="stat-label" data-i18n="about.stat3">Nodes in bibliometric citation network</div>
         </div>
         <div class="stat-card">
           <div class="stat-number">4</div>
-          <div class="stat-label" data-i18n="about.stat3">Peer-reviewed publications</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-number">5+</div>
-          <div class="stat-label" data-i18n="about.stat4">Organizations served across LatAm</div>
+          <div class="stat-label" data-i18n="about.stat4">Peer-reviewed publications</div>
         </div>
       </div>
     </div>
@@ -693,7 +791,7 @@
     <p class="section-subtitle"  data-i18n="projects.subtitle">From production bots to deployed dashboards — a curated set of systems I've built.</p>
     <div class="projects-grid">
 
-      <div class="project-card">
+      <a class="project-card" href="https://github.com/Rodato/archetypeSuite" target="_blank" rel="noopener">
         <div class="project-header">
           <div class="project-name">archetypeSuite</div>
           <span class="badge badge-live" data-i18n="badge.live">Live</span>
@@ -701,12 +799,13 @@
         <p class="project-desc" data-i18n="p1.desc">
           End-to-end ML pipeline for archetype discovery. LangGraph orchestrates ingestion → profiling → preprocessing → algorithm selection → clustering → LLM-generated narrative. 33 automated tests passing.
         </p>
+        <div class="project-impact" data-i18n="p1.impact">Cuts survey analysis time by 50%</div>
         <div class="project-tags">
           <span class="project-tag">Python</span><span class="project-tag">LangGraph</span>
           <span class="project-tag">scikit-learn</span><span class="project-tag">Streamlit</span>
           <span class="project-tag">OpenRouter</span>
         </div>
-      </div>
+      </a>
 
       <div class="project-card">
         <div class="project-header">
@@ -716,6 +815,7 @@
         <p class="project-desc" data-i18n="p2.desc">
           Semantic search over 6 educational documents on gender and parenting. MongoDB vector store + OpenAI embeddings. Multilingual WhatsApp bot with conversation memory in Supabase. 7 specialized agents, 1,544 processed chunks.
         </p>
+        <div class="project-impact" data-i18n="p2.impact">Active in CO &amp; MX · ~300 users / month</div>
         <div class="project-tags">
           <span class="project-tag">RAG</span><span class="project-tag">MongoDB</span>
           <span class="project-tag">Supabase</span><span class="project-tag">Twilio</span>
@@ -723,7 +823,7 @@
         </div>
       </div>
 
-      <div class="project-card">
+      <a class="project-card" href="https://github.com/Rodato/Aly" target="_blank" rel="noopener">
         <div class="project-header">
           <div class="project-name">Aly — WhatsApp AI Agent</div>
           <span class="badge badge-mvp" data-i18n="badge.mvp">MVP</span>
@@ -731,29 +831,31 @@
         <p class="project-desc" data-i18n="p3.desc">
           Multilingual bot (ES/EN/PT) for Equimundo's A+P Manual. 5 sequential LLM agents: language detection → intent classification → specialized response (factual, planning, ideation, sensitive topics). Built with FastAPI + LangGraph.
         </p>
+        <div class="project-impact" data-i18n="p3.impact">Active across 4 countries · ~400 users / month</div>
         <div class="project-tags">
           <span class="project-tag">FastAPI</span><span class="project-tag">LangGraph</span>
           <span class="project-tag">MongoDB</span><span class="project-tag">Twilio</span>
           <span class="project-tag">Multilingual</span>
         </div>
-      </div>
+      </a>
 
-      <div class="project-card">
+      <a class="project-card" href="https://github.com/Rodato/aly-dashboard" target="_blank" rel="noopener">
         <div class="project-header">
-          <div class="project-name">Document Review System</div>
-          <span class="badge badge-prod" data-i18n="badge.prod">Production</span>
+          <div class="project-name">Aly Dashboard</div>
+          <span class="badge badge-live" data-i18n="badge.live">Live</span>
         </div>
-        <p class="project-desc" data-i18n="p4.desc">
-          5 sequential LLM agents that evaluate documents against rubrics, producing scored Word + PDF reports. Handles PDF and DOCX inputs. Configurable rubric; defaults to a 4×25pt scoring schema.
+        <p class="project-desc" data-i18n="p9.desc">
+          Operational monitoring dashboard for the Aly (Apapáchar) WhatsApp bot. KPIs with sparklines and deltas, geographic visualization, alert flags with Excel export and review-status toggle, and a leaderboard with drill-down. Multi-page Streamlit app with custom navigation and i18n.
         </p>
+        <div class="project-impact" data-i18n="p9.impact">Real-time bot monitoring for the research team</div>
         <div class="project-tags">
-          <span class="project-tag">Python</span><span class="project-tag">OpenRouter</span>
-          <span class="project-tag">Streamlit</span><span class="project-tag">pdfplumber</span>
-          <span class="project-tag">LLM Pipeline</span>
+          <span class="project-tag">Streamlit</span><span class="project-tag">Supabase</span>
+          <span class="project-tag">Plotly</span><span class="project-tag">PostgreSQL</span>
+          <span class="project-tag">Python</span>
         </div>
-      </div>
+      </a>
 
-      <div class="project-card">
+      <a class="project-card" href="https://github.com/Rodato/convocatorias-bot" target="_blank" rel="noopener">
         <div class="project-header">
           <div class="project-name">convocatorias-bot</div>
           <span class="badge badge-prod" data-i18n="badge.prod">Production</span>
@@ -761,14 +863,15 @@
         <p class="project-desc" data-i18n="p5.desc">
           Automated daily scanner of 15+ funding and grant sources. Claude AI filters by organizational relevance, deduplicates results, and sends curated alerts to Slack. Runs on GitHub Actions every morning.
         </p>
+        <div class="project-impact" data-i18n="p5.impact">Saves 10 hours / week to the project formulation team</div>
         <div class="project-tags">
           <span class="project-tag">Python</span><span class="project-tag">BeautifulSoup</span>
           <span class="project-tag">Claude AI</span><span class="project-tag">Slack API</span>
           <span class="project-tag">GitHub Actions</span>
         </div>
-      </div>
+      </a>
 
-      <div class="project-card">
+      <a class="project-card" href="https://github.com/Rodato/dashboard-sgr" target="_blank" rel="noopener">
         <div class="project-header">
           <div class="project-name">SGR Dashboard</div>
           <span class="badge badge-live" data-i18n="badge.live">Live</span>
@@ -776,14 +879,15 @@
         <p class="project-desc" data-i18n="p6.desc">
           Interactive dashboard for Colombia's General Royalties System (SGR). Real-time data from datos.gov.co via Socrata API, dynamic filters, choropleth maps, and Excel export. Deployed on Streamlit Cloud.
         </p>
+        <div class="project-impact" data-i18n="p6.impact">Saves 8 hours / week to the project formulation team</div>
         <div class="project-tags">
           <span class="project-tag">Streamlit</span><span class="project-tag">pydeck</span>
           <span class="project-tag">Plotly</span><span class="project-tag">Socrata API</span>
           <span class="project-tag">GeoJSON</span>
         </div>
-      </div>
+      </a>
 
-      <div class="project-card">
+      <a class="project-card" href="https://github.com/Rodato/agentChatBuilder" target="_blank" rel="noopener">
         <div class="project-header">
           <div class="project-name">agentChatBuilder</div>
           <span class="badge badge-dev" data-i18n="badge.dev">In Dev</span>
@@ -796,7 +900,7 @@
           <span class="project-tag">FastAPI</span><span class="project-tag">MongoDB</span>
           <span class="project-tag">Supabase</span>
         </div>
-      </div>
+      </a>
 
       <div class="project-card">
         <div class="project-header">
@@ -806,10 +910,43 @@
         <p class="project-desc" data-i18n="p8.desc">
           Multi-city survey processing pipeline for social field research across 4 cities in Colombia, Peru, Ecuador, and Bolivia. KoboToolbox integration, validation, deduplication, LLM-generated reports, and 30+ charts for interim deliverables.
         </p>
+        <div class="project-impact" data-i18n="p8.impact">4 cities across 4 countries · 30+ charts auto-generated</div>
         <div class="project-tags">
           <span class="project-tag">Python</span><span class="project-tag">pandas</span>
           <span class="project-tag">KoboToolbox</span><span class="project-tag">LLM</span>
           <span class="project-tag">Social Research</span>
+        </div>
+      </div>
+
+      <a class="project-card" href="https://github.com/Rodato/ama-bot-monitoring" target="_blank" rel="noopener">
+        <div class="project-header">
+          <div class="project-name">AMA Bot Monitoring</div>
+          <span class="badge badge-live" data-i18n="badge.live">Live</span>
+        </div>
+        <p class="project-desc" data-i18n="p10.desc">
+          Monitoring dashboard for the AMA WhatsApp bot. Tracks user activity, sessions, and engagement across deployments. Streamlit + Supabase backend with Plotly visualizations and Excel exports.
+        </p>
+        <div class="project-impact" data-i18n="p10.impact">Real-time tracking of bot activity for the research team</div>
+        <div class="project-tags">
+          <span class="project-tag">Streamlit</span><span class="project-tag">Supabase</span>
+          <span class="project-tag">SQLAlchemy</span><span class="project-tag">Plotly</span>
+          <span class="project-tag">Python</span>
+        </div>
+      </a>
+
+      <div class="project-card">
+        <div class="project-header">
+          <div class="project-name">AMA Lineabase 2026</div>
+          <span class="badge badge-active" data-i18n="badge.active">Active</span>
+        </div>
+        <p class="project-desc" data-i18n="p11.desc">
+          Field-survey validation pipeline for the AMA program in Leticia (Colombia) and Cobija (Bolivia). KoboToolbox QC, ID validation, duration outlier detection per classroom, attendance crosschecks vs Google Forms, school-level Excel reports, and LLM-generated narrative summaries via OpenRouter.
+        </p>
+        <div class="project-impact" data-i18n="p11.impact">2 cities across 2 countries · automated QC + reporting</div>
+        <div class="project-tags">
+          <span class="project-tag">Python</span><span class="project-tag">pandas</span>
+          <span class="project-tag">KoboToolbox</span><span class="project-tag">OpenRouter</span>
+          <span class="project-tag">CLI</span>
         </div>
       </div>
 
@@ -839,10 +976,19 @@
             <span class="exp-role-name" data-i18n="e1.role3">Data Analytics Consultant</span>
             <span class="exp-duration">Dec 2023 – May 2024</span>
           </li>
+          <li class="exp-role-item">
+            <span class="exp-role-name" data-i18n="e1.role4">Data Analytics Consultant</span>
+            <span class="exp-duration">Jul 2023 – Aug 2023</span>
+          </li>
         </ul>
-        <p class="exp-desc" data-i18n="e1.desc">
-          Leading design and deployment of ML, NLP, and LLM systems for social and behavioral analytics. Build RAG-based conversational assistants, ETL pipelines for unstructured data, and interactive dashboards for non-technical teams across research and product contexts.
-        </p>
+        <ul class="exp-bullets">
+          <li data-i18n="e1.b1">Built <strong>2 conversational agents</strong> with LangGraph: first deployed across <strong>4 countries</strong> (CO/EC/PE/BO) with <strong>~400 users/month</strong>; second active in CO &amp; MX with <strong>~300 users/month</strong>.</li>
+          <li data-i18n="e1.b2">Real-time monitoring dashboards with leaderboards and automatic report generation, giving researchers immediate access to bot usage metrics with no manual extraction.</li>
+          <li data-i18n="e1.b3">Automation flows in <strong>n8n</strong> and <strong>Zapier</strong> for admin and accounting → <strong>80% time saved</strong> on repetitive tasks.</li>
+          <li data-i18n="e1.b4">AI system for automatic detection of funding opportunities → <strong>10 hours/week saved</strong> for the project formulation team.</li>
+          <li data-i18n="e1.b5">Python data pipelines connecting KoboToolbox &amp; Typeform to Supabase dashboards → <strong>~90% reduction</strong> in field-data monitoring time.</li>
+          <li data-i18n="e1.b6">Multi-agent processing system for clustering and behavioral narrative generation over survey data → <strong>50% reduction</strong> in analysis time.</li>
+        </ul>
       </div>
 
       <div class="exp-item">
@@ -850,29 +996,42 @@
         <ul class="exp-roles">
           <li class="exp-role-item">
             <span class="exp-role-name" data-i18n="e2.role1">Project Analyst</span>
-            <span class="exp-duration">Jan 2025 – Dec 2025</span>
+            <span class="exp-duration">Jan 2025 – Mar 2026</span>
           </li>
           <li class="exp-role-item">
             <span class="exp-role-name" data-i18n="e2.role2">Research Leader</span>
             <span class="exp-duration">Jul 2023 – Dec 2024</span>
           </li>
         </ul>
-        <p class="exp-desc" data-i18n="e2.desc">
-          Led research processes for public and business decision-making contexts. Deployed AI agents for information synthesis, built the SGR royalties monitoring dashboard, and developed an MVP multi-agent document assistant for project formulation.
-        </p>
+        <ul class="exp-bullets">
+          <li data-i18n="e2.b1">Built SGR (General Royalties System) monitoring dashboard integrated with the <code>datos.gov.co</code> Open Data API → <strong>8 hours/week saved</strong> for the project formulation team.</li>
+          <li data-i18n="e2.b2">Developed a prompt library for technology surveillance → research time per report cut <strong>from 8 to 3 days (-63%)</strong>, applied across <strong>~20 reports</strong> for companies in Valle del Cauca.</li>
+          <li data-i18n="e2.b3">Deployed intelligent agents for information synthesis and organization across research, search, and project formulation in public and corporate contexts.</li>
+          <li data-i18n="e2.b4">Built MVP of a multi-agent assistant for document management, focused on classification and efficient access to technical and administrative documents.</li>
+        </ul>
       </div>
 
       <div class="exp-item">
-        <div class="exp-company">Universidad del Valle — CINARA Institute</div>
+        <div class="exp-company">Universidad del Valle, CIDSE</div>
         <ul class="exp-roles">
           <li class="exp-role-item">
-            <span class="exp-role-name" data-i18n="e3.role1">Quantitative Analytics Lead · PUDA2022 Project</span>
-            <span class="exp-duration">Sep 2021 – Jun 2023</span>
+            <span class="exp-role-name" data-i18n="e3b.role1">Data Analysis Consultant</span>
+            <span class="exp-duration">Nov 2024 – Dec 2024</span>
+          </li>
+          <li class="exp-role-item">
+            <span class="exp-role-name" data-i18n="e3b.role2">Data Analytics &amp; Experimental Design Consultant</span>
+            <span class="exp-duration">Oct 2023 – Dec 2023</span>
+          </li>
+          <li class="exp-role-item">
+            <span class="exp-role-name" data-i18n="e3b.role3">Shiny Developer</span>
+            <span class="exp-duration">Oct 2020 – Dec 2020</span>
           </li>
         </ul>
-        <p class="exp-desc" data-i18n="e3.desc">
-          Designed and modeled socio-environmental datasets using PCA, clustering, and spatial modeling. Developed network models and fuzzy logic systems applied to complex environmental systems.
-        </p>
+        <ul class="exp-bullets">
+          <li data-i18n="e3b.b1">Sample design, construction and deployment of experimental surveys in <strong>oTree</strong>, with results processing using clustering algorithms for computational social science projects.</li>
+          <li data-i18n="e3b.b2">Narrative and social-network analysis using NLP and text mining in R.</li>
+          <li data-i18n="e3b.b3">Interactive Shiny dashboards for non-technical research teams.</li>
+        </ul>
       </div>
 
       <div class="exp-item">
@@ -887,22 +1046,68 @@
             <span class="exp-duration">Mar 2020 – Dec 2021</span>
           </li>
         </ul>
-        <p class="exp-desc" data-i18n="e4.desc">
-          Social media mining, sentiment analysis, and user profiling using clustering and NLP techniques. Developed social listening reports and data-driven user personas from digital interaction data.
-        </p>
+        <ul class="exp-bullets">
+          <li data-i18n="e4.b1">Designed and analyzed an end-to-end Typeform survey including final report → <strong>50% time reduction</strong> vs. previous process.</li>
+          <li data-i18n="e4.b2">Automated survey processing and report generation across <strong>6 countries</strong> (CL, SV, CO, MX, UY, PE) → <strong>90% time saved</strong> for the research team.</li>
+          <li data-i18n="e4.b3">Built data capture system via <strong>Twitter API</strong> + <strong>Google Trends/News</strong> → weekly collection cut <strong>from 2 days to 20 minutes</strong>.</li>
+          <li data-i18n="e4.b4">NLP and text mining pipelines for sentiment analysis, clustering, and user-persona construction over the captured data.</li>
+        </ul>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-company">Universidad del Valle, CINARA Institute</div>
+        <ul class="exp-roles">
+          <li class="exp-role-item">
+            <span class="exp-role-name" data-i18n="e5b.role1">Quantitative Analytics Lead · PUDA2022 Project</span>
+            <span class="exp-duration">Sep 2021 – Jun 2023</span>
+          </li>
+        </ul>
+        <ul class="exp-bullets">
+          <li data-i18n="e5b.b1">Sample design and construction of socio-environmental surveys; processed results applying PCA and clustering for data characterization in water and sanitation contexts.</li>
+          <li data-i18n="e5b.b2">Network models and fuzzy logic systems applied to complex socio-environmental systems.</li>
+        </ul>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-company">Fundación Univalle</div>
+        <ul class="exp-roles">
+          <li class="exp-role-item">
+            <span class="exp-role-name" data-i18n="e6.role1">Advisor</span>
+            <span class="exp-duration">Sep 2020 – Nov 2020</span>
+          </li>
+        </ul>
+        <ul class="exp-bullets">
+          <li data-i18n="e6.b1">Applied clustering and PCA over <strong>SISBEN IV</strong> data for categorization and georeferencing of vulnerable population, with technical reporting.</li>
+        </ul>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-company">Directrix Analytics</div>
+        <ul class="exp-roles">
+          <li class="exp-role-item">
+            <span class="exp-role-name" data-i18n="e7.role1">Data Scientist · HORIZONT Project</span>
+            <span class="exp-duration">Nov 2018 – Apr 2019</span>
+          </li>
+        </ul>
+        <ul class="exp-bullets">
+          <li data-i18n="e7.b1">Automated industrial sensor data capture from a kiln at the <strong>ARGOS</strong> Yumbo (Valle del Cauca) plant, enabling continuous monitoring of process variables.</li>
+          <li data-i18n="e7.b2">PCA and predictive models on the captured data; visualization dashboards for plant teams.</li>
+        </ul>
       </div>
 
       <div class="exp-item">
         <div class="exp-company">CIDSE, Universidad del Valle</div>
         <ul class="exp-roles">
           <li class="exp-role-item">
-            <span class="exp-role-name" data-i18n="e5.role1">Research Assistant</span>
+            <span class="exp-role-name" data-i18n="e8.role1">Research Assistant</span>
             <span class="exp-duration">Jan 2017 – Jul 2020</span>
           </li>
         </ul>
-        <p class="exp-desc" data-i18n="e5.desc">
-          Data mining, citation network analysis, and semantic model development in R and Python. Advanced data visualization and co-authorship of peer-reviewed publications in economic methodology.
-        </p>
+        <ul class="exp-bullets">
+          <li data-i18n="e8.b1">Automated download of scientific citation data from the <strong>RePEc API</strong>, building a network of <strong>104,589 nodes</strong> → <strong>6 months of manual work saved</strong>.</li>
+          <li data-i18n="e8.b2">Built semantic models and citation networks in R and Python for bibliometric and influence analysis in economics.</li>
+          <li data-i18n="e8.b3">Co-author of <strong>4 peer-reviewed publications</strong> in international journals (see Publications).</li>
+        </ul>
       </div>
 
     </div>
@@ -925,6 +1130,7 @@
       <div class="pub-item">
         <div class="pub-title">A Tale of a Tool: The Impact of Sims's Vector Autoregressions on Macroeconometrics</div>
         <div class="pub-meta">Salazar, B. &amp; Otero, D. · <em>History of Political Economy</em>, 51(3), 557–578 · 2019</div>
+        <a href="https://doi.org/10.1215/00182702-7551924" target="_blank" rel="noopener" class="pub-link">doi.org/10.1215/00182702-7551924 ↗</a>
       </div>
 
       <div class="pub-item">
@@ -936,6 +1142,7 @@
       <div class="pub-item">
         <div class="pub-title">La revolución de los nuevos clásicos: redes, influencia y metodología</div>
         <div class="pub-meta">Salazar, B. &amp; Otero, D. · <em>Revista de Economía Institucional</em>, 17(32), 39–69 · 2015</div>
+        <a href="https://doi.org/10.18601/01245996.v17n32.02" target="_blank" rel="noopener" class="pub-link">doi.org/10.18601/01245996.v17n32.02 ↗</a>
       </div>
 
     </div>
@@ -973,21 +1180,20 @@
       'nav.publications': 'Publications',
       'nav.contact':      'Contact',
 
-      'hero.badge': 'Open to new projects & collaborations',
       'hero.roles': '<span>AI Engineer</span><span class="hero-role-sep">·</span><span>Data Scientist</span><span class="hero-role-sep">·</span><span>Applied Researcher</span>',
-      'hero.bio':   'I build intelligent systems at the intersection of social science and AI — LLM pipelines, RAG-powered conversational agents, and data tools that help organizations understand and act on complex information.',
+      'hero.bio':   'I build intelligent systems where AI meets social science — LLM pipelines, RAG-powered conversational agents, multi-agent architectures, and data tools that help research and product teams turn unstructured information into decisions.',
       'hero.cta1':  'Get in touch',
       'hero.cta2':  'View projects',
 
       'about.label': 'About',
       'about.title': 'Bridging social science and AI',
-      'about.p1':    "I'm an economist and computer science engineer who builds AI-powered solutions for real-world problems. My background is unusual: I started in economics and complex systems research, then moved into machine learning, NLP, and — more recently — LLM orchestration and agentic AI.",
-      'about.p2':    "That combination means I can do the technical work <em>and</em> understand the social, organizational, and research context behind it. I've built conversational agents, multi-step data pipelines, ML clustering systems, and interactive dashboards used by organizations across Colombia and Latin America.",
-      'about.p3':    "Currently leading data science and AI at Estudio Plural, where I design LLM-based tools for behavioral research, knowledge retrieval, and organizational intelligence. I also teach — I've run NLP workshops at Universidad del Valle and consult on applied research projects.",
-      'about.stat1': 'Years of applied research & data work',
-      'about.stat2': 'AI & data projects built and shipped',
-      'about.stat3': 'Peer-reviewed publications',
-      'about.stat4': 'Organizations served across LatAm',
+      'about.p1':    "I'm an economist and computer-science engineer (M.Sc.) building AI systems for real-world problems. My path is unusual: I started in economics, complex systems, and computational social science, then moved into machine learning and NLP, and now into LLM orchestration, agentic AI, RAG architectures, fine-tuning, and semantic embeddings.",
+      'about.p2':    "That mix means I do the technical work <em>and</em> understand the social, organizational, and research context behind it. I've shipped conversational agents serving hundreds of users monthly across Latin America, ML clustering pipelines, RAG systems, and dashboards used by research and product teams.",
+      'about.p3':    "Currently leading data science and AI at Estudio Plural, where I design LLM-based tools for behavioral research, knowledge retrieval, and organizational intelligence. I publish, teach, and consult on applied research projects when there's a good fit.",
+      'about.stat1': 'Active WhatsApp bot users / month',
+      'about.stat2': 'Countries reached with data systems',
+      'about.stat3': 'Nodes in bibliometric citation network',
+      'about.stat4': 'Peer-reviewed publications',
 
       'skills.label': 'Technical Stack',
       'skills.title': 'What I work with',
@@ -1006,14 +1212,25 @@
       'badge.dev':    'In Dev',
       'badge.active': 'Active',
 
-      'p1.desc': 'End-to-end ML pipeline for archetype discovery. LangGraph orchestrates ingestion → profiling → preprocessing → algorithm selection → clustering → LLM-generated narrative. 33 automated tests passing.',
-      'p2.desc': 'Semantic search over 6 educational documents on gender and parenting. MongoDB vector store + OpenAI embeddings. Multilingual WhatsApp bot with conversation memory in Supabase. 7 specialized agents, 1,544 processed chunks.',
-      'p3.desc': 'Multilingual bot (ES/EN/PT) for Equimundo\'s A+P Manual. 5 sequential LLM agents: language detection → intent classification → specialized response (factual, planning, ideation, sensitive topics). Built with FastAPI + LangGraph.',
-      'p4.desc': '5 sequential LLM agents that evaluate documents against rubrics, producing scored Word + PDF reports. Handles PDF and DOCX inputs. Configurable rubric; defaults to a 4×25pt scoring schema.',
-      'p5.desc': 'Automated daily scanner of 15+ funding and grant sources. Claude AI filters by organizational relevance, deduplicates results, and sends curated alerts to Slack. Runs on GitHub Actions every morning.',
-      'p6.desc': 'Interactive dashboard for Colombia\'s General Royalties System (SGR). Real-time data from datos.gov.co via Socrata API, dynamic filters, choropleth maps, and Excel export. Deployed on Streamlit Cloud.',
-      'p7.desc': 'No-code SaaS platform for building multi-agent chatbots with multi-channel deployment (WhatsApp, Telegram, Web). Full UI in Next.js + shadcn/ui; FastAPI backend with MongoDB Atlas and Supabase auth.',
-      'p8.desc': 'Multi-city survey processing pipeline for social field research across 4 cities in Colombia, Peru, Ecuador, and Bolivia. KoboToolbox integration, validation, deduplication, LLM-generated reports, and 30+ charts for interim deliverables.',
+      'p1.desc':   'End-to-end ML pipeline for archetype discovery. LangGraph orchestrates ingestion → profiling → preprocessing → algorithm selection → clustering → LLM-generated narrative. 33 automated tests passing.',
+      'p1.impact': 'Cuts survey analysis time by 50%',
+      'p2.desc':   'Semantic search over 6 educational documents on gender and parenting. MongoDB vector store + OpenAI embeddings. Multilingual WhatsApp bot with conversation memory in Supabase. 7 specialized agents, 1,544 processed chunks.',
+      'p2.impact': 'Active in CO &amp; MX · ~300 users / month',
+      'p3.desc':   'Multilingual bot (ES/EN/PT) for Equimundo\'s A+P Manual. 5 sequential LLM agents: language detection → intent classification → specialized response (factual, planning, ideation, sensitive topics). Built with FastAPI + LangGraph.',
+      'p3.impact': 'Active across 4 countries · ~400 users / month',
+      'p5.desc':   'Automated daily scanner of 15+ funding and grant sources. Claude AI filters by organizational relevance, deduplicates results, and sends curated alerts to Slack. Runs on GitHub Actions every morning.',
+      'p5.impact': 'Saves 10 hours / week to the project formulation team',
+      'p6.desc':   'Interactive dashboard for Colombia\'s General Royalties System (SGR). Real-time data from datos.gov.co via Socrata API, dynamic filters, choropleth maps, and Excel export. Deployed on Streamlit Cloud.',
+      'p6.impact': 'Saves 8 hours / week to the project formulation team',
+      'p7.desc':   'No-code SaaS platform for building multi-agent chatbots with multi-channel deployment (WhatsApp, Telegram, Web). Full UI in Next.js + shadcn/ui; FastAPI backend with MongoDB Atlas and Supabase auth.',
+      'p8.desc':   'Multi-city survey processing pipeline for social field research across 4 cities in Colombia, Peru, Ecuador, and Bolivia. KoboToolbox integration, validation, deduplication, LLM-generated reports, and 30+ charts for interim deliverables.',
+      'p8.impact': '4 cities across 4 countries · 30+ charts auto-generated',
+      'p9.desc':   'Operational monitoring dashboard for the Aly (Apapáchar) WhatsApp bot. KPIs with sparklines and deltas, geographic visualization, alert flags with Excel export and review-status toggle, and a leaderboard with drill-down. Multi-page Streamlit app with custom navigation and i18n.',
+      'p9.impact': 'Real-time bot monitoring for the research team',
+      'p10.desc':   'Monitoring dashboard for the AMA WhatsApp bot. Tracks user activity, sessions, and engagement across deployments. Streamlit + Supabase backend with Plotly visualizations and Excel exports.',
+      'p10.impact': 'Real-time tracking of bot activity for the research team',
+      'p11.desc':   'Field-survey validation pipeline for the AMA program in Leticia (Colombia) and Cobija (Bolivia). KoboToolbox QC, ID validation, duration outlier detection per classroom, attendance crosschecks vs Google Forms, school-level Excel reports, and LLM-generated narrative summaries via OpenRouter.',
+      'p11.impact': '2 cities across 2 countries · automated QC + reporting',
 
       'exp.label': 'Experience',
       'exp.title': "Where I've worked",
@@ -1021,21 +1238,50 @@
       'e1.role1': 'Data Science & AI Specialist',
       'e1.role2': 'Behavioral Research & Analytics Lead',
       'e1.role3': 'Data Analytics Consultant',
-      'e1.desc':  'Leading design and deployment of ML, NLP, and LLM systems for social and behavioral analytics. Build RAG-based conversational assistants, ETL pipelines for unstructured data, and interactive dashboards for non-technical teams across research and product contexts.',
+      'e1.role4': 'Data Analytics Consultant',
+      'e1.b1':    'Built <strong>2 conversational agents</strong> with LangGraph: first deployed across <strong>4 countries</strong> (CO/EC/PE/BO) with <strong>~400 users/month</strong>; second active in CO &amp; MX with <strong>~300 users/month</strong>.',
+      'e1.b2':    'Real-time monitoring dashboards with leaderboards and automatic report generation, giving researchers immediate access to bot usage metrics with no manual extraction.',
+      'e1.b3':    'Automation flows in <strong>n8n</strong> and <strong>Zapier</strong> for admin and accounting → <strong>80% time saved</strong> on repetitive tasks.',
+      'e1.b4':    'AI system for automatic detection of funding opportunities → <strong>10 hours/week saved</strong> for the project formulation team.',
+      'e1.b5':    'Python data pipelines connecting KoboToolbox &amp; Typeform to Supabase dashboards → <strong>~90% reduction</strong> in field-data monitoring time.',
+      'e1.b6':    'Multi-agent processing system for clustering and behavioral narrative generation over survey data → <strong>50% reduction</strong> in analysis time.',
 
       'e2.role1': 'Project Analyst',
       'e2.role2': 'Research Leader',
-      'e2.desc':  'Led research processes for public and business decision-making contexts. Deployed AI agents for information synthesis, built the SGR royalties monitoring dashboard, and developed an MVP multi-agent document assistant for project formulation.',
+      'e2.b1':    'Built SGR (General Royalties System) monitoring dashboard integrated with the <code>datos.gov.co</code> Open Data API → <strong>8 hours/week saved</strong> for the project formulation team.',
+      'e2.b2':    'Developed a prompt library for technology surveillance → research time per report cut <strong>from 8 to 3 days (-63%)</strong>, applied across <strong>~20 reports</strong> for companies in Valle del Cauca.',
+      'e2.b3':    'Deployed intelligent agents for information synthesis and organization across research, search, and project formulation in public and corporate contexts.',
+      'e2.b4':    'Built MVP of a multi-agent assistant for document management, focused on classification and efficient access to technical and administrative documents.',
 
-      'e3.role1': 'Quantitative Analytics Lead · PUDA2022 Project',
-      'e3.desc':  'Designed and modeled socio-environmental datasets using PCA, clustering, and spatial modeling. Developed network models and fuzzy logic systems applied to complex environmental systems.',
+      'e3b.role1': 'Data Analysis Consultant',
+      'e3b.role2': 'Data Analytics & Experimental Design Consultant',
+      'e3b.role3': 'Shiny Developer',
+      'e3b.b1':    'Sample design, construction and deployment of experimental surveys in <strong>oTree</strong>, with results processing using clustering algorithms for computational social science projects.',
+      'e3b.b2':    'Narrative and social-network analysis using NLP and text mining in R.',
+      'e3b.b3':    'Interactive Shiny dashboards for non-technical research teams.',
 
       'e4.role1': 'Data Analytics Consultant',
       'e4.role2': 'Data Scientist',
-      'e4.desc':  'Social media mining, sentiment analysis, and user profiling using clustering and NLP techniques. Developed social listening reports and data-driven user personas from digital interaction data.',
+      'e4.b1':    'Designed and analyzed an end-to-end Typeform survey including final report → <strong>50% time reduction</strong> vs. previous process.',
+      'e4.b2':    'Automated survey processing and report generation across <strong>6 countries</strong> (CL, SV, CO, MX, UY, PE) → <strong>90% time saved</strong> for the research team.',
+      'e4.b3':    'Built data capture system via <strong>Twitter API</strong> + <strong>Google Trends/News</strong> → weekly collection cut <strong>from 2 days to 20 minutes</strong>.',
+      'e4.b4':    'NLP and text mining pipelines for sentiment analysis, clustering, and user-persona construction over the captured data.',
 
-      'e5.role1': 'Research Assistant',
-      'e5.desc':  'Data mining, citation network analysis, and semantic model development in R and Python. Advanced data visualization and co-authorship of peer-reviewed publications in economic methodology.',
+      'e5b.role1': 'Quantitative Analytics Lead · PUDA2022 Project',
+      'e5b.b1':    'Sample design and construction of socio-environmental surveys; processed results applying PCA and clustering for data characterization in water and sanitation contexts.',
+      'e5b.b2':    'Network models and fuzzy logic systems applied to complex socio-environmental systems.',
+
+      'e6.role1': 'Advisor',
+      'e6.b1':    'Applied clustering and PCA over <strong>SISBEN IV</strong> data for categorization and georeferencing of vulnerable population, with technical reporting.',
+
+      'e7.role1': 'Data Scientist · HORIZONT Project',
+      'e7.b1':    'Automated industrial sensor data capture from a kiln at the <strong>ARGOS</strong> Yumbo (Valle del Cauca) plant, enabling continuous monitoring of process variables.',
+      'e7.b2':    'PCA and predictive models on the captured data; visualization dashboards for plant teams.',
+
+      'e8.role1': 'Research Assistant',
+      'e8.b1':    'Automated download of scientific citation data from the <strong>RePEc API</strong>, building a network of <strong>104,589 nodes</strong> → <strong>6 months of manual work saved</strong>.',
+      'e8.b2':    'Built semantic models and citation networks in R and Python for bibliometric and influence analysis in economics.',
+      'e8.b3':    'Co-author of <strong>4 peer-reviewed publications</strong> in international journals (see Publications).',
 
       'pub.label': 'Research',
       'pub.title': 'Publications',
@@ -1055,21 +1301,20 @@
       'nav.publications': 'Publicaciones',
       'nav.contact':      'Contacto',
 
-      'hero.badge': 'Abierto a nuevos proyectos y colaboraciones',
       'hero.roles': '<span>Ingeniero de IA</span><span class="hero-role-sep">·</span><span>Científico de Datos</span><span class="hero-role-sep">·</span><span>Investigador Aplicado</span>',
-      'hero.bio':   'Construyo sistemas inteligentes en la intersección de las ciencias sociales y la IA — pipelines LLM, agentes conversacionales con RAG, y herramientas de datos que ayudan a organizaciones a entender y actuar sobre información compleja.',
+      'hero.bio':   'Construyo sistemas inteligentes donde la IA se cruza con las ciencias sociales — pipelines LLM, agentes conversacionales con RAG, arquitecturas multiagente y herramientas de datos que ayudan a equipos de investigación y producto a convertir información no estructurada en decisiones.',
       'hero.cta1':  'Escríbeme',
       'hero.cta2':  'Ver proyectos',
 
       'about.label': 'Sobre mí',
       'about.title': 'Conectando ciencias sociales e IA',
-      'about.p1':    'Soy economista e ingeniero en ciencias computacionales que construye soluciones de IA para problemas reales. Mi formación es poco común: empecé en economía e investigación de sistemas complejos, y luego me moví hacia machine learning, NLP y — más recientemente — orquestación de LLMs e IA agéntica.',
-      'about.p2':    'Esa combinación significa que puedo hacer el trabajo técnico <em>y</em> entender el contexto social, organizacional e investigativo detrás. He construido agentes conversacionales, pipelines de datos multi-paso, sistemas de clustering ML y dashboards interactivos usados por organizaciones en Colombia y América Latina.',
-      'about.p3':    'Actualmente liderando ciencia de datos e IA en Estudio Plural, donde diseño herramientas basadas en LLMs para investigación comportamental, recuperación de conocimiento e inteligencia organizacional. También enseño — he dictado talleres de NLP en la Universidad del Valle y consulto en proyectos de investigación aplicada.',
-      'about.stat1': 'Años de investigación aplicada y trabajo con datos',
-      'about.stat2': 'Proyectos de IA y datos construidos y entregados',
-      'about.stat3': 'Publicaciones arbitradas',
-      'about.stat4': 'Organizaciones atendidas en Latinoamérica',
+      'about.p1':    'Soy economista e ingeniero en ciencias computacionales (M.Sc.) construyendo sistemas de IA para problemas reales. Mi camino es poco común: empecé en economía, sistemas complejos y ciencias sociales computacionales, y me moví hacia machine learning y NLP, y ahora hacia orquestación de LLMs, IA agéntica, arquitecturas RAG, fine-tuning y embeddings semánticos.',
+      'about.p2':    'Esa mezcla significa que hago el trabajo técnico <em>y</em> entiendo el contexto social, organizacional e investigativo detrás. He desplegado agentes conversacionales que atienden a cientos de usuarios al mes en América Latina, pipelines de clustering ML, sistemas RAG y dashboards usados por equipos de investigación y producto.',
+      'about.p3':    'Actualmente liderando ciencia de datos e IA en Estudio Plural, donde diseño herramientas basadas en LLMs para investigación comportamental, recuperación de conocimiento e inteligencia organizacional. Publico, enseño y consulto en proyectos de investigación aplicada cuando hay buen fit.',
+      'about.stat1': 'Usuarios activos / mes en bots WhatsApp',
+      'about.stat2': 'Países atendidos con sistemas de datos',
+      'about.stat3': 'Nodos en red bibliométrica de citaciones',
+      'about.stat4': 'Publicaciones científicas arbitradas',
 
       'skills.label': 'Stack Técnico',
       'skills.title': 'Con qué trabajo',
@@ -1088,14 +1333,25 @@
       'badge.dev':    'En Desarrollo',
       'badge.active': 'Activo',
 
-      'p1.desc': 'Pipeline ML de extremo a extremo para descubrimiento de arquetipos. LangGraph orquesta ingesta → perfilado → preprocesamiento → selección de algoritmo → clustering → narrativa generada por LLM. 33 pruebas automatizadas pasando.',
-      'p2.desc': 'Búsqueda semántica sobre 6 documentos educativos de género y crianza. Vector store en MongoDB + embeddings de OpenAI. Bot WhatsApp multilingüe con memoria de conversación en Supabase. 7 agentes especializados, 1,544 fragmentos procesados.',
-      'p3.desc': 'Bot multilingüe (ES/EN/PT) para el Manual A+P de Equimundo. 5 agentes LLM secuenciales: detección de idioma → clasificación de intención → respuesta especializada (factual, planificación, ideación, temas sensibles). Construido con FastAPI + LangGraph.',
-      'p4.desc': '5 agentes LLM secuenciales que evalúan documentos contra rúbricas, produciendo reportes puntuados en Word y PDF. Acepta PDF y DOCX. Rúbrica configurable; por defecto usa un esquema de 4×25pt.',
-      'p5.desc': 'Escáner diario automatizado de 15+ fuentes de financiamiento y convocatorias. Claude AI filtra por relevancia organizacional, deduplica resultados y envía alertas curadas a Slack. Corre en GitHub Actions cada mañana.',
-      'p6.desc': 'Dashboard interactivo del Sistema General de Regalías (SGR) de Colombia. Datos en tiempo real de datos.gov.co vía Socrata API, filtros dinámicos, mapas coropléticos y exportación a Excel. Desplegado en Streamlit Cloud.',
-      'p7.desc': 'Plataforma SaaS sin código para construir chatbots multi-agente con despliegue multicanal (WhatsApp, Telegram, Web). UI completa en Next.js + shadcn/ui; backend FastAPI con MongoDB Atlas y autenticación Supabase.',
-      'p8.desc': 'Pipeline de procesamiento de encuestas en múltiples ciudades para investigación social de campo en 4 ciudades de Colombia, Perú, Ecuador y Bolivia. Integración KoboToolbox, validación, deduplicación, reportes con LLM y 30+ gráficas para entregables intermedios.',
+      'p1.desc':   'Pipeline ML de extremo a extremo para descubrimiento de arquetipos. LangGraph orquesta ingesta → perfilado → preprocesamiento → selección de algoritmo → clustering → narrativa generada por LLM. 33 pruebas automatizadas pasando.',
+      'p1.impact': 'Reduce 50% el tiempo de análisis de encuestas',
+      'p2.desc':   'Búsqueda semántica sobre 6 documentos educativos de género y crianza. Vector store en MongoDB + embeddings de OpenAI. Bot WhatsApp multilingüe con memoria de conversación en Supabase. 7 agentes especializados, 1,544 fragmentos procesados.',
+      'p2.impact': 'Activo en CO y MX · ~300 usuarios / mes',
+      'p3.desc':   'Bot multilingüe (ES/EN/PT) para el Manual A+P de Equimundo. 5 agentes LLM secuenciales: detección de idioma → clasificación de intención → respuesta especializada (factual, planificación, ideación, temas sensibles). Construido con FastAPI + LangGraph.',
+      'p3.impact': 'Activo en 4 países · ~400 usuarios / mes',
+      'p5.desc':   'Escáner diario automatizado de 15+ fuentes de financiamiento y convocatorias. Claude AI filtra por relevancia organizacional, deduplica resultados y envía alertas curadas a Slack. Corre en GitHub Actions cada mañana.',
+      'p5.impact': 'Ahorra 10 horas / semana al equipo de formulación',
+      'p6.desc':   'Dashboard interactivo del Sistema General de Regalías (SGR) de Colombia. Datos en tiempo real de datos.gov.co vía Socrata API, filtros dinámicos, mapas coropléticos y exportación a Excel. Desplegado en Streamlit Cloud.',
+      'p6.impact': 'Ahorra 8 horas / semana al equipo de formulación',
+      'p7.desc':   'Plataforma SaaS sin código para construir chatbots multi-agente con despliegue multicanal (WhatsApp, Telegram, Web). UI completa en Next.js + shadcn/ui; backend FastAPI con MongoDB Atlas y autenticación Supabase.',
+      'p8.desc':   'Pipeline de procesamiento de encuestas en múltiples ciudades para investigación social de campo en 4 ciudades de Colombia, Perú, Ecuador y Bolivia. Integración KoboToolbox, validación, deduplicación, reportes con LLM y 30+ gráficas para entregables intermedios.',
+      'p8.impact': '4 ciudades en 4 países · 30+ gráficas auto-generadas',
+      'p9.desc':   'Dashboard operativo para el bot de WhatsApp Aly (Apapáchar). KPIs con sparklines y deltas, visualización geográfica, alertas con exportación Excel y toggle de revisión, y leaderboard con drill-down. App multi-página en Streamlit con navegación custom e i18n.',
+      'p9.impact': 'Monitoreo del bot en tiempo real para el equipo de investigación',
+      'p10.desc':   'Dashboard de monitoreo del bot de WhatsApp de AMA. Rastrea actividad de usuarios, sesiones y engagement entre despliegues. Backend Streamlit + Supabase con visualizaciones Plotly y exportaciones a Excel.',
+      'p10.impact': 'Seguimiento en tiempo real de la actividad del bot para el equipo de investigación',
+      'p11.desc':   'Pipeline de validación de encuestas de campo para el programa AMA en Leticia (Colombia) y Cobija (Bolivia). QC de KoboToolbox, validación de IDs, detección de outliers de duración por salón, cruces de asistencia vs Google Forms, reportes Excel por colegio y resúmenes narrativos generados por LLM vía OpenRouter.',
+      'p11.impact': '2 ciudades en 2 países · QC + reportes automatizados',
 
       'exp.label': 'Experiencia',
       'exp.title': 'Dónde he trabajado',
@@ -1103,21 +1359,50 @@
       'e1.role1': 'Científico de Datos e IA',
       'e1.role2': 'Líder de Investigación y Analítica Comportamental',
       'e1.role3': 'Consultor en Analítica de Datos',
-      'e1.desc':  'Liderando diseño y despliegue de sistemas ML, NLP y LLM para analítica social y comportamental. Construyo asistentes conversacionales con RAG, pipelines ETL para datos no estructurados y dashboards interactivos para equipos no técnicos en contextos de investigación y producto.',
+      'e1.role4': 'Consultor en Analítica de Datos',
+      'e1.b1':    'Desarrollé <strong>2 agentes conversacionales</strong> con LangGraph: el primero desplegado en <strong>4 países</strong> (CO/EC/PE/BO) con <strong>~400 usuarios/mes</strong>; el segundo activo en CO y MX con <strong>~300 usuarios/mes</strong>.',
+      'e1.b2':    'Dashboards de monitoreo en tiempo real con leaderboards y generación automática de reportes, dando a los investigadores acceso inmediato a métricas de uso de los bots sin extracción manual.',
+      'e1.b3':    'Flujos de automatización en <strong>n8n</strong> y <strong>Zapier</strong> para áreas administrativas y contables → <strong>80% de ahorro de tiempo</strong> en tareas repetitivas.',
+      'e1.b4':    'Sistema de IA para detección automática de oportunidades de financiamiento → <strong>10 horas/semana</strong> ahorradas al equipo de formulación.',
+      'e1.b5':    'Pipelines de datos en Python conectando KoboToolbox y Typeform a dashboards en Supabase → <strong>~90% reducción</strong> en tiempo de monitoreo de campo.',
+      'e1.b6':    'Sistema multiagente para clustering y construcción de narrativas comportamentales sobre datos de encuestas → <strong>50% reducción</strong> en tiempo de análisis.',
 
       'e2.role1': 'Analista de Proyectos',
       'e2.role2': 'Líder de Investigación',
-      'e2.desc':  'Lideré procesos de investigación para toma de decisiones en contextos públicos y empresariales. Desplegué agentes de IA para síntesis de información, construí el dashboard de monitoreo del SGR y desarrollé un MVP de asistente multi-agente para formulación de proyectos.',
+      'e2.b1':    'Construí dashboard de monitoreo del SGR (Sistema General de Regalías) integrado con la API de Datos Abiertos <code>datos.gov.co</code> → <strong>8 horas/semana</strong> ahorradas al equipo de formulación.',
+      'e2.b2':    'Desarrollé librería de prompts para vigilancia tecnológica → tiempo por informe reducido <strong>de 8 a 3 días (-63%)</strong>, aplicada en <strong>~20 informes</strong> para empresas del Valle del Cauca.',
+      'e2.b3':    'Implementé agentes inteligentes para síntesis y organización de información en procesos de investigación, búsqueda y formulación de proyectos en contextos públicos y empresariales.',
+      'e2.b4':    'Desarrollé un MVP de asistente multiagente orientado a la gestión documental, con énfasis en clasificación y acceso eficiente a documentos técnicos y administrativos.',
 
-      'e3.role1': 'Líder de Analítica Cuantitativa · Proyecto PUDA2022',
-      'e3.desc':  'Diseñé y modelé datos socioambientales usando PCA, clustering y modelado espacial. Desarrollé modelos de redes y sistemas de lógica difusa aplicados a sistemas ambientales complejos.',
+      'e3b.role1': 'Consultor en Análisis de Datos',
+      'e3b.role2': 'Consultor en Analítica de Datos y Diseño Experimental',
+      'e3b.role3': 'Desarrollador Shiny',
+      'e3b.b1':    'Diseño muestral, construcción y montaje de encuestas experimentales en <strong>oTree</strong>, y procesamiento de resultados aplicando algoritmos de clustering para proyectos de ciencias sociales computacionales.',
+      'e3b.b2':    'Análisis de narrativas y redes sociales mediante NLP y minería de texto usando R.',
+      'e3b.b3':    'Dashboards interactivos en Shiny para equipos no técnicos.',
 
       'e4.role1': 'Consultor en Analítica de Datos',
       'e4.role2': 'Científico de Datos',
-      'e4.desc':  'Minería de redes sociales, análisis de sentimiento y perfilado de usuarios usando clustering y técnicas de NLP. Desarrollé informes de escucha social y user personas basadas en datos de interacción digital.',
+      'e4.b1':    'Diseñé y analicé una encuesta en Typeform de extremo a extremo, incluyendo el informe final → <strong>50% reducción</strong> de tiempo frente al proceso anterior.',
+      'e4.b2':    'Automaticé el procesamiento y generación de informes de encuestas en <strong>6 países</strong> (CL, SV, CO, MX, UY, PE) → <strong>90% de ahorro</strong> de tiempo del equipo de investigación.',
+      'e4.b3':    'Desarrollé sistema de captura de datos vía <strong>API de Twitter</strong> + <strong>Google Trends/News</strong> → recolección semanal reducida <strong>de 2 días a 20 minutos</strong>.',
+      'e4.b4':    'Pipelines de NLP y minería de texto para análisis de sentimiento, clustering y construcción de user personas sobre los datos capturados.',
 
-      'e5.role1': 'Asistente de Investigación',
-      'e5.desc':  'Minería de datos, análisis de redes de citación y desarrollo de modelos semánticos en R y Python. Visualización avanzada de datos y coautoría de publicaciones científicas arbitradas en metodología económica.',
+      'e5b.role1': 'Líder de Analítica Cuantitativa · Proyecto PUDA2022',
+      'e5b.b1':    'Diseño muestral y construcción de encuestas socioambientales; procesé resultados aplicando PCA y clustering para caracterización de datos en contextos de agua y saneamiento.',
+      'e5b.b2':    'Modelos de redes y lógica difusa aplicados a sistemas socioambientales complejos.',
+
+      'e6.role1': 'Asesor',
+      'e6.b1':    'Aplicación de clustering y PCA sobre datos <strong>SISBEN IV</strong> para categorización y georreferenciación de población vulnerable, con elaboración de informes técnicos.',
+
+      'e7.role1': 'Científico de Datos · Proyecto HORIZONT',
+      'e7.b1':    'Automaticé la captura de datos de sensores industriales de un horno en la planta de <strong>ARGOS</strong> Yumbo (Valle del Cauca), habilitando el monitoreo continuo de variables de proceso.',
+      'e7.b2':    'PCA y modelos predictivos sobre los datos capturados; dashboards de visualización para equipos de planta.',
+
+      'e8.role1': 'Asistente de Investigación',
+      'e8.b1':    'Automaticé la descarga de datos de citaciones científicas desde la <strong>API de RePEc</strong>, construyendo una red de <strong>104.589 nodos</strong> → <strong>6 meses de trabajo manual ahorrados</strong>.',
+      'e8.b2':    'Construcción de modelos semánticos y redes de citación en R y Python para análisis bibliométrico e influencia en economía.',
+      'e8.b3':    'Co-autor en <strong>4 publicaciones científicas</strong> indexadas en revistas internacionales (ver Publicaciones).',
 
       'pub.label': 'Investigación',
       'pub.title': 'Publicaciones',
