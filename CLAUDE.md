@@ -8,10 +8,12 @@ Personal portfolio website. Single static file, no build step, deployable direct
 portfolio/
   index.html      # Entire site — HTML + CSS + JS in one file
   photo.jpg       # Profile photo (converted from IMG_5098.heic, 600px, 56KB)
+  CNAME           # Custom domain for GitHub Pages (danielotero.dev)
+  .gitignore      # Ignores .DS_Store and *.heic
   CLAUDE.md       # This file
 ```
 
-The original `IMG_5098.heic` is also in the folder but not used by the site.
+The original `IMG_5098.heic` is also in the folder but not used by the site (gitignored).
 
 ## Stack
 
@@ -41,20 +43,27 @@ The toggle button in the nav shows the *other* language (i.e. shows `ES` when cu
 
 ## Deployment
 
-Repo: `Rodato/Rodato.github.io` → served at `https://rodato.github.io`
+Repo: `Rodato/Rodato.github.io` → served at `https://danielotero.dev` (custom domain).
 
-**Custom domain (pending — to do tomorrow):**
-1. Buy `danielotero.dev` (or chosen domain) via Cloudflare Registrar / Namecheap
-2. In repo Settings → Pages → Custom domain → enter the domain
-3. In DNS registrar, add these records:
-   ```
-   A     @   185.199.108.153
-   A     @   185.199.109.153
-   A     @   185.199.110.153
-   A     @   185.199.111.153
-   CNAME www rodato.github.io
-   ```
-4. GitHub will provision HTTPS automatically (takes ~1h)
+Domain registered at **Hostinger**. `CNAME` file at repo root contains `danielotero.dev`. DNS records configured at Hostinger:
+```
+A     @   185.199.108.153
+A     @   185.199.109.153
+A     @   185.199.110.153
+A     @   185.199.111.153
+CNAME www rodato.github.io
+```
+
+**HTTPS**: Let's Encrypt cert for `danielotero.dev` provisioned 2026-04-22 (auto-renews). "Enforce HTTPS" enabled.
+
+To re-check the cert manually:
+```bash
+echo | openssl s_client -servername danielotero.dev -connect danielotero.dev:443 2>/dev/null \
+  | openssl x509 -noout -subject -issuer -dates
+```
+Expected `subject=CN=danielotero.dev`.
+
+Note: `.dev` TLD is on the HSTS preload list → browsers force HTTPS. If the cert ever expires or shows `*.github.io` again, in Settings → Pages click **Remove** on the custom domain, wait ~1 min, then re-enter `danielotero.dev` and Save to re-trigger provisioning.
 
 ## Design decisions
 
@@ -66,13 +75,19 @@ Repo: `Rodato/Rodato.github.io` → served at `https://rodato.github.io`
 - Contact section: dark background (inverted)
 - Nav: glassmorphism (backdrop-filter blur)
 
-## Content — Projects shown (8)
+## Content — Projects shown (10)
 
-1. archetypeSuite — ML clustering pipeline (LangGraph + scikit-learn)
-2. puddleAsistant — RAG + WhatsApp bot (MongoDB + Supabase)
-3. Aly — WhatsApp multi-agent bot for Equimundo (FastAPI + LangGraph)
-4. Document Review System — 5 LLM agents → Word/PDF reports
-5. convocatorias-bot — daily funding scanner (GitHub Actions + Claude AI)
-6. SGR Dashboard — Colombia royalties data (Streamlit Cloud, deployed)
-7. agentChatBuilder — no-code SaaS chatbot builder (Next.js + FastAPI)
-8. AMA Survey Pipeline — multi-city survey processing (KoboToolbox + LLM)
+Most cards link to their GitHub repo (full card is `<a class="project-card" href="...">`). Cards without a public repo are plain `<div>`.
+
+1. archetypeSuite — ML clustering pipeline (LangGraph + scikit-learn) → `Rodato/archetypeSuite`
+2. puddleAsistant — RAG + WhatsApp bot (MongoDB + Supabase) — *no repo link yet*
+3. Aly — WhatsApp multi-agent bot for Equimundo (FastAPI + LangGraph) → `Rodato/Aly`
+4. Aly Dashboard — Streamlit dashboard for Aly bot (Supabase + Plotly) → `Rodato/aly-dashboard`
+5. convocatorias-bot — daily funding scanner (GitHub Actions + Claude AI) → `Rodato/convocatorias-bot`
+6. SGR Dashboard — Colombia royalties data (Streamlit Cloud) → `Rodato/dashboard-sgr`
+7. agentChatBuilder — no-code SaaS chatbot builder (Next.js + FastAPI) → `Rodato/agentChatBuilder`
+8. AMA Survey Pipeline — multi-city survey processing (KoboToolbox + LLM) — *no repo link yet*
+9. AMA Bot Monitoring — Streamlit dashboard for AMA bot → `Rodato/ama-bot-monitoring`
+10. AMA Lineabase 2026 — KoboToolbox QC pipeline for Leticia/Cobija — *no public repo*
+
+Each card also shows a colored "impact" line below the description (e.g. "~400 users / month", "Saves 10 h/week"). Stored in i18n keys `pX.impact`.
