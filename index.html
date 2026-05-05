@@ -322,7 +322,7 @@
 
     .skills-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(3, 1fr);
       gap: 1.25rem;
       margin-top: 3rem;
     }
@@ -430,6 +430,28 @@
     .badge-mvp    { background: #fef9c3; color: #a16207; }
     .badge-dev    { background: var(--accent-light); color: var(--accent); }
     .badge-active { background: #f3e8ff; color: #7c3aed; }
+
+    .project-tracks {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+      margin-bottom: 0.85rem;
+    }
+
+    .track-chip {
+      font-size: 0.62rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.2rem 0.5rem;
+      border-radius: 4px;
+      white-space: nowrap;
+      line-height: 1.2;
+    }
+
+    .track-agentic { background: #dbeafe; color: #1d4ed8; }
+    .track-nlp     { background: #f3e8ff; color: #7c3aed; }
+    .track-ds      { background: #dcfce7; color: #15803d; }
 
     .project-desc {
       font-size: 0.875rem;
@@ -641,7 +663,7 @@
     @media (max-width: 900px) {
       .projects-grid { grid-template-columns: repeat(2, 1fr); }
       .about-grid    { grid-template-columns: 1fr; gap: 2.5rem; }
-      .skills-grid   { grid-template-columns: 1fr; }
+      .skills-grid   { grid-template-columns: repeat(2, 1fr); }
       .hero-content  { grid-template-columns: 1fr; }
       .hero-photo-wrap { order: -1; }
       .hero-photo    { width: 140px; height: 175px; border-radius: 14px; }
@@ -652,6 +674,7 @@
       section        { padding: 4rem 1.25rem; }
       .hero-name     { font-size: 2.8rem; }
       .projects-grid { grid-template-columns: 1fr; }
+      .skills-grid   { grid-template-columns: 1fr; }
       .about-stats   { grid-template-columns: 1fr 1fr; }
       .exp-role-item { flex-direction: column; gap: 0; }
     }
@@ -688,7 +711,7 @@
         <span>Applied Researcher</span>
       </div>
       <p class="hero-bio" data-i18n="hero.bio">
-        I build intelligent systems where AI meets social science — LLM pipelines, RAG-powered conversational agents, multi-agent architectures, and data tools that help research and product teams turn unstructured information into decisions.
+        I build production systems across three fronts — agentic AI (LangGraph, RAG, multi-agent), NLP and text analytics (semantic search, embeddings, bibliometric networks), and applied data science (clustering, dashboards, pipelines) — for research and product teams across Latin America.
       </p>
       <div class="hero-ctas">
         <a href="#contact" class="btn btn-primary"    data-i18n="hero.cta1">Get in touch</a>
@@ -709,13 +732,13 @@
     <div class="about-grid">
       <div class="about-text">
         <p data-i18n="about.p1">
-          I'm an economist and computer-science engineer (M.Sc.) building AI systems for real-world problems. My path is unusual: I started in economics, complex systems, and computational social science, then moved into machine learning and NLP, and now into LLM orchestration, agentic AI, RAG architectures, fine-tuning, and semantic embeddings.
+          I'm an economist and computer-science engineer (M.Sc.) working across three fronts: <strong>agentic AI</strong> (LLM orchestration, RAG, multi-agent systems), <strong>NLP and text analytics</strong> (semantic search, embeddings, bibliometric networks), and <strong>applied data science</strong> (clustering, statistical modeling, dashboards). My path moves between them — sometimes within a single project.
         </p>
         <p data-i18n="about.p2">
-          That mix means I do the technical work <em>and</em> understand the social, organizational, and research context behind it. I've shipped conversational agents serving hundreds of users monthly across Latin America, ML clustering pipelines, RAG systems, and dashboards used by research and product teams.
+          That breadth means I do the technical work <em>and</em> understand the social, organizational, and research context behind it. I've shipped conversational agents serving hundreds of users monthly across Latin America, ML clustering pipelines for survey research, RAG systems with vector search, and <strong>6 monitoring dashboards across 4 countries</strong> for data-capture and impact-evaluation processes.
         </p>
         <p data-i18n="about.p3">
-          Currently leading data science and AI at Estudio Plural, where I design LLM-based tools for behavioral research, knowledge retrieval, and organizational intelligence. I publish, teach, and consult on applied research projects when there's a good fit.
+          Currently leading data science and AI at Estudio Plural — designing LLM-based tools for behavioral research, knowledge retrieval, and organizational intelligence. I publish peer-reviewed work on bibliometric NLP, teach, and consult on applied research projects when there's a good fit.
         </p>
       </div>
       <div class="about-stats">
@@ -747,38 +770,47 @@
     <h2 class="section-title"  data-i18n="skills.title">What I work with</h2>
     <div class="skills-grid">
       <div class="skill-group">
-        <div class="skill-group-title" data-i18n="skills.g1">AI &amp; LLMs</div>
+        <div class="skill-group-title" data-i18n="skills.g1">Agentic AI &amp; LLMs</div>
         <div class="skill-tags">
           <span class="tag">LangChain</span><span class="tag">LangGraph</span>
-          <span class="tag">RAG</span><span class="tag">Fine-tuning</span>
-          <span class="tag">Prompt Engineering</span><span class="tag">Autonomous Agents</span>
+          <span class="tag">RAG</span><span class="tag">Multi-agent</span>
+          <span class="tag">Prompt Engineering</span><span class="tag">Fine-tuning</span>
           <span class="tag">Hugging Face</span><span class="tag">OpenRouter</span>
         </div>
       </div>
       <div class="skill-group">
-        <div class="skill-group-title" data-i18n="skills.g2">Languages &amp; Data Science</div>
+        <div class="skill-group-title" data-i18n="skills.g2">NLP &amp; Text Analytics</div>
+        <div class="skill-tags">
+          <span class="tag">Embeddings</span><span class="tag">Semantic Search</span>
+          <span class="tag">Text Classification</span><span class="tag">Sentiment Analysis</span>
+          <span class="tag">Network Analysis</span><span class="tag">Bibliometrics</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-title" data-i18n="skills.g3">Data Science &amp; Stats</div>
         <div class="skill-tags">
           <span class="tag">Python</span><span class="tag">R</span>
-          <span class="tag">JavaScript</span><span class="tag">Pandas</span>
-          <span class="tag">scikit-learn</span><span class="tag">Plotly</span>
-          <span class="tag">NLP / Text Mining</span><span class="tag">Network Analysis</span>
+          <span class="tag">Pandas</span><span class="tag">scikit-learn</span>
+          <span class="tag">Plotly</span><span class="tag">Clustering</span>
+          <span class="tag">PCA</span><span class="tag">Statistical Modeling</span>
         </div>
       </div>
       <div class="skill-group">
-        <div class="skill-group-title" data-i18n="skills.g3">Databases &amp; Storage</div>
+        <div class="skill-group-title" data-i18n="skills.g5">Agentic Coding Systems</div>
         <div class="skill-tags">
-          <span class="tag">MongoDB</span><span class="tag">PostgreSQL</span>
-          <span class="tag">Supabase</span><span class="tag">Qdrant (Vector DB)</span>
-          <span class="tag">Neo4j (Graph DB)</span><span class="tag">SQLite</span>
+          <span class="tag">Claude Code</span><span class="tag">Codex</span>
+          <span class="tag">OpenCode</span>
         </div>
       </div>
       <div class="skill-group">
-        <div class="skill-group-title" data-i18n="skills.g4">Infrastructure &amp; Delivery</div>
+        <div class="skill-group-title" data-i18n="skills.g4">Infrastructure &amp; Storage</div>
         <div class="skill-tags">
           <span class="tag">FastAPI</span><span class="tag">Streamlit</span>
-          <span class="tag">Docker</span><span class="tag">GitHub Actions</span>
-          <span class="tag">n8n</span><span class="tag">Twilio</span>
-          <span class="tag">Linux / Bash</span><span class="tag">Next.js</span>
+          <span class="tag">Next.js</span><span class="tag">Docker</span>
+          <span class="tag">GitHub Actions</span><span class="tag">n8n</span>
+          <span class="tag">Twilio</span><span class="tag">PostgreSQL</span>
+          <span class="tag">MongoDB</span><span class="tag">Qdrant</span>
+          <span class="tag">Neo4j</span>
         </div>
       </div>
     </div>
@@ -790,26 +822,14 @@
   <div class="container">
     <div class="section-label"   data-i18n="projects.label">Work</div>
     <h2 class="section-title"    data-i18n="projects.title">Selected projects</h2>
-    <p class="section-subtitle"  data-i18n="projects.subtitle">From production bots to deployed dashboards — a curated set of systems I've built.</p>
+    <p class="section-subtitle"  data-i18n="projects.subtitle">Production systems across three fronts — agentic AI, NLP, and data science — built for research and product teams.</p>
     <div class="projects-grid">
 
-      <a class="project-card" href="https://github.com/Rodato/archetypeSuite" target="_blank" rel="noopener">
-        <div class="project-header">
-          <div class="project-name">archetypeSuite</div>
-          <span class="badge badge-live" data-i18n="badge.live">Live</span>
-        </div>
-        <p class="project-desc" data-i18n="p1.desc">
-          End-to-end ML pipeline for archetype discovery. LangGraph orchestrates ingestion → profiling → preprocessing → algorithm selection → clustering → LLM-generated narrative. 33 automated tests passing.
-        </p>
-        <div class="project-impact" data-i18n="p1.impact">Cuts survey analysis time by 50%</div>
-        <div class="project-tags">
-          <span class="project-tag">Python</span><span class="project-tag">LangGraph</span>
-          <span class="project-tag">scikit-learn</span><span class="project-tag">Streamlit</span>
-          <span class="project-tag">OpenRouter</span>
-        </div>
-      </a>
-
       <div class="project-card">
+        <div class="project-tracks">
+          <span class="track-chip track-agentic" data-i18n="track.agentic">Agentic</span>
+          <span class="track-chip track-nlp" data-i18n="track.nlp">NLP</span>
+        </div>
         <div class="project-header">
           <div class="project-name">puddleAsistant</div>
           <span class="badge badge-prod" data-i18n="badge.prod">Production</span>
@@ -819,61 +839,16 @@
         </p>
         <div class="project-impact" data-i18n="p2.impact">Active in CO &amp; MX · ~300 users / month</div>
         <div class="project-tags">
-          <span class="project-tag">RAG</span><span class="project-tag">MongoDB</span>
-          <span class="project-tag">Supabase</span><span class="project-tag">Twilio</span>
-          <span class="project-tag">Multi-agent</span>
+          <span class="project-tag">RAG</span><span class="project-tag">Embeddings</span>
+          <span class="project-tag">MongoDB</span><span class="project-tag">Supabase</span>
+          <span class="project-tag">Twilio</span><span class="project-tag">Multi-agent</span>
         </div>
       </div>
 
-      <a class="project-card" href="https://github.com/Rodato/Aly" target="_blank" rel="noopener">
-        <div class="project-header">
-          <div class="project-name">Aly — WhatsApp AI Agent</div>
-          <span class="badge badge-mvp" data-i18n="badge.mvp">MVP</span>
-        </div>
-        <p class="project-desc" data-i18n="p3.desc">
-          Multilingual bot (ES/EN/PT) for Equimundo's A+P Manual. 5 sequential LLM agents: language detection → intent classification → specialized response (factual, planning, ideation, sensitive topics). Built with FastAPI + LangGraph.
-        </p>
-        <div class="project-impact" data-i18n="p3.impact">Active across 4 countries · ~400 users / month</div>
-        <div class="project-tags">
-          <span class="project-tag">FastAPI</span><span class="project-tag">LangGraph</span>
-          <span class="project-tag">MongoDB</span><span class="project-tag">Twilio</span>
-          <span class="project-tag">Multilingual</span>
-        </div>
-      </a>
-
-      <a class="project-card" href="https://github.com/Rodato/aly-dashboard" target="_blank" rel="noopener">
-        <div class="project-header">
-          <div class="project-name">Aly Dashboard</div>
-          <span class="badge badge-live" data-i18n="badge.live">Live</span>
-        </div>
-        <p class="project-desc" data-i18n="p9.desc">
-          Operational monitoring dashboard for the Aly (Apapáchar) WhatsApp bot. KPIs with sparklines and deltas, geographic visualization, alert flags with Excel export and review-status toggle, and a leaderboard with drill-down. Multi-page Streamlit app with custom navigation and i18n.
-        </p>
-        <div class="project-impact" data-i18n="p9.impact">Real-time bot monitoring for the research team</div>
-        <div class="project-tags">
-          <span class="project-tag">Streamlit</span><span class="project-tag">Supabase</span>
-          <span class="project-tag">Plotly</span><span class="project-tag">PostgreSQL</span>
-          <span class="project-tag">Python</span>
-        </div>
-      </a>
-
-      <a class="project-card" href="https://github.com/Rodato/convocatorias-bot" target="_blank" rel="noopener">
-        <div class="project-header">
-          <div class="project-name">convocatorias-bot</div>
-          <span class="badge badge-prod" data-i18n="badge.prod">Production</span>
-        </div>
-        <p class="project-desc" data-i18n="p5.desc">
-          Automated daily scanner of 15+ funding and grant sources. Claude AI filters by organizational relevance, deduplicates results, and sends curated alerts to Slack. Runs on GitHub Actions every morning.
-        </p>
-        <div class="project-impact" data-i18n="p5.impact">Saves 10 hours / week to the project formulation team</div>
-        <div class="project-tags">
-          <span class="project-tag">Python</span><span class="project-tag">BeautifulSoup</span>
-          <span class="project-tag">Claude AI</span><span class="project-tag">Slack API</span>
-          <span class="project-tag">GitHub Actions</span>
-        </div>
-      </a>
-
       <a class="project-card" href="https://github.com/Rodato/dashboard-sgr" target="_blank" rel="noopener">
+        <div class="project-tracks">
+          <span class="track-chip track-ds" data-i18n="track.ds">Data Science</span>
+        </div>
         <div class="project-header">
           <div class="project-name">SGR Dashboard</div>
           <span class="badge badge-live" data-i18n="badge.live">Live</span>
@@ -889,22 +864,51 @@
         </div>
       </a>
 
-      <a class="project-card" href="https://github.com/Rodato/agentChatBuilder" target="_blank" rel="noopener">
-        <div class="project-header">
-          <div class="project-name">agentChatBuilder</div>
-          <span class="badge badge-dev" data-i18n="badge.dev">In Dev</span>
+      <a class="project-card" href="https://github.com/Rodato/archetypeSuite" target="_blank" rel="noopener">
+        <div class="project-tracks">
+          <span class="track-chip track-agentic" data-i18n="track.agentic">Agentic</span>
+          <span class="track-chip track-ds" data-i18n="track.ds">Data Science</span>
         </div>
-        <p class="project-desc" data-i18n="p7.desc">
-          No-code SaaS platform for building multi-agent chatbots with multi-channel deployment (WhatsApp, Telegram, Web). Full UI in Next.js + shadcn/ui; FastAPI backend with MongoDB Atlas and Supabase auth.
+        <div class="project-header">
+          <div class="project-name">archetypeSuite</div>
+          <span class="badge badge-live" data-i18n="badge.live">Live</span>
+        </div>
+        <p class="project-desc" data-i18n="p1.desc">
+          End-to-end ML pipeline for archetype discovery. LangGraph orchestrates ingestion → profiling → preprocessing → algorithm selection → clustering → LLM-generated narrative. 33 automated tests passing.
         </p>
+        <div class="project-impact" data-i18n="p1.impact">Cuts survey analysis time by 50%</div>
         <div class="project-tags">
-          <span class="project-tag">Next.js</span><span class="project-tag">TypeScript</span>
-          <span class="project-tag">FastAPI</span><span class="project-tag">MongoDB</span>
-          <span class="project-tag">Supabase</span>
+          <span class="project-tag">Python</span><span class="project-tag">LangGraph</span>
+          <span class="project-tag">scikit-learn</span><span class="project-tag">Streamlit</span>
+          <span class="project-tag">OpenRouter</span>
+        </div>
+      </a>
+
+      <a class="project-card" href="https://github.com/Rodato/Aly" target="_blank" rel="noopener">
+        <div class="project-tracks">
+          <span class="track-chip track-agentic" data-i18n="track.agentic">Agentic</span>
+          <span class="track-chip track-nlp" data-i18n="track.nlp">NLP</span>
+        </div>
+        <div class="project-header">
+          <div class="project-name">Aly — WhatsApp AI Agent</div>
+          <span class="badge badge-mvp" data-i18n="badge.mvp">MVP</span>
+        </div>
+        <p class="project-desc" data-i18n="p3.desc">
+          Multilingual bot (ES/EN/PT) for Equimundo's A+P Manual. 5 sequential LLM agents: language detection → intent classification → specialized response (factual, planning, ideation, sensitive topics). Built with FastAPI + LangGraph.
+        </p>
+        <div class="project-impact" data-i18n="p3.impact">Active across 4 countries · ~400 users / month</div>
+        <div class="project-tags">
+          <span class="project-tag">FastAPI</span><span class="project-tag">LangGraph</span>
+          <span class="project-tag">Text Classification</span><span class="project-tag">MongoDB</span>
+          <span class="project-tag">Twilio</span>
         </div>
       </a>
 
       <div class="project-card">
+        <div class="project-tracks">
+          <span class="track-chip track-ds" data-i18n="track.ds">Data Science</span>
+          <span class="track-chip track-agentic" data-i18n="track.agentic">Agentic</span>
+        </div>
         <div class="project-header">
           <div class="project-name">AMA Survey Pipeline</div>
           <span class="badge badge-active" data-i18n="badge.active">Active</span>
@@ -920,7 +924,69 @@
         </div>
       </div>
 
+      <a class="project-card" href="https://github.com/Rodato/convocatorias-bot" target="_blank" rel="noopener">
+        <div class="project-tracks">
+          <span class="track-chip track-agentic" data-i18n="track.agentic">Agentic</span>
+          <span class="track-chip track-nlp" data-i18n="track.nlp">NLP</span>
+        </div>
+        <div class="project-header">
+          <div class="project-name">convocatorias-bot</div>
+          <span class="badge badge-prod" data-i18n="badge.prod">Production</span>
+        </div>
+        <p class="project-desc" data-i18n="p5.desc">
+          Automated daily scanner of 15+ funding and grant sources. Claude AI filters by organizational relevance, deduplicates results, and sends curated alerts to Slack. Runs on GitHub Actions every morning.
+        </p>
+        <div class="project-impact" data-i18n="p5.impact">Saves 10 hours / week to the project formulation team</div>
+        <div class="project-tags">
+          <span class="project-tag">Python</span><span class="project-tag">BeautifulSoup</span>
+          <span class="project-tag">Claude AI</span><span class="project-tag">Slack API</span>
+          <span class="project-tag">GitHub Actions</span>
+        </div>
+      </a>
+
+      <a class="project-card" href="https://github.com/Rodato/aly-dashboard" target="_blank" rel="noopener">
+        <div class="project-tracks">
+          <span class="track-chip track-ds" data-i18n="track.ds">Data Science</span>
+        </div>
+        <div class="project-header">
+          <div class="project-name">Aly Dashboard</div>
+          <span class="badge badge-live" data-i18n="badge.live">Live</span>
+        </div>
+        <p class="project-desc" data-i18n="p9.desc">
+          Operational monitoring dashboard for the Aly (Apapáchar) WhatsApp bot. KPIs with sparklines and deltas, geographic visualization, alert flags with Excel export and review-status toggle, and a leaderboard with drill-down. Multi-page Streamlit app with custom navigation and i18n.
+        </p>
+        <div class="project-impact" data-i18n="p9.impact">Real-time bot monitoring for the research team</div>
+        <div class="project-tags">
+          <span class="project-tag">Streamlit</span><span class="project-tag">Supabase</span>
+          <span class="project-tag">Plotly</span><span class="project-tag">PostgreSQL</span>
+          <span class="project-tag">Python</span>
+        </div>
+      </a>
+
+      <div class="project-card">
+        <div class="project-tracks">
+          <span class="track-chip track-ds" data-i18n="track.ds">Data Science</span>
+          <span class="track-chip track-agentic" data-i18n="track.agentic">Agentic</span>
+        </div>
+        <div class="project-header">
+          <div class="project-name">AMA Lineabase 2026</div>
+          <span class="badge badge-active" data-i18n="badge.active">Active</span>
+        </div>
+        <p class="project-desc" data-i18n="p11.desc">
+          Field-survey validation pipeline for the AMA program in Leticia (Colombia) and Cobija (Bolivia). KoboToolbox QC, ID validation, duration outlier detection per classroom, attendance crosschecks vs Google Forms, school-level Excel reports, and LLM-generated narrative summaries via OpenRouter.
+        </p>
+        <div class="project-impact" data-i18n="p11.impact">2 cities across 2 countries · automated QC + reporting</div>
+        <div class="project-tags">
+          <span class="project-tag">Python</span><span class="project-tag">pandas</span>
+          <span class="project-tag">KoboToolbox</span><span class="project-tag">OpenRouter</span>
+          <span class="project-tag">CLI</span>
+        </div>
+      </div>
+
       <a class="project-card" href="https://github.com/Rodato/ama-bot-monitoring" target="_blank" rel="noopener">
+        <div class="project-tracks">
+          <span class="track-chip track-ds" data-i18n="track.ds">Data Science</span>
+        </div>
         <div class="project-header">
           <div class="project-name">AMA Bot Monitoring</div>
           <span class="badge badge-live" data-i18n="badge.live">Live</span>
@@ -936,21 +1002,23 @@
         </div>
       </a>
 
-      <div class="project-card">
+      <a class="project-card" href="https://github.com/Rodato/agentChatBuilder" target="_blank" rel="noopener">
+        <div class="project-tracks">
+          <span class="track-chip track-agentic" data-i18n="track.agentic">Agentic</span>
+        </div>
         <div class="project-header">
-          <div class="project-name">AMA Lineabase 2026</div>
-          <span class="badge badge-active" data-i18n="badge.active">Active</span>
+          <div class="project-name">agentChatBuilder</div>
+          <span class="badge badge-dev" data-i18n="badge.dev">In Dev</span>
         </div>
-        <p class="project-desc" data-i18n="p11.desc">
-          Field-survey validation pipeline for the AMA program in Leticia (Colombia) and Cobija (Bolivia). KoboToolbox QC, ID validation, duration outlier detection per classroom, attendance crosschecks vs Google Forms, school-level Excel reports, and LLM-generated narrative summaries via OpenRouter.
+        <p class="project-desc" data-i18n="p7.desc">
+          No-code SaaS platform for building multi-agent chatbots with multi-channel deployment (WhatsApp, Telegram, Web). Full UI in Next.js + shadcn/ui; FastAPI backend with MongoDB Atlas and Supabase auth.
         </p>
-        <div class="project-impact" data-i18n="p11.impact">2 cities across 2 countries · automated QC + reporting</div>
         <div class="project-tags">
-          <span class="project-tag">Python</span><span class="project-tag">pandas</span>
-          <span class="project-tag">KoboToolbox</span><span class="project-tag">OpenRouter</span>
-          <span class="project-tag">CLI</span>
+          <span class="project-tag">Next.js</span><span class="project-tag">TypeScript</span>
+          <span class="project-tag">FastAPI</span><span class="project-tag">MongoDB</span>
+          <span class="project-tag">Supabase</span>
         </div>
-      </div>
+      </a>
 
     </div>
   </div>
@@ -1121,6 +1189,7 @@
   <div class="container">
     <div class="section-label" data-i18n="pub.label">Research</div>
     <h2 class="section-title"  data-i18n="pub.title">Publications</h2>
+    <p class="section-subtitle" data-i18n="pub.subtitle">Bibliometric NLP and citation-network analysis applied to economic discourse — 104K+ nodes across four peer-reviewed studies.</p>
     <div class="pub-list">
 
       <div class="pub-item">
@@ -1189,15 +1258,15 @@
       'nav.contact':      'Contact',
 
       'hero.roles': '<span>AI Engineer</span><span class="hero-role-sep">·</span><span>Data Scientist</span><span class="hero-role-sep">·</span><span>Applied Researcher</span>',
-      'hero.bio':   'I build intelligent systems where AI meets social science — LLM pipelines, RAG-powered conversational agents, multi-agent architectures, and data tools that help research and product teams turn unstructured information into decisions.',
+      'hero.bio':   'I build production systems across three fronts — agentic AI (LangGraph, RAG, multi-agent), NLP and text analytics (semantic search, embeddings, bibliometric networks), and applied data science (clustering, dashboards, pipelines) — for research and product teams across Latin America.',
       'hero.cta1':  'Get in touch',
       'hero.cta2':  'View projects',
 
       'about.label': 'About',
       'about.title': 'Bridging social science and AI',
-      'about.p1':    "I'm an economist and computer-science engineer (M.Sc.) building AI systems for real-world problems. My path is unusual: I started in economics, complex systems, and computational social science, then moved into machine learning and NLP, and now into LLM orchestration, agentic AI, RAG architectures, fine-tuning, and semantic embeddings.",
-      'about.p2':    "That mix means I do the technical work <em>and</em> understand the social, organizational, and research context behind it. I've shipped conversational agents serving hundreds of users monthly across Latin America, ML clustering pipelines, RAG systems, and dashboards used by research and product teams.",
-      'about.p3':    "Currently leading data science and AI at Estudio Plural, where I design LLM-based tools for behavioral research, knowledge retrieval, and organizational intelligence. I publish, teach, and consult on applied research projects when there's a good fit.",
+      'about.p1':    "I'm an economist and computer-science engineer (M.Sc.) working across three fronts: <strong>agentic AI</strong> (LLM orchestration, RAG, multi-agent systems), <strong>NLP and text analytics</strong> (semantic search, embeddings, bibliometric networks), and <strong>applied data science</strong> (clustering, statistical modeling, dashboards). My path moves between them — sometimes within a single project.",
+      'about.p2':    "That breadth means I do the technical work <em>and</em> understand the social, organizational, and research context behind it. I've shipped conversational agents serving hundreds of users monthly across Latin America, ML clustering pipelines for survey research, RAG systems with vector search, and <strong>6 monitoring dashboards across 4 countries</strong> for data-capture and impact-evaluation processes.",
+      'about.p3':    "Currently leading data science and AI at Estudio Plural — designing LLM-based tools for behavioral research, knowledge retrieval, and organizational intelligence. I publish peer-reviewed work on bibliometric NLP, teach, and consult on applied research projects when there's a good fit.",
       'about.stat1': 'Active WhatsApp bot users / month',
       'about.stat2': 'Countries reached with data systems',
       'about.stat3': 'Nodes in bibliometric citation network',
@@ -1205,14 +1274,19 @@
 
       'skills.label': 'Technical Stack',
       'skills.title': 'What I work with',
-      'skills.g1':    'AI & LLMs',
-      'skills.g2':    'Languages & Data Science',
-      'skills.g3':    'Databases & Storage',
-      'skills.g4':    'Infrastructure & Delivery',
+      'skills.g1':    'Agentic AI & LLMs',
+      'skills.g5':    'Agentic Coding Systems',
+      'skills.g2':    'NLP & Text Analytics',
+      'skills.g3':    'Data Science & Stats',
+      'skills.g4':    'Infrastructure & Storage',
 
       'projects.label':    'Work',
       'projects.title':    'Selected projects',
-      'projects.subtitle': 'From production bots to deployed dashboards — a curated set of systems I\'ve built.',
+      'projects.subtitle': 'Production systems across three fronts — agentic AI, NLP, and data science — built for research and product teams.',
+
+      'track.agentic': 'Agentic',
+      'track.nlp':     'NLP',
+      'track.ds':      'Data Science',
 
       'badge.live':   'Live',
       'badge.prod':   'Production',
@@ -1291,8 +1365,9 @@
       'e8.b2':    'Built semantic models and citation networks in R and Python for bibliometric and influence analysis in economics.',
       'e8.b3':    'Co-author of <strong>4 peer-reviewed publications</strong> in international journals (see Publications).',
 
-      'pub.label': 'Research',
-      'pub.title': 'Publications',
+      'pub.label':    'Research',
+      'pub.title':    'Publications',
+      'pub.subtitle': 'Bibliometric NLP and citation-network analysis applied to economic discourse — 104K+ nodes across four peer-reviewed studies.',
 
       'contact.label': 'Contact',
       'contact.title': "Let's work together",
@@ -1310,15 +1385,15 @@
       'nav.contact':      'Contacto',
 
       'hero.roles': '<span>Ingeniero de IA</span><span class="hero-role-sep">·</span><span>Científico de Datos</span><span class="hero-role-sep">·</span><span>Investigador Aplicado</span>',
-      'hero.bio':   'Construyo sistemas inteligentes donde la IA se cruza con las ciencias sociales — pipelines LLM, agentes conversacionales con RAG, arquitecturas multiagente y herramientas de datos que ayudan a equipos de investigación y producto a convertir información no estructurada en decisiones.',
+      'hero.bio':   'Construyo sistemas en producción en tres frentes — IA agéntica (LangGraph, RAG, multiagente), NLP y análisis de texto (búsqueda semántica, embeddings, redes bibliométricas) y ciencia de datos aplicada (clustering, dashboards, pipelines) — para equipos de investigación y producto en América Latina.',
       'hero.cta1':  'Escríbeme',
       'hero.cta2':  'Ver proyectos',
 
       'about.label': 'Sobre mí',
       'about.title': 'Conectando ciencias sociales e IA',
-      'about.p1':    'Soy economista e ingeniero en ciencias computacionales (M.Sc.) construyendo sistemas de IA para problemas reales. Mi camino es poco común: empecé en economía, sistemas complejos y ciencias sociales computacionales, y me moví hacia machine learning y NLP, y ahora hacia orquestación de LLMs, IA agéntica, arquitecturas RAG, fine-tuning y embeddings semánticos.',
-      'about.p2':    'Esa mezcla significa que hago el trabajo técnico <em>y</em> entiendo el contexto social, organizacional e investigativo detrás. He desplegado agentes conversacionales que atienden a cientos de usuarios al mes en América Latina, pipelines de clustering ML, sistemas RAG y dashboards usados por equipos de investigación y producto.',
-      'about.p3':    'Actualmente liderando ciencia de datos e IA en Estudio Plural, donde diseño herramientas basadas en LLMs para investigación comportamental, recuperación de conocimiento e inteligencia organizacional. Publico, enseño y consulto en proyectos de investigación aplicada cuando hay buen fit.',
+      'about.p1':    'Soy economista e ingeniero en ciencias computacionales (M.Sc.) trabajando en tres frentes: <strong>IA agéntica</strong> (orquestación de LLMs, RAG, sistemas multiagente), <strong>NLP y análisis de texto</strong> (búsqueda semántica, embeddings, redes bibliométricas) y <strong>ciencia de datos aplicada</strong> (clustering, modelado estadístico, dashboards). Mi camino se mueve entre ellos — a veces dentro de un mismo proyecto.',
+      'about.p2':    'Esa amplitud significa que hago el trabajo técnico <em>y</em> entiendo el contexto social, organizacional e investigativo detrás. He desplegado agentes conversacionales que atienden a cientos de usuarios al mes en América Latina, pipelines de clustering ML para investigación por encuestas, sistemas RAG con búsqueda vectorial y <strong>6 dashboards de monitoreo en 4 países</strong> para procesos de captura de datos y evaluación de impacto.',
+      'about.p3':    'Actualmente lidero ciencia de datos e IA en Estudio Plural — diseño herramientas basadas en LLMs para investigación comportamental, recuperación de conocimiento e inteligencia organizacional. Publico trabajo arbitrado sobre NLP bibliométrico, enseño y consulto en proyectos de investigación aplicada cuando hay buen fit.',
       'about.stat1': 'Usuarios activos / mes en bots WhatsApp',
       'about.stat2': 'Países atendidos con sistemas de datos',
       'about.stat3': 'Nodos en red bibliométrica de citaciones',
@@ -1326,14 +1401,19 @@
 
       'skills.label': 'Stack Técnico',
       'skills.title': 'Con qué trabajo',
-      'skills.g1':    'IA y LLMs',
-      'skills.g2':    'Lenguajes y Ciencia de Datos',
-      'skills.g3':    'Bases de Datos y Almacenamiento',
-      'skills.g4':    'Infraestructura y Entrega',
+      'skills.g1':    'IA Agéntica y LLMs',
+      'skills.g5':    'Sistemas de Codificación Agéntica',
+      'skills.g2':    'NLP y Análisis de Texto',
+      'skills.g3':    'Ciencia de Datos y Estadística',
+      'skills.g4':    'Infraestructura y Almacenamiento',
 
       'projects.label':    'Trabajo',
       'projects.title':    'Proyectos seleccionados',
-      'projects.subtitle': 'De bots en producción a dashboards desplegados — una selección de sistemas que he construido.',
+      'projects.subtitle': 'Sistemas en producción en tres frentes — IA agéntica, NLP y ciencia de datos — construidos para equipos de investigación y producto.',
+
+      'track.agentic': 'Agéntico',
+      'track.nlp':     'NLP',
+      'track.ds':      'Ciencia de Datos',
 
       'badge.live':   'Activo',
       'badge.prod':   'Producción',
@@ -1412,8 +1492,9 @@
       'e8.b2':    'Construcción de modelos semánticos y redes de citación en R y Python para análisis bibliométrico e influencia en economía.',
       'e8.b3':    'Co-autor en <strong>4 publicaciones científicas</strong> indexadas en revistas internacionales (ver Publicaciones).',
 
-      'pub.label': 'Investigación',
-      'pub.title': 'Publicaciones',
+      'pub.label':    'Investigación',
+      'pub.title':    'Publicaciones',
+      'pub.subtitle': 'NLP bibliométrico y análisis de redes de citación aplicado al discurso económico — más de 104K nodos en cuatro publicaciones arbitradas.',
 
       'contact.label': 'Contacto',
       'contact.title': 'Trabajemos juntos',
