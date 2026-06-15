@@ -24,6 +24,27 @@
   <meta name="twitter:description" content="Building LLM pipelines, RAG systems, and multi-agent AI for research and product teams across Latin America.">
   <meta name="twitter:image" content="https://danielotero.dev/og.png">
 
+  <!-- Structured data: schema.org Person -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Daniel Otero",
+    "url": "https://danielotero.dev",
+    "image": "https://danielotero.dev/photo.jpg",
+    "jobTitle": "AI Engineer & Data Scientist",
+    "description": "Economist and AI engineer building LLM pipelines, RAG systems, and multi-agent architectures for research and product teams across Latin America.",
+    "email": "mailto:otero.r.daniel@gmail.com",
+    "worksFor": { "@type": "Organization", "name": "Estudio Plural" },
+    "address": { "@type": "PostalAddress", "addressLocality": "Cali", "addressCountry": "CO" },
+    "knowsAbout": ["Agentic AI", "Large Language Models", "RAG", "LangGraph", "NLP", "Semantic Search", "Data Science", "Clustering", "Bibliometrics"],
+    "sameAs": [
+      "https://github.com/Rodato",
+      "https://www.linkedin.com/in/daniel-otero-r/"
+    ]
+  }
+  </script>
+
   <!-- Favicon: inline SVG, blue circle with DO initials -->
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%231d4ed8'/%3E%3Ctext x='32' y='42' font-family='Inter,system-ui,sans-serif' font-size='30' font-weight='700' text-anchor='middle' fill='white'%3EDO%3C/text%3E%3C/svg%3E">
 
@@ -701,6 +722,61 @@
 
     .pub-link:hover { text-decoration: underline; }
 
+    /* ── SERVICES ── */
+    #services { background: var(--bg); }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr));
+      gap: 1.25rem;
+      margin-top: 3rem;
+    }
+
+    .service-card {
+      background: var(--bg-subtle);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1.75rem;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .service-icon {
+      width: 44px; height: 44px;
+      border-radius: 11px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.1rem;
+      flex-shrink: 0;
+    }
+
+    .service-icon svg { width: 22px; height: 22px; }
+    .service-icon-agentic { background: #dbeafe; color: #1d4ed8; }
+    .service-icon-nlp     { background: #f3e8ff; color: #7c3aed; }
+    .service-icon-ds      { background: #dcfce7; color: #15803d; }
+
+    .service-title {
+      font-size: 1.05rem;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      margin-bottom: 0.55rem;
+    }
+
+    .service-desc {
+      font-size: 0.9rem;
+      color: var(--fg-muted);
+      line-height: 1.72;
+      margin-bottom: 1.25rem;
+    }
+
+    .service-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: auto;
+    }
+
     /* ── CONTACT ── */
     #contact { background: var(--fg); padding: 7rem 2rem; }
 
@@ -821,6 +897,7 @@
       <li><a href="#projects"     data-i18n="nav.projects">Projects</a></li>
       <li><a href="#experience"   data-i18n="nav.experience">Experience</a></li>
       <li><a href="#publications" data-i18n="nav.publications">Publications</a></li>
+      <li><a href="#services"     data-i18n="nav.services">Services</a></li>
       <li><a href="#contact"      data-i18n="nav.contact">Contact</a></li>
     </ul>
     <div class="nav-controls">
@@ -862,7 +939,7 @@
       </div>
     </div>
     <div class="hero-photo-wrap">
-      <img src="photo.jpg" alt="Daniel Otero" class="hero-photo">
+      <img src="photo.jpg" alt="Daniel Otero" class="hero-photo" width="260" height="320" decoding="async" fetchpriority="high">
     </div>
   </div>
 </section>
@@ -1388,6 +1465,55 @@
   </div>
 </section>
 
+<!-- ── SERVICES ── -->
+<section id="services">
+  <div class="container">
+    <div class="section-label"  data-i18n="services.label">Services</div>
+    <h2 class="section-title"   data-i18n="services.title">How I can help</h2>
+    <p class="section-subtitle" data-i18n="services.subtitle">Hire me to take an idea from prototype to production — across conversational AI, data systems, and applied research.</p>
+    <div class="services-grid">
+
+      <div class="service-card">
+        <div class="service-icon service-icon-agentic">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+        </div>
+        <h3 class="service-title" data-i18n="svc1.title">Conversational AI &amp; Agents</h3>
+        <p class="service-desc"   data-i18n="svc1.desc">Production chatbots and multi-agent assistants — multilingual, with RAG over your documents and conversation memory. Deployed where your users already are.</p>
+        <div class="service-tags">
+          <span class="tag">WhatsApp</span><span class="tag">Web</span>
+          <span class="tag">RAG</span><span class="tag">LangGraph</span>
+          <span class="tag">Multi-agent</span>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon service-icon-ds">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+        </div>
+        <h3 class="service-title" data-i18n="svc2.title">Data Pipelines &amp; Dashboards</h3>
+        <p class="service-desc"   data-i18n="svc2.desc">From messy field data to decisions your team can act on: ingestion, automated validation and QC, and live dashboards they'll actually use.</p>
+        <div class="service-tags">
+          <span class="tag">KoboToolbox</span><span class="tag">Streamlit</span>
+          <span class="tag">PostgreSQL</span><span class="tag">Automation</span>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon service-icon-nlp">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="4 7 4 4 20 4 20 7"/><line x1="9" y1="20" x2="15" y2="20"/><line x1="12" y1="4" x2="12" y2="20"/></svg>
+        </div>
+        <h3 class="service-title" data-i18n="svc3.title">NLP &amp; Applied Research</h3>
+        <p class="service-desc"   data-i18n="svc3.desc">Research-grade text and data analysis — semantic search, classification, sentiment, clustering and network analysis over surveys, documents and organizational data.</p>
+        <div class="service-tags">
+          <span class="tag">Embeddings</span><span class="tag">Semantic Search</span>
+          <span class="tag">Clustering</span><span class="tag">Networks</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <!-- ── CONTACT ── -->
 <section id="contact">
   <div class="container">
@@ -1423,6 +1549,7 @@
       'nav.projects':     'Projects',
       'nav.experience':   'Experience',
       'nav.publications': 'Publications',
+      'nav.services':     'Services',
       'nav.contact':      'Contact',
 
       'hero.badge': 'Available for consulting',
@@ -1542,6 +1669,16 @@
       'pub.title':    'Publications',
       'pub.subtitle': 'Bibliometric NLP and citation-network analysis applied to economic discourse — 104K+ nodes across four peer-reviewed studies.',
 
+      'services.label':    'Services',
+      'services.title':    'How I can help',
+      'services.subtitle': 'Hire me to take an idea from prototype to production — across conversational AI, data systems, and applied research.',
+      'svc1.title': 'Conversational AI & Agents',
+      'svc1.desc':  'Production chatbots and multi-agent assistants — multilingual, with RAG over your documents and conversation memory. Deployed where your users already are.',
+      'svc2.title': 'Data Pipelines & Dashboards',
+      'svc2.desc':  "From messy field data to decisions your team can act on: ingestion, automated validation and QC, and live dashboards they'll actually use.",
+      'svc3.title': 'NLP & Applied Research',
+      'svc3.desc':  'Research-grade text and data analysis — semantic search, classification, sentiment, clustering and network analysis over surveys, documents and organizational data.',
+
       'contact.label': 'Contact',
       'contact.title': "Let's work together",
       'contact.sub':   'Open to consulting, research collaborations, and new projects — especially where AI, data, and social impact intersect.',
@@ -1555,6 +1692,7 @@
       'nav.projects':     'Proyectos',
       'nav.experience':   'Experiencia',
       'nav.publications': 'Publicaciones',
+      'nav.services':     'Servicios',
       'nav.contact':      'Contacto',
 
       'hero.badge': 'Disponible para consultoría',
@@ -1673,6 +1811,16 @@
       'pub.label':    'Investigación',
       'pub.title':    'Publicaciones',
       'pub.subtitle': 'NLP bibliométrico y análisis de redes de citación aplicado al discurso económico — más de 104K nodos en cuatro publicaciones arbitradas.',
+
+      'services.label':    'Servicios',
+      'services.title':    'Cómo puedo ayudar',
+      'services.subtitle': 'Contrátame para llevar una idea de prototipo a producción — en IA conversacional, sistemas de datos e investigación aplicada.',
+      'svc1.title': 'IA Conversacional y Agentes',
+      'svc1.desc':  'Chatbots y asistentes multiagente en producción — multilingües, con RAG sobre tus documentos y memoria de conversación. Desplegados donde ya están tus usuarios.',
+      'svc2.title': 'Pipelines de Datos y Dashboards',
+      'svc2.desc':  'De datos de campo desordenados a decisiones accionables para tu equipo: ingesta, validación y QC automatizados, y dashboards en vivo que sí usan.',
+      'svc3.title': 'NLP e Investigación Aplicada',
+      'svc3.desc':  'Análisis de texto y datos con rigor de investigación — búsqueda semántica, clasificación, sentimiento, clustering y análisis de redes sobre encuestas, documentos y datos organizacionales.',
 
       'contact.label': 'Contacto',
       'contact.title': 'Trabajemos juntos',

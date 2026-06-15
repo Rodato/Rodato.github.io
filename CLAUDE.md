@@ -9,6 +9,8 @@ portfolio/
   index.html      # Entire site — HTML + CSS + JS in one file
   photo.jpg       # Profile photo (converted from IMG_5098.heic, 600px, 56KB)
   og.png          # 1200×630 branded Open Graph card (og:image / twitter:image)
+  sitemap.xml     # Single-URL sitemap (referenced by robots.txt)
+  robots.txt      # Allow all + sitemap pointer
   CNAME           # Custom domain for GitHub Pages (danielotero.dev)
   .gitignore      # Ignores .DS_Store, *.heic, .claude/
   CLAUDE.md       # This file
@@ -32,7 +34,7 @@ The `applyLang(lang)` function iterates all `[data-i18n]` elements and sets `inn
 
 The toggle button in the nav shows the *other* language (i.e. shows `ES` when currently in English).
 
-**What gets translated:** nav links, hero (incl. availability badge `hero.badge`), about, skills group titles, project descriptions, badge labels, track chip labels (`track.agentic` / `track.nlp` / `track.ds`), project filter labels (`filter.all` + reused `track.*`), experience roles and descriptions, publications subtitle, contact section.
+**What gets translated:** nav links, hero (incl. availability badge `hero.badge`), about, skills group titles, project descriptions, badge labels, track chip labels (`track.agentic` / `track.nlp` / `track.ds`), project filter labels (`filter.all` + reused `track.*`), **services section (`services.*`, `svc1–3.title/desc`)**, experience roles and descriptions, publications subtitle, contact section.
 
 **What stays in English always:** project names (code names), tech stack tags, publication titles, company names, stat numbers, dates.
 
@@ -73,6 +75,7 @@ Note: `.dev` TLD is on the HSTS preload list → browsers force HTTPS. If the ce
 - Hero: two-column grid (text left, photo right); collapses to 1 col on mobile. Green "Available for consulting" availability badge (pulsing dot) above the name — reuses the `.hero-badge` style
 - Project cards: 3-col grid → 2-col → 1-col, with track filter chips (All / Agentic / NLP / Data Science) above the grid
 - Experience: left-border timeline with blue dot markers
+- Services: "How I can help" section (3 cards with three-fronts icons + capability tags) placed just before Contact — offer → CTA funnel ending. `.services-grid` uses `auto-fit minmax` (no manual breakpoints)
 - Contact section: dark background (inverted)
 - Nav: glassmorphism (backdrop-filter blur); collapses to a hamburger dropdown menu below 640px
 
@@ -85,6 +88,13 @@ All colors are CSS variables on `:root`, overridden under `[data-theme="dark"]`.
 ## Open Graph image
 
 `og.png` (1200×630) is a branded card matching the dark theme: name, roles, three-fronts line, green availability pill, and the rounded photo. `og:image` / `twitter:image` use the **absolute** URL `https://danielotero.dev/og.png` (relative paths break social previews). Generated with a Pillow script (system SF font, falls back to Arial); regenerate similarly if the design/photo changes.
+
+## SEO
+
+- `<script type="application/ld+json">` in `<head>` with a `schema.org/Person` (name, jobTitle, worksFor, address, knowsAbout, sameAs → GitHub/LinkedIn). Keep it in sync if those facts change.
+- `sitemap.xml` (single URL) + `robots.txt` (allow all, points to the sitemap).
+- Hero `<img>` has explicit `width`/`height` + `fetchpriority="high"` (LCP image, avoid CLS).
+- **Analytics not wired yet** — needs an external account (Plausible / Umami Cloud); add the provider snippet in `<head>` once chosen.
 
 ## Content — Projects shown (10)
 
