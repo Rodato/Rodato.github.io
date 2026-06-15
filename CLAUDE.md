@@ -8,8 +8,9 @@ Personal portfolio website. Single static file, no build step, deployable direct
 portfolio/
   index.html      # Entire site — HTML + CSS + JS in one file
   photo.jpg       # Profile photo (converted from IMG_5098.heic, 600px, 56KB)
+  og.png          # 1200×630 branded Open Graph card (og:image / twitter:image)
   CNAME           # Custom domain for GitHub Pages (danielotero.dev)
-  .gitignore      # Ignores .DS_Store and *.heic
+  .gitignore      # Ignores .DS_Store, *.heic, .claude/
   CLAUDE.md       # This file
 ```
 
@@ -27,11 +28,11 @@ All translatable text elements have a `data-i18n="key"` attribute. A JS object a
 const t = { en: { 'key': 'text', ... }, es: { 'key': 'texto', ... } }
 ```
 
-The `applyLang(lang)` function iterates all `[data-i18n]` elements and sets `innerHTML`. Language preference is saved to `localStorage` under `'portfolio-lang'`.
+The `applyLang(lang)` function iterates all `[data-i18n]` elements and sets `innerHTML`. Language preference is saved to `localStorage` under `'portfolio-lang'`. On first visit (no stored preference) the default follows the browser language (`navigator.language` → `es` if it starts with "es", else `en`).
 
 The toggle button in the nav shows the *other* language (i.e. shows `ES` when currently in English).
 
-**What gets translated:** nav links, hero, about, skills group titles, project descriptions, badge labels, experience roles and descriptions, contact section.
+**What gets translated:** nav links, hero (incl. availability badge `hero.badge`), about, skills group titles, project descriptions, badge labels, track chip labels (`track.agentic` / `track.nlp` / `track.ds`), project filter labels (`filter.all` + reused `track.*`), experience roles and descriptions, publications subtitle, contact section.
 
 **What stays in English always:** project names (code names), tech stack tags, publication titles, company names, stat numbers, dates.
 
@@ -67,13 +68,23 @@ Note: `.dev` TLD is on the HSTS preload list → browsers force HTTPS. If the ce
 
 ## Design decisions
 
-- Minimalist white design, Inter font, blue accent (`#1d4ed8`)
+- Minimalist design, Inter font, blue accent (`#1d4ed8`); light + dark themes (see Theming)
 - Single-page with smooth scroll
-- Hero: two-column grid (text left, photo right); collapses to 1 col on mobile
-- Project cards: 3-col grid → 2-col → 1-col
+- Hero: two-column grid (text left, photo right); collapses to 1 col on mobile. Green "Available for consulting" availability badge (pulsing dot) above the name — reuses the `.hero-badge` style
+- Project cards: 3-col grid → 2-col → 1-col, with track filter chips (All / Agentic / NLP / Data Science) above the grid
 - Experience: left-border timeline with blue dot markers
 - Contact section: dark background (inverted)
-- Nav: glassmorphism (backdrop-filter blur)
+- Nav: glassmorphism (backdrop-filter blur); collapses to a hamburger dropdown menu below 640px
+
+## Theming (dark mode)
+
+Light/dark toggle (sun/moon icon) in the nav, alongside the language button. Theme is stored in `localStorage` under `'portfolio-theme'`; on first visit it follows `prefers-color-scheme`. An inline script in `<head>` sets `data-theme` on `<html>` before first paint to avoid a flash of light mode.
+
+All colors are CSS variables on `:root`, overridden under `[data-theme="dark"]`. Sections with **hardcoded inverted colors** (nav, `.btn-primary`, `#contact`, `footer`, the mobile `.nav-links` dropdown) have explicit `[data-theme="dark"]` overrides — when editing those, add a matching dark override or the inversion breaks.
+
+## Open Graph image
+
+`og.png` (1200×630) is a branded card matching the dark theme: name, roles, three-fronts line, green availability pill, and the rounded photo. `og:image` / `twitter:image` use the **absolute** URL `https://danielotero.dev/og.png` (relative paths break social previews). Generated with a Pillow script (system SF font, falls back to Arial); regenerate similarly if the design/photo changes.
 
 ## Content — Projects shown (10)
 
