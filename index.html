@@ -544,6 +544,7 @@
     .badge-mvp    { background: #fef9c3; color: #a16207; }
     .badge-dev    { background: var(--accent-light); color: var(--accent); }
     .badge-active { background: #f3e8ff; color: #7c3aed; }
+    .badge-code   { background: #e5e7eb; color: #4b5563; }
 
     .project-tracks {
       display: flex;
@@ -1051,45 +1052,6 @@
     </div>
     <div class="projects-grid">
 
-      <div class="project-card">
-        <div class="project-tracks">
-          <span class="track-chip track-agentic" data-i18n="track.agentic">Agentic</span>
-          <span class="track-chip track-nlp" data-i18n="track.nlp">NLP</span>
-        </div>
-        <div class="project-header">
-          <div class="project-name">puddleAsistant</div>
-          <span class="badge badge-prod" data-i18n="badge.prod">Production</span>
-        </div>
-        <p class="project-desc" data-i18n="p2.desc">
-          Semantic search over 6 educational documents on gender and parenting. MongoDB vector store + OpenAI embeddings. Multilingual WhatsApp bot with conversation memory in Supabase. 7 specialized agents, 1,544 processed chunks.
-        </p>
-        <div class="project-impact" data-i18n="p2.impact">Active in CO &amp; MX · ~300 users / month</div>
-        <div class="project-tags">
-          <span class="project-tag">RAG</span><span class="project-tag">Embeddings</span>
-          <span class="project-tag">MongoDB</span><span class="project-tag">Supabase</span>
-          <span class="project-tag">Twilio</span><span class="project-tag">Multi-agent</span>
-        </div>
-      </div>
-
-      <a class="project-card" href="https://github.com/Rodato/dashboard-sgr" target="_blank" rel="noopener">
-        <div class="project-tracks">
-          <span class="track-chip track-ds" data-i18n="track.ds">Data Science</span>
-        </div>
-        <div class="project-header">
-          <div class="project-name">SGR Dashboard</div>
-          <span class="badge badge-live" data-i18n="badge.live">Live</span>
-        </div>
-        <p class="project-desc" data-i18n="p6.desc">
-          Interactive dashboard for Colombia's General Royalties System (SGR). Real-time data from datos.gov.co via Socrata API, dynamic filters, choropleth maps, and Excel export. Deployed on Streamlit Cloud.
-        </p>
-        <div class="project-impact" data-i18n="p6.impact">Saves 8 hours / week to the project formulation team</div>
-        <div class="project-tags">
-          <span class="project-tag">Streamlit</span><span class="project-tag">pydeck</span>
-          <span class="project-tag">Plotly</span><span class="project-tag">Socrata API</span>
-          <span class="project-tag">GeoJSON</span>
-        </div>
-      </a>
-
       <a class="project-card" href="https://cali-1v-barrios.vercel.app" target="_blank" rel="noopener">
         <div class="project-tracks">
           <span class="track-chip track-ds" data-i18n="track.ds">Data Science</span>
@@ -1109,6 +1071,104 @@
         </div>
       </a>
 
+      <a class="project-card" href="https://narrativas-2026.vercel.app" target="_blank" rel="noopener">
+        <div class="project-tracks">
+          <span class="track-chip track-ds" data-i18n="track.ds">Data Science</span>
+          <span class="track-chip track-nlp" data-i18n="track.nlp">NLP</span>
+        </div>
+        <div class="project-header">
+          <div class="project-name">Narrativas 2026</div>
+          <span class="badge badge-live" data-i18n="badge.live">Live</span>
+        </div>
+        <p class="project-desc" data-i18n="p13.desc">
+          Social-listening platform mapping the public X/Twitter conversation around Colombia's 2026 presidential race. Apify ingestion → LLM classification of emotion, framing and stance → embedding-based narrative clustering (fastembed + HDBSCAN) → a directed interaction graph with coalition alignment. Next.js 16 static site on Vercel.
+        </p>
+        <div class="project-impact" data-i18n="p13.impact">Navigable network graph · sentiment over time</div>
+        <div class="project-tags">
+          <span class="project-tag">Next.js</span><span class="project-tag">NLP</span>
+          <span class="project-tag">Embeddings</span><span class="project-tag">networkx</span>
+          <span class="project-tag">Apify</span>
+        </div>
+      </a>
+
+      <a class="project-card" href="https://lin-manosfera.vercel.app" target="_blank" rel="noopener">
+        <div class="project-tracks">
+          <span class="track-chip track-ds" data-i18n="track.ds">Data Science</span>
+          <span class="track-chip track-nlp" data-i18n="track.nlp">NLP</span>
+        </div>
+        <div class="project-header">
+          <div class="project-name">LIN — Social Listening</div>
+          <span class="badge badge-live" data-i18n="badge.live">Live</span>
+        </div>
+        <p class="project-desc" data-i18n="p14.desc">
+          Digital social-listening pilot on the Spanish-speaking online conversation (TikTok focus), built for an Estudio Plural × Camino proposal. 742 unique videos over four months, each AI-classified as signal vs noise — only ~35% of keyword matches are genuine, so raw volume overstates the topic roughly 3×. Hashtag-and-creator network, geography, engagement by theme, and a video-by-video corpus explorer. Next.js on Vercel.
+        </p>
+        <div class="project-impact" data-i18n="p14.impact">742 videos classified · raw volume overstates the topic ~3×</div>
+        <div class="project-tags">
+          <span class="project-tag">Next.js</span><span class="project-tag">NLP</span>
+          <span class="project-tag">Apify</span><span class="project-tag">OpenRouter</span>
+          <span class="project-tag">Recharts</span>
+        </div>
+      </a>
+
+      <a class="project-card" href="https://sgr-interactivedashboard.streamlit.app" target="_blank" rel="noopener">
+        <div class="project-tracks">
+          <span class="track-chip track-ds" data-i18n="track.ds">Data Science</span>
+        </div>
+        <div class="project-header">
+          <div class="project-name">SGR Dashboard</div>
+          <span class="badge badge-live" data-i18n="badge.live">Live</span>
+        </div>
+        <p class="project-desc" data-i18n="p6.desc">
+          Interactive dashboard for Colombia's General Royalties System (SGR). Real-time data from datos.gov.co via Socrata API, dynamic filters, choropleth maps, and Excel export. Deployed on Streamlit Cloud.
+        </p>
+        <div class="project-impact" data-i18n="p6.impact">Saves 8 hours / week to the project formulation team</div>
+        <div class="project-tags">
+          <span class="project-tag">Streamlit</span><span class="project-tag">pydeck</span>
+          <span class="project-tag">Plotly</span><span class="project-tag">Socrata API</span>
+          <span class="project-tag">GeoJSON</span>
+        </div>
+      </a>
+
+      <a class="project-card" href="https://ama-endline-pcm4jbzyvmekla63l4lwl8.streamlit.app" target="_blank" rel="noopener">
+        <div class="project-tracks">
+          <span class="track-chip track-ds" data-i18n="track.ds">Data Science</span>
+          <span class="track-chip track-agentic" data-i18n="track.agentic">Agentic</span>
+        </div>
+        <div class="project-header">
+          <div class="project-name">AMA Survey Pipeline</div>
+          <span class="badge badge-live" data-i18n="badge.live">Live</span>
+        </div>
+        <p class="project-desc" data-i18n="p8.desc">
+          Survey-processing pipeline for AMA's social field research across multiple cities. KoboToolbox ingestion, validation and deduplication feeding an interactive endline results dashboard — auto-generated charts, cross-tabs, and LLM-written report sections. Deployed on Streamlit Cloud.
+        </p>
+        <div class="project-impact" data-i18n="p8.impact">Multi-city field survey · live endline dashboard</div>
+        <div class="project-tags">
+          <span class="project-tag">Python</span><span class="project-tag">pandas</span>
+          <span class="project-tag">KoboToolbox</span><span class="project-tag">Streamlit</span>
+          <span class="project-tag">LLM</span>
+        </div>
+      </a>
+
+      <a class="project-card" href="https://ama-bot-monitoring-cvaqwjjdkcsf873xtv3vzu.streamlit.app" target="_blank" rel="noopener">
+        <div class="project-tracks">
+          <span class="track-chip track-ds" data-i18n="track.ds">Data Science</span>
+        </div>
+        <div class="project-header">
+          <div class="project-name">AMA Bot Monitoring</div>
+          <span class="badge badge-live" data-i18n="badge.live">Live</span>
+        </div>
+        <p class="project-desc" data-i18n="p10.desc">
+          Monitoring dashboard for the AMA WhatsApp bot. Tracks user activity, sessions, and engagement across deployments. Streamlit + Supabase backend with Plotly visualizations and Excel exports.
+        </p>
+        <div class="project-impact" data-i18n="p10.impact">Real-time tracking of bot activity for the research team</div>
+        <div class="project-tags">
+          <span class="project-tag">Streamlit</span><span class="project-tag">Supabase</span>
+          <span class="project-tag">SQLAlchemy</span><span class="project-tag">Plotly</span>
+          <span class="project-tag">Python</span>
+        </div>
+      </a>
+
       <a class="project-card" href="https://github.com/Rodato/archetypeSuite" target="_blank" rel="noopener">
         <div class="project-tracks">
           <span class="track-chip track-agentic" data-i18n="track.agentic">Agentic</span>
@@ -1116,7 +1176,7 @@
         </div>
         <div class="project-header">
           <div class="project-name">archetypeSuite</div>
-          <span class="badge badge-live" data-i18n="badge.live">Live</span>
+          <span class="badge badge-code" data-i18n="badge.code">Code</span>
         </div>
         <p class="project-desc" data-i18n="p1.desc">
           End-to-end ML pipeline for archetype discovery. LangGraph orchestrates ingestion → profiling → preprocessing → algorithm selection → clustering → LLM-generated narrative. 33 automated tests passing.
@@ -1149,26 +1209,6 @@
         </div>
       </a>
 
-      <div class="project-card">
-        <div class="project-tracks">
-          <span class="track-chip track-ds" data-i18n="track.ds">Data Science</span>
-          <span class="track-chip track-agentic" data-i18n="track.agentic">Agentic</span>
-        </div>
-        <div class="project-header">
-          <div class="project-name">AMA Survey Pipeline</div>
-          <span class="badge badge-active" data-i18n="badge.active">Active</span>
-        </div>
-        <p class="project-desc" data-i18n="p8.desc">
-          Multi-city survey processing pipeline for social field research across 4 cities in Colombia, Peru, Ecuador, and Bolivia. KoboToolbox integration, validation, deduplication, LLM-generated reports, and 30+ charts for interim deliverables.
-        </p>
-        <div class="project-impact" data-i18n="p8.impact">4 cities across 4 countries · 30+ charts auto-generated</div>
-        <div class="project-tags">
-          <span class="project-tag">Python</span><span class="project-tag">pandas</span>
-          <span class="project-tag">KoboToolbox</span><span class="project-tag">LLM</span>
-          <span class="project-tag">Social Research</span>
-        </div>
-      </div>
-
       <a class="project-card" href="https://github.com/Rodato/convocatorias-bot" target="_blank" rel="noopener">
         <div class="project-tracks">
           <span class="track-chip track-agentic" data-i18n="track.agentic">Agentic</span>
@@ -1195,7 +1235,7 @@
         </div>
         <div class="project-header">
           <div class="project-name">Aly Dashboard</div>
-          <span class="badge badge-live" data-i18n="badge.live">Live</span>
+          <span class="badge badge-code" data-i18n="badge.code">Code</span>
         </div>
         <p class="project-desc" data-i18n="p9.desc">
           Operational monitoring dashboard for the Aly (Apapáchar) WhatsApp bot. KPIs with sparklines and deltas, geographic visualization, alert flags with Excel export and review-status toggle, and a leaderboard with drill-down. Multi-page Streamlit app with custom navigation and i18n.
@@ -1227,25 +1267,6 @@
           <span class="project-tag">CLI</span>
         </div>
       </div>
-
-      <a class="project-card" href="https://github.com/Rodato/ama-bot-monitoring" target="_blank" rel="noopener">
-        <div class="project-tracks">
-          <span class="track-chip track-ds" data-i18n="track.ds">Data Science</span>
-        </div>
-        <div class="project-header">
-          <div class="project-name">AMA Bot Monitoring</div>
-          <span class="badge badge-live" data-i18n="badge.live">Live</span>
-        </div>
-        <p class="project-desc" data-i18n="p10.desc">
-          Monitoring dashboard for the AMA WhatsApp bot. Tracks user activity, sessions, and engagement across deployments. Streamlit + Supabase backend with Plotly visualizations and Excel exports.
-        </p>
-        <div class="project-impact" data-i18n="p10.impact">Real-time tracking of bot activity for the research team</div>
-        <div class="project-tags">
-          <span class="project-tag">Streamlit</span><span class="project-tag">Supabase</span>
-          <span class="project-tag">SQLAlchemy</span><span class="project-tag">Plotly</span>
-          <span class="project-tag">Python</span>
-        </div>
-      </a>
 
       <a class="project-card" href="https://github.com/Rodato/agentChatBuilder" target="_blank" rel="noopener">
         <div class="project-tracks">
@@ -1591,11 +1612,10 @@
       'badge.mvp':    'MVP',
       'badge.dev':    'In Dev',
       'badge.active': 'Active',
+      'badge.code':   'Code',
 
       'p1.desc':   'End-to-end ML pipeline for archetype discovery. LangGraph orchestrates ingestion → profiling → preprocessing → algorithm selection → clustering → LLM-generated narrative. 33 automated tests passing.',
       'p1.impact': 'Cuts survey analysis time by 50%',
-      'p2.desc':   'Semantic search over 6 educational documents on gender and parenting. MongoDB vector store + OpenAI embeddings. Multilingual WhatsApp bot with conversation memory in Supabase. 7 specialized agents, 1,544 processed chunks.',
-      'p2.impact': 'Active in CO &amp; MX · ~300 users / month',
       'p3.desc':   'Multilingual bot (ES/EN/PT) for Equimundo\'s A+P Manual. 5 sequential LLM agents: language detection → intent classification → specialized response (factual, planning, ideation, sensitive topics). Built with FastAPI + LangGraph.',
       'p3.impact': 'Active across 4 countries · ~400 users / month',
       'p5.desc':   'Automated daily scanner of 15+ funding and grant sources. Claude AI filters by organizational relevance, deduplicates results, and sends curated alerts to Slack. Runs on GitHub Actions every morning.',
@@ -1603,8 +1623,8 @@
       'p6.desc':   'Interactive dashboard for Colombia\'s General Royalties System (SGR). Real-time data from datos.gov.co via Socrata API, dynamic filters, choropleth maps, and Excel export. Deployed on Streamlit Cloud.',
       'p6.impact': 'Saves 8 hours / week to the project formulation team',
       'p7.desc':   'No-code SaaS platform for building multi-agent chatbots with multi-channel deployment (WhatsApp, Telegram, Web). Full UI in Next.js + shadcn/ui; FastAPI backend with MongoDB Atlas and Supabase auth.',
-      'p8.desc':   'Multi-city survey processing pipeline for social field research across 4 cities in Colombia, Peru, Ecuador, and Bolivia. KoboToolbox integration, validation, deduplication, LLM-generated reports, and 30+ charts for interim deliverables.',
-      'p8.impact': '4 cities across 4 countries · 30+ charts auto-generated',
+      'p8.desc':   'Survey-processing pipeline for AMA\'s social field research across multiple cities. KoboToolbox ingestion, validation and deduplication feeding an interactive endline results dashboard — auto-generated charts, cross-tabs, and LLM-written report sections. Deployed on Streamlit Cloud.',
+      'p8.impact': 'Multi-city field survey · live endline dashboard',
       'p9.desc':   'Operational monitoring dashboard for the Aly (Apapáchar) WhatsApp bot. KPIs with sparklines and deltas, geographic visualization, alert flags with Excel export and review-status toggle, and a leaderboard with drill-down. Multi-page Streamlit app with custom navigation and i18n.',
       'p9.impact': 'Real-time bot monitoring for the research team',
       'p10.desc':   'Monitoring dashboard for the AMA WhatsApp bot. Tracks user activity, sessions, and engagement across deployments. Streamlit + Supabase backend with Plotly visualizations and Excel exports.',
@@ -1613,6 +1633,10 @@
       'p11.impact': '2 cities across 2 countries · automated QC + reporting',
       'p12.desc':   'Interactive map of Cali\'s 339 neighborhoods with the 2026 first-round presidential results. Official Registraduría tally (216 polling stations, 5,158 tables) geolocated to neighborhood level by cross-referencing IDESC\'s WFS school layer + OpenStreetMap geocoding. Leaflet, static site on Vercel.',
       'p12.impact': '339 neighborhoods · 1M+ official votes mapped',
+      'p13.desc':   'Social-listening platform mapping the public X/Twitter conversation around Colombia\'s 2026 presidential race. Apify ingestion → LLM classification of emotion, framing and stance → embedding-based narrative clustering (fastembed + HDBSCAN) → a directed interaction graph with coalition alignment. Next.js 16 static site on Vercel.',
+      'p13.impact': 'Navigable network graph · sentiment over time',
+      'p14.desc':   'Digital social-listening pilot on the Spanish-speaking online conversation (TikTok focus), built for an Estudio Plural × Camino proposal. 742 unique videos over four months, each AI-classified as signal vs noise — only ~35% of keyword matches are genuine, so raw volume overstates the topic roughly 3×. Hashtag-and-creator network, geography, engagement by theme, and a video-by-video corpus explorer. Next.js on Vercel.',
+      'p14.impact': '742 videos classified · raw volume overstates the topic ~3×',
 
       'exp.label': 'Experience',
       'exp.title': "Where I've worked",
@@ -1729,16 +1753,15 @@
 
       'filter.all':   'Todos',
 
-      'badge.live':   'Activo',
+      'badge.live':   'En vivo',
       'badge.prod':   'Producción',
       'badge.mvp':    'MVP',
       'badge.dev':    'En Desarrollo',
       'badge.active': 'Activo',
+      'badge.code':   'Código',
 
       'p1.desc':   'Pipeline ML de extremo a extremo para descubrimiento de arquetipos. LangGraph orquesta ingesta → perfilado → preprocesamiento → selección de algoritmo → clustering → narrativa generada por LLM. 33 pruebas automatizadas pasando.',
       'p1.impact': 'Reduce 50% el tiempo de análisis de encuestas',
-      'p2.desc':   'Búsqueda semántica sobre 6 documentos educativos de género y crianza. Vector store en MongoDB + embeddings de OpenAI. Bot WhatsApp multilingüe con memoria de conversación en Supabase. 7 agentes especializados, 1,544 fragmentos procesados.',
-      'p2.impact': 'Activo en CO y MX · ~300 usuarios / mes',
       'p3.desc':   'Bot multilingüe (ES/EN/PT) para el Manual A+P de Equimundo. 5 agentes LLM secuenciales: detección de idioma → clasificación de intención → respuesta especializada (factual, planificación, ideación, temas sensibles). Construido con FastAPI + LangGraph.',
       'p3.impact': 'Activo en 4 países · ~400 usuarios / mes',
       'p5.desc':   'Escáner diario automatizado de 15+ fuentes de financiamiento y convocatorias. Claude AI filtra por relevancia organizacional, deduplica resultados y envía alertas curadas a Slack. Corre en GitHub Actions cada mañana.',
@@ -1746,8 +1769,8 @@
       'p6.desc':   'Dashboard interactivo del Sistema General de Regalías (SGR) de Colombia. Datos en tiempo real de datos.gov.co vía Socrata API, filtros dinámicos, mapas coropléticos y exportación a Excel. Desplegado en Streamlit Cloud.',
       'p6.impact': 'Ahorra 8 horas / semana al equipo de formulación',
       'p7.desc':   'Plataforma SaaS sin código para construir chatbots multi-agente con despliegue multicanal (WhatsApp, Telegram, Web). UI completa en Next.js + shadcn/ui; backend FastAPI con MongoDB Atlas y autenticación Supabase.',
-      'p8.desc':   'Pipeline de procesamiento de encuestas en múltiples ciudades para investigación social de campo en 4 ciudades de Colombia, Perú, Ecuador y Bolivia. Integración KoboToolbox, validación, deduplicación, reportes con LLM y 30+ gráficas para entregables intermedios.',
-      'p8.impact': '4 ciudades en 4 países · 30+ gráficas auto-generadas',
+      'p8.desc':   'Pipeline de procesamiento de encuestas para la investigación social de campo de AMA en múltiples ciudades. Ingesta, validación y deduplicación con KoboToolbox que alimentan un dashboard interactivo de resultados de salida (endline) — gráficas auto-generadas, cruces y secciones de reporte redactadas por LLM. Desplegado en Streamlit Cloud.',
+      'p8.impact': 'Encuesta de campo multi-ciudad · dashboard de salida en vivo',
       'p9.desc':   'Dashboard operativo para el bot de WhatsApp Aly (Apapáchar). KPIs con sparklines y deltas, visualización geográfica, alertas con exportación Excel y toggle de revisión, y leaderboard con drill-down. App multi-página en Streamlit con navegación custom e i18n.',
       'p9.impact': 'Monitoreo del bot en tiempo real para el equipo de investigación',
       'p10.desc':   'Dashboard de monitoreo del bot de WhatsApp de AMA. Rastrea actividad de usuarios, sesiones y engagement entre despliegues. Backend Streamlit + Supabase con visualizaciones Plotly y exportaciones a Excel.',
@@ -1756,6 +1779,10 @@
       'p11.impact': '2 ciudades en 2 países · QC + reportes automatizados',
       'p12.desc':   'Mapa interactivo de los 339 barrios de Cali con los resultados de la primera vuelta presidencial 2026. Escrutinio oficial de la Registraduría (216 puestos, 5.158 mesas) geolocalizado a nivel de barrio cruzando la capa WFS de colegios de IDESC + geocodificación con OpenStreetMap. Leaflet, sitio estático en Vercel.',
       'p12.impact': '339 barrios · 1M+ votos oficiales mapeados',
+      'p13.desc':   'Plataforma de social listening que mapea la conversación pública en X/Twitter en torno a la carrera presidencial de Colombia 2026. Ingesta con Apify → clasificación con LLM de emoción, encuadre y postura → clustering de narrativas por embeddings (fastembed + HDBSCAN) → grafo de interacción dirigido con alineamiento por coalición. Sitio estático en Next.js 16 sobre Vercel.',
+      'p13.impact': 'Grafo de red navegable · sentimiento en el tiempo',
+      'p14.desc':   'Piloto de escucha digital sobre la conversación en redes en español (foco TikTok), desarrollado para una propuesta de Estudio Plural × Camino. 742 videos únicos en cuatro meses, cada uno clasificado con IA en señal vs ruido — solo ~35% de lo que matchea las keywords es genuino, así que el volumen crudo sobreestima el tema ~3×. Red de hashtags y creadores, geografía, engagement por tema y un explorador del corpus video por video. Next.js sobre Vercel.',
+      'p14.impact': '742 videos clasificados · el volumen crudo sobreestima el tema ~3×',
 
       'exp.label': 'Experiencia',
       'exp.title': 'Dónde he trabajado',

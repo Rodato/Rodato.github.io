@@ -96,19 +96,31 @@ All colors are CSS variables on `:root`, overridden under `[data-theme="dark"]`.
 - Hero `<img>` has explicit `width`/`height` + `fetchpriority="high"` (LCP image, avoid CLS).
 - **Analytics not wired yet** — needs an external account (Plausible / Umami Cloud); add the provider snippet in `<head>` once chosen.
 
-## Content — Projects shown (10)
+## Content — Projects shown (12)
 
-Most cards link to their GitHub repo (full card is `<a class="project-card" href="...">`). Cards without a public repo are plain `<div>`.
+**Ordering principle:** cards are ordered in two tiers. **Tier 1 = live, navigable demos first** (each links to a working deployed product the visitor can actually see); **tier 2 = "work we did"** (repo link or no link, no public demo). This ordering is intentional — keep new demo-backed projects at the top.
 
-1. archetypeSuite — ML clustering pipeline (LangGraph + scikit-learn) → `Rodato/archetypeSuite`
-2. puddleAsistant — RAG + WhatsApp bot (MongoDB + Supabase) — *no repo link yet*
-3. Aly — WhatsApp multi-agent bot for Equimundo (FastAPI + LangGraph) → `Rodato/Aly`
-4. Aly Dashboard — Streamlit dashboard for Aly bot (Supabase + Plotly) → `Rodato/aly-dashboard`
-5. convocatorias-bot — daily funding scanner (GitHub Actions + Claude AI) → `Rodato/convocatorias-bot`
-6. SGR Dashboard — Colombia royalties data (Streamlit Cloud) → `Rodato/dashboard-sgr`
-7. agentChatBuilder — no-code SaaS chatbot builder (Next.js + FastAPI) → `Rodato/agentChatBuilder`
-8. AMA Survey Pipeline — multi-city survey processing (KoboToolbox + LLM) — *no repo link yet*
-9. AMA Bot Monitoring — Streamlit dashboard for AMA bot → `Rodato/ama-bot-monitoring`
-10. AMA Lineabase 2026 — KoboToolbox QC pipeline for Leticia/Cobija — *no public repo*
+**Badge semantics (honest signaling):**
+- `badge-live` ("Live" / "En vivo") — has a public, navigable live demo. Reserve it for cards whose `href` opens a working deployment.
+- `badge-code` ("Code" / "Código", neutral gray) — links to a GitHub repo only, no live demo.
+- `badge-prod` / `badge-mvp` / `badge-active` / `badge-dev` — lifecycle status (production automation, MVP, ongoing fieldwork, in development).
 
-Each card also shows a colored "impact" line below the description (e.g. "~400 users / month", "Saves 10 h/week"). Stored in i18n keys `pX.impact`.
+**Tier 1 — live demos** (card is `<a>` → deployment):
+1. Cali Electoral Map (DS) — `cali-1v-barrios.vercel.app` · p12
+2. Narrativas 2026 (DS+NLP) — `narrativas-2026.vercel.app` · social listening on the 2026 presidential race; neutral/method-framed (no partisan tone) · p13
+3. LIN — Social Listening (DS+NLP) — `lin-manosfera.vercel.app` · Estudio Plural × Camino, manosphere study; titled by capability, topic in the description · p14
+4. SGR Dashboard (DS) — `sgr-interactivedashboard.streamlit.app` · p6
+5. AMA Survey Pipeline (DS+Agentic) — `ama-endline-…streamlit.app` · the endline (EncuestaSalida) results dashboard fused into this card · p8
+6. AMA Bot Monitoring (DS) — `ama-bot-monitoring-…streamlit.app` · p10
+
+**Tier 2 — work we did** (repo link or no link):
+7. archetypeSuite (Agentic+DS) — repo `Rodato/archetypeSuite` · badge Code · p1
+8. Aly — WhatsApp AI Agent (Agentic+NLP) — repo `Rodato/Aly` · badge MVP · p3
+9. convocatorias-bot (Agentic+NLP) — repo `Rodato/convocatorias-bot` · badge Production · p5
+10. Aly Dashboard (DS) — repo `Rodato/aly-dashboard` · badge Code · p9
+11. AMA Lineabase 2026 (DS+Agentic) — no public repo, plain `<div>` · badge Active · p11
+12. agentChatBuilder (Agentic) — repo `Rodato/agentChatBuilder` · badge In Dev · p7
+
+Removed: **puddleAsistant** (p2) — had no repo, no demo, and fabricated metrics; deleted entirely.
+
+Each card also shows a colored "impact" line below the description (e.g. "~400 users / month", "Saves 10 h/week"). Stored in i18n keys `pX.impact`. The i18n key indices (`pN`) are stable identifiers, **not** display order — the markup order is what determines tiers.
