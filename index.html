@@ -1328,6 +1328,20 @@
       </div>
 
       <div class="exp-item">
+        <div class="exp-company">Glasswing International</div>
+        <ul class="exp-roles">
+          <li class="exp-role-item">
+            <span class="exp-role-name" data-i18n="eg.role1">AI &amp; Automation Consultant</span>
+            <span class="exp-duration">May 2025 – Jul 2025</span>
+          </li>
+        </ul>
+        <ul class="exp-bullets">
+          <li data-i18n="eg.b1">Designed and shipped an <strong>end-to-end accounting-automation system</strong> that replaces the accountant's manual forwarding and review of supplier invoices → <strong>~12 hours/week</strong> of manual work freed. The routing worker (Python, <strong>Gmail API</strong> + SQLite) classifies each incoming invoice and routes it to the right coordinators from a matrix of <strong>323 suppliers</strong> and <strong>~1,900 assignments</strong>, running <strong>in production</strong> on a VPS (Docker Compose behind Tailscale) with Telegram alerts.</li>
+          <li data-i18n="eg.b2">Built the <strong>automatic payment-package verification</strong> module: it extracts and cross-checks multiple documents (invoice, RUT, chamber-of-commerce, bank certification, transfer/reimbursement request) with <strong>Claude via OpenRouter</strong> (text + <strong>vision</strong> for scans), robust to how attachments arrive (merged or separate). It flags amount, NIT and beneficiary mismatches and replies approving or returning with corrections → each review cut <strong>from ~15 min to under 1 min</strong>.</li>
+        </ul>
+      </div>
+
+      <div class="exp-item">
         <div class="exp-company">Octopus Force</div>
         <ul class="exp-roles">
           <li class="exp-role-item">
@@ -1652,6 +1666,10 @@
       'e1.b5':    'Python data pipelines connecting KoboToolbox &amp; Typeform to Supabase dashboards → <strong>~90% reduction</strong> in field-data monitoring time.',
       'e1.b6':    'Multi-agent processing system for clustering and behavioral narrative generation over survey data → <strong>50% reduction</strong> in analysis time.',
 
+      'eg.role1': 'AI & Automation Consultant',
+      'eg.b1':    "Designed and shipped an <strong>end-to-end accounting-automation system</strong> that replaces the accountant's manual forwarding and review of supplier invoices → <strong>~12 hours/week</strong> of manual work freed. The routing worker (Python, <strong>Gmail API</strong> + SQLite) classifies each incoming invoice and routes it to the right coordinators from a matrix of <strong>323 suppliers</strong> and <strong>~1,900 assignments</strong>, running <strong>in production</strong> on a VPS (Docker Compose behind Tailscale) with Telegram alerts.",
+      'eg.b2':    'Built the <strong>automatic payment-package verification</strong> module: it extracts and cross-checks multiple documents (invoice, RUT, chamber-of-commerce, bank certification, transfer/reimbursement request) with <strong>Claude via OpenRouter</strong> (text + <strong>vision</strong> for scans), robust to how attachments arrive (merged or separate). It flags amount, NIT and beneficiary mismatches and replies approving or returning with corrections → each review cut <strong>from ~15 min to under 1 min</strong>.',
+
       'e2.role1': 'Project Analyst',
       'e2.role2': 'Research Leader',
       'e2.b1':    'Built SGR (General Royalties System) monitoring dashboard integrated with the <code>datos.gov.co</code> Open Data API → <strong>8 hours/week saved</strong> for the project formulation team.',
@@ -1797,6 +1815,10 @@
       'e1.b4':    'Sistema de IA para detección automática de oportunidades de financiamiento → <strong>10 horas/semana</strong> ahorradas al equipo de formulación.',
       'e1.b5':    'Pipelines de datos en Python conectando KoboToolbox y Typeform a dashboards en Supabase → <strong>~90% reducción</strong> en tiempo de monitoreo de campo.',
       'e1.b6':    'Sistema multiagente para clustering y construcción de narrativas comportamentales sobre datos de encuestas → <strong>50% reducción</strong> en tiempo de análisis.',
+
+      'eg.role1': 'Consultor de IA y Automatización',
+      'eg.b1':    'Desarrollé un <strong>sistema de automatización contable de extremo a extremo</strong> que reemplaza el reenvío y la revisión manual de facturas de proveedor → <strong>~12 horas/semana</strong> de trabajo manual liberadas. El worker de enrutamiento (Python, <strong>Gmail API</strong> + SQLite) clasifica cada factura entrante y la enruta a los coordinadores correctos según una matriz de <strong>323 proveedores</strong> y <strong>~1.900 asignaciones</strong>, desplegado <strong>en producción</strong> sobre VPS (Docker Compose tras Tailscale) con alertas por Telegram.',
+      'eg.b2':    'Construí el módulo de <strong>verificación automática de paquetes de pago</strong>: extrae y cruza múltiples documentos (factura, RUT, cámara de comercio, certificación bancaria y solicitud de transferencia/reintegro) con <strong>Claude vía OpenRouter</strong> (texto + <strong>visión</strong> para escaneos), robusto a la forma de los adjuntos (mergeados o separados). Detecta discrepancias de montos, NIT y beneficiario y responde aprobando o devolviendo con las correcciones → cada verificación reducida <strong>de ~15 min a menos de 1 min</strong>.',
 
       'e2.role1': 'Analista de Proyectos',
       'e2.role2': 'Líder de Investigación',
