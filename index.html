@@ -1169,6 +1169,26 @@
         </div>
       </a>
 
+      <div class="project-card">
+        <div class="project-tracks">
+          <span class="track-chip track-agentic" data-i18n="track.agentic">Agentic</span>
+          <span class="track-chip track-nlp" data-i18n="track.nlp">NLP</span>
+        </div>
+        <div class="project-header">
+          <div class="project-name">Tranqui</div>
+          <span class="badge badge-prod" data-i18n="badge.prod">Production</span>
+        </div>
+        <p class="project-desc" data-i18n="p15.desc">
+          Mental-health accompaniment bot on WhatsApp for people affected by a disaster. Talks directly to Meta&rsquo;s Cloud API &mdash; no middleware &mdash; with a single model call per message: no RAG, no agent graph, no vector store. Raw-byte HMAC signature verification, sender classification that fails closed on Meta&rsquo;s new BSUID identities, and in-memory history backed by Supabase so a deploy mid-conversation never repeats the welcome. 123 tests. Self-hosted on Docker + Caddy, with a role-separated monitoring panel (masked IDs, PII-free weekly report).
+        </p>
+        <div class="project-impact" data-i18n="p15.impact">Removed a misrouting bug that hit 17.6% of inbound messages</div>
+        <div class="project-tags">
+          <span class="project-tag">Bun</span><span class="project-tag">Elysia</span>
+          <span class="project-tag">WhatsApp Cloud API</span><span class="project-tag">Supabase</span>
+          <span class="project-tag">OpenRouter</span>
+        </div>
+      </div>
+
       <a class="project-card" href="https://github.com/Rodato/archetypeSuite" target="_blank" rel="noopener">
         <div class="project-tracks">
           <span class="track-chip track-agentic" data-i18n="track.agentic">Agentic</span>
@@ -1651,6 +1671,8 @@
       'p13.impact': 'Navigable network graph · sentiment over time',
       'p14.desc':   'Digital social-listening pilot on the Spanish-speaking online conversation (TikTok focus), built for an Estudio Plural × Camino proposal. 742 unique videos over four months, each AI-classified as signal vs noise — only ~35% of keyword matches are genuine, so raw volume overstates the topic roughly 3×. Hashtag-and-creator network, geography, engagement by theme, and a video-by-video corpus explorer. Next.js on Vercel.',
       'p14.impact': '742 videos classified · raw volume overstates the topic ~3×',
+      'p15.desc':   'Mental-health accompaniment bot on WhatsApp for people affected by a disaster. Talks directly to Meta&rsquo;s Cloud API &mdash; no middleware &mdash; with a single model call per message: no RAG, no agent graph, no vector store. Raw-byte HMAC signature verification, sender classification that fails closed on Meta&rsquo;s new BSUID identities, and in-memory history backed by Supabase so a deploy mid-conversation never repeats the welcome. 123 tests. Self-hosted on Docker + Caddy, with a role-separated monitoring panel (masked IDs, PII-free weekly report).',
+      'p15.impact': 'Removed a misrouting bug that hit 17.6% of inbound messages',
 
       'exp.label': 'Experience',
       'exp.title': "Where I've worked",
@@ -1801,6 +1823,8 @@
       'p13.impact': 'Grafo de red navegable · sentimiento en el tiempo',
       'p14.desc':   'Piloto de escucha digital sobre la conversación en redes en español (foco TikTok), desarrollado para una propuesta de Estudio Plural × Camino. 742 videos únicos en cuatro meses, cada uno clasificado con IA en señal vs ruido — solo ~35% de lo que matchea las keywords es genuino, así que el volumen crudo sobreestima el tema ~3×. Red de hashtags y creadores, geografía, engagement por tema y un explorador del corpus video por video. Next.js sobre Vercel.',
       'p14.impact': '742 videos clasificados · el volumen crudo sobreestima el tema ~3×',
+      'p15.desc':   'Bot de acompañamiento en salud mental por WhatsApp para personas afectadas por un desastre. Habla directo con la Cloud API de Meta &mdash;sin middleware&mdash; con una sola llamada al modelo por mensaje: sin RAG, sin grafo de agentes, sin base vectorial. Verificación HMAC sobre los bytes crudos, clasificación de remitente que falla cerrado ante las nuevas identidades BSUID de Meta, e historial en memoria respaldado por Supabase para que un deploy a mitad de conversación no repita la bienvenida. 123 tests. Autohospedado en Docker + Caddy, con un panel de monitoreo por roles (IDs enmascarados, reporte semanal sin PII).',
+      'p15.impact': 'Elimina un bug de enrutamiento que afectaba al 17.6% de los mensajes entrantes',
 
       'exp.label': 'Experiencia',
       'exp.title': 'Dónde he trabajado',

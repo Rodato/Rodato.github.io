@@ -96,7 +96,7 @@ All colors are CSS variables on `:root`, overridden under `[data-theme="dark"]`.
 - Hero `<img>` has explicit `width`/`height` + `fetchpriority="high"` (LCP image, avoid CLS).
 - **Analytics not wired yet** — needs an external account (Plausible / Umami Cloud); add the provider snippet in `<head>` once chosen.
 
-## Content — Projects shown (12)
+## Content — Projects shown (13)
 
 **Ordering principle:** cards are ordered in two tiers. **Tier 1 = live, navigable demos first** (each links to a working deployed product the visitor can actually see); **tier 2 = "work we did"** (repo link or no link, no public demo). This ordering is intentional — keep new demo-backed projects at the top.
 
@@ -114,12 +114,13 @@ All colors are CSS variables on `:root`, overridden under `[data-theme="dark"]`.
 6. AMA Bot Monitoring (DS) — `ama-bot-monitoring-…streamlit.app` · p10
 
 **Tier 2 — work we did** (repo link or no link):
-7. archetypeSuite (Agentic+DS) — repo `Rodato/archetypeSuite` · badge Code · p1
-8. Aly — WhatsApp AI Agent (Agentic+NLP) — repo `Rodato/Aly` · badge MVP · p3
-9. convocatorias-bot (Agentic+NLP) — repo `Rodato/convocatorias-bot` · badge Production · p5
-10. Aly Dashboard (DS) — repo `Rodato/aly-dashboard` · badge Code · p9
-11. AMA Lineabase 2026 (DS+Agentic) — no public repo, plain `<div>` · badge Active · p11
-12. agentChatBuilder (Agentic) — repo `Rodato/agentChatBuilder` · badge In Dev · p7
+7. Tranqui (Agentic+NLP) — WhatsApp mental-health bot for disaster contexts (Estudio Plural). Repo `Estudio-Plural/Tranqui` is **private** and the bot is a live WhatsApp line, not a demo → plain `<div>`, no link · badge Production · p15
+8. archetypeSuite (Agentic+DS) — repo `Rodato/archetypeSuite` · badge Code · p1
+9. Aly — WhatsApp AI Agent (Agentic+NLP) — repo `Rodato/Aly` · badge MVP · p3
+10. convocatorias-bot (Agentic+NLP) — repo `Rodato/convocatorias-bot` · badge Production · p5
+11. Aly Dashboard (DS) — repo `Rodato/aly-dashboard` · badge Code · p9
+12. AMA Lineabase 2026 (DS+Agentic) — no public repo, plain `<div>` · badge Active · p11
+13. agentChatBuilder (Agentic) — repo `Rodato/agentChatBuilder` · badge In Dev · p7
 
 Removed: **puddleAsistant** (p2) — had no repo, no demo, and fabricated metrics; deleted entirely.
 
