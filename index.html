@@ -1221,7 +1221,7 @@
         <p class="project-desc" data-i18n="p3.desc">
           Multilingual bot (ES/EN/PT) for Equimundo's A+P Manual. 5 sequential LLM agents: language detection → intent classification → specialized response (factual, planning, ideation, sensitive topics). Built with FastAPI + LangGraph.
         </p>
-        <div class="project-impact" data-i18n="p3.impact">Active across 4 countries · ~400 users / month</div>
+        <div class="project-impact" data-i18n="p3.impact">~300 users / month across Colombia &amp; Mexico</div>
         <div class="project-tags">
           <span class="project-tag">FastAPI</span><span class="project-tag">LangGraph</span>
           <span class="project-tag">Text Classification</span><span class="project-tag">MongoDB</span>
@@ -1338,7 +1338,9 @@
           </li>
         </ul>
         <ul class="exp-bullets">
-          <li data-i18n="e1.b1">Built <strong>2 conversational agents</strong> with LangGraph: first deployed across <strong>4 countries</strong> (CO/EC/PE/BO) with <strong>~400 users/month</strong>; second active in CO &amp; MX with <strong>~300 users/month</strong>.</li>
+          <li data-i18n="e1.b1"><strong>Aly</strong> — WhatsApp RAG assistant for program facilitators (LangGraph + pgvector on Bun/Elysia). One graph, three branches with their own prompts and corpus: <strong>Apapáchar</strong> (Fundación Apapacho + ICBF, Colombia), <strong>Semillas de Igualdad</strong> (GENDES, teachers in Mexico) and an Equimundo demo bot. Every message is normalized, triaged for sensitive content, intent-classified and answered grounded in the program manuals — <strong>~300 users/month</strong> across CO &amp; MX.</li>
+          <li data-i18n="e1.b7"><strong>Tranqui</strong> — mental-health accompaniment bot on WhatsApp for people affected by a disaster. Direct Meta Cloud API webhook, a single model call per message (no RAG, no agent graph), and a role-separated monitoring panel. Dropping the middleware removed a misrouting bug that hit <strong>17.6% of inbound messages</strong>.</li>
+          <li data-i18n="e1.b8"><strong>AMA bot</strong> — conversational agent for the AMA program, deployed across <strong>4 countries</strong> (CO/EC/PE/BO) with <strong>~400 users/month</strong>.</li>
           <li data-i18n="e1.b2">Real-time monitoring dashboards with leaderboards and automatic report generation, giving researchers immediate access to bot usage metrics with no manual extraction.</li>
           <li data-i18n="e1.b3">Automation flows in <strong>n8n</strong> and <strong>Zapier</strong> for admin and accounting → <strong>80% time saved</strong> on repetitive tasks.</li>
           <li data-i18n="e1.b4">AI system for automatic detection of funding opportunities → <strong>10 hours/week saved</strong> for the project formulation team.</li>
@@ -1651,7 +1653,7 @@
       'p1.desc':   'End-to-end ML pipeline for archetype discovery. LangGraph orchestrates ingestion → profiling → preprocessing → algorithm selection → clustering → LLM-generated narrative. 33 automated tests passing.',
       'p1.impact': 'Cuts survey analysis time by 50%',
       'p3.desc':   'Multilingual bot (ES/EN/PT) for Equimundo\'s A+P Manual. 5 sequential LLM agents: language detection → intent classification → specialized response (factual, planning, ideation, sensitive topics). Built with FastAPI + LangGraph.',
-      'p3.impact': 'Active across 4 countries · ~400 users / month',
+      'p3.impact': '~300 users / month across Colombia &amp; Mexico',
       'p5.desc':   'Automated daily scanner of 15+ funding and grant sources. Claude AI filters by organizational relevance, deduplicates results, and sends curated alerts to Slack. Runs on GitHub Actions every morning.',
       'p5.impact': 'Saves 10 hours / week to the project formulation team',
       'p6.desc':   'Interactive dashboard for Colombia\'s General Royalties System (SGR). Real-time data from datos.gov.co via Socrata API, dynamic filters, choropleth maps, and Excel export. Deployed on Streamlit Cloud.',
@@ -1681,7 +1683,9 @@
       'e1.role2': 'Behavioral Research & Analytics Lead',
       'e1.role3': 'Data Analytics Consultant',
       'e1.role4': 'Data Analytics Consultant',
-      'e1.b1':    'Built <strong>2 conversational agents</strong> with LangGraph: first deployed across <strong>4 countries</strong> (CO/EC/PE/BO) with <strong>~400 users/month</strong>; second active in CO &amp; MX with <strong>~300 users/month</strong>.',
+      'e1.b1':    '<strong>Aly</strong> — WhatsApp RAG assistant for program facilitators (LangGraph + pgvector on Bun/Elysia). One graph, three branches with their own prompts and corpus: <strong>Apapáchar</strong> (Fundación Apapacho + ICBF, Colombia), <strong>Semillas de Igualdad</strong> (GENDES, teachers in Mexico) and an Equimundo demo bot. Every message is normalized, triaged for sensitive content, intent-classified and answered grounded in the program manuals — <strong>~300 users/month</strong> across CO &amp; MX.',
+      'e1.b7':    '<strong>Tranqui</strong> — mental-health accompaniment bot on WhatsApp for people affected by a disaster. Direct Meta Cloud API webhook, a single model call per message (no RAG, no agent graph), and a role-separated monitoring panel. Dropping the middleware removed a misrouting bug that hit <strong>17.6% of inbound messages</strong>.',
+      'e1.b8':    '<strong>AMA bot</strong> — conversational agent for the AMA program, deployed across <strong>4 countries</strong> (CO/EC/PE/BO) with <strong>~400 users/month</strong>.',
       'e1.b2':    'Real-time monitoring dashboards with leaderboards and automatic report generation, giving researchers immediate access to bot usage metrics with no manual extraction.',
       'e1.b3':    'Automation flows in <strong>n8n</strong> and <strong>Zapier</strong> for admin and accounting → <strong>80% time saved</strong> on repetitive tasks.',
       'e1.b4':    'AI system for automatic detection of funding opportunities → <strong>10 hours/week saved</strong> for the project formulation team.',
@@ -1803,7 +1807,7 @@
       'p1.desc':   'Pipeline ML de extremo a extremo para descubrimiento de arquetipos. LangGraph orquesta ingesta → perfilado → preprocesamiento → selección de algoritmo → clustering → narrativa generada por LLM. 33 pruebas automatizadas pasando.',
       'p1.impact': 'Reduce 50% el tiempo de análisis de encuestas',
       'p3.desc':   'Bot multilingüe (ES/EN/PT) para el Manual A+P de Equimundo. 5 agentes LLM secuenciales: detección de idioma → clasificación de intención → respuesta especializada (factual, planificación, ideación, temas sensibles). Construido con FastAPI + LangGraph.',
-      'p3.impact': 'Activo en 4 países · ~400 usuarios / mes',
+      'p3.impact': '~300 usuarios / mes entre Colombia y México',
       'p5.desc':   'Escáner diario automatizado de 15+ fuentes de financiamiento y convocatorias. Claude AI filtra por relevancia organizacional, deduplica resultados y envía alertas curadas a Slack. Corre en GitHub Actions cada mañana.',
       'p5.impact': 'Ahorra 10 horas / semana al equipo de formulación',
       'p6.desc':   'Dashboard interactivo del Sistema General de Regalías (SGR) de Colombia. Datos en tiempo real de datos.gov.co vía Socrata API, filtros dinámicos, mapas coropléticos y exportación a Excel. Desplegado en Streamlit Cloud.',
@@ -1833,7 +1837,9 @@
       'e1.role2': 'Líder de Investigación y Analítica Comportamental',
       'e1.role3': 'Consultor en Analítica de Datos',
       'e1.role4': 'Consultor en Analítica de Datos',
-      'e1.b1':    'Desarrollé <strong>2 agentes conversacionales</strong> con LangGraph: el primero desplegado en <strong>4 países</strong> (CO/EC/PE/BO) con <strong>~400 usuarios/mes</strong>; el segundo activo en CO y MX con <strong>~300 usuarios/mes</strong>.',
+      'e1.b1':    '<strong>Aly</strong> — asistente RAG en WhatsApp para facilitadores de programas (LangGraph + pgvector sobre Bun/Elysia). Un solo grafo, tres ramas con sus propios prompts y corpus: <strong>Apapáchar</strong> (Fundación Apapacho + ICBF, Colombia), <strong>Semillas de Igualdad</strong> (GENDES, docentes en México) y un bot demo de Equimundo. Cada mensaje se normaliza, pasa por triage de contenido sensible, se clasifica por intención y se responde anclado en los manuales del programa — <strong>~300 usuarios/mes</strong> entre CO y MX.',
+      'e1.b7':    '<strong>Tranqui</strong> — bot de acompañamiento en salud mental por WhatsApp para personas afectadas por un desastre. Webhook directo a la Cloud API de Meta, una sola llamada al modelo por mensaje (sin RAG, sin grafo de agentes) y un panel de monitoreo por roles. Sacar el middleware eliminó un bug de enrutamiento que afectaba al <strong>17.6% de los mensajes entrantes</strong>.',
+      'e1.b8':    '<strong>Bot de AMA</strong> — agente conversacional del programa AMA, desplegado en <strong>4 países</strong> (CO/EC/PE/BO) con <strong>~400 usuarios/mes</strong>.',
       'e1.b2':    'Dashboards de monitoreo en tiempo real con leaderboards y generación automática de reportes, dando a los investigadores acceso inmediato a métricas de uso de los bots sin extracción manual.',
       'e1.b3':    'Flujos de automatización en <strong>n8n</strong> y <strong>Zapier</strong> para áreas administrativas y contables → <strong>80% de ahorro de tiempo</strong> en tareas repetitivas.',
       'e1.b4':    'Sistema de IA para detección automática de oportunidades de financiamiento → <strong>10 horas/semana</strong> ahorradas al equipo de formulación.',

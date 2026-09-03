@@ -124,4 +124,24 @@ All colors are CSS variables on `:root`, overridden under `[data-theme="dark"]`.
 
 Removed: **puddleAsistant** (p2) — had no repo, no demo, and fabricated metrics; deleted entirely.
 
+## Content — Experience (Estudio Plural bullets)
+
+The Estudio Plural entry names the three conversational agents explicitly, one bullet each.
+DOM order is `e1.b1` → `e1.b7` → `e1.b8` → `e1.b2`…`e1.b6` (the `bN` indices are stable
+i18n ids, **not** display order — same convention as the `pN` project keys):
+
+- `e1.b1` — **Aly**: WhatsApp RAG assistant for facilitators (LangGraph + pgvector, Bun/Elysia).
+  One graph, three branches: `apapachar` (Fundación Apapacho + ICBF, Colombia), `mexico` =
+  **Semillas de Igualdad** (GENDES, teachers in Mexico) and `demo` (Equimundo showcase).
+  **~300 users/month across CO & MX.**
+- `e1.b7` — **Tranqui**: mental-health bot for disaster contexts (see the p15 project card).
+- `e1.b8` — **AMA bot**: the agent deployed across **4 countries** (CO/EC/PE/BO) with
+  **~400 users/month** — Leticia (CO), Cobija (BO), Iquitos (PE), Lago Agrio (EC).
+
+⚠️ **Which agent owns which number** (confirmed by Daniel 2026-09-03): the *4 countries /
+~400 users per month* figure belongs to the **AMA bot**, not to Aly. It used to sit on the
+Aly project card (`p3.impact`) and was corrected to *~300 users/month across Colombia &
+Mexico*. Don't move it back. `p3` still links `Rodato/Aly` — the older public Python/FastAPI
+generation ("Puddle Assistant"); today's Aly is the private `Estudio-Plural/Aly` on Bun/Elysia.
+
 Each card also shows a colored "impact" line below the description (e.g. "~400 users / month", "Saves 10 h/week"). Stored in i18n keys `pX.impact`. The i18n key indices (`pN`) are stable identifiers, **not** display order — the markup order is what determines tiers.
