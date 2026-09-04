@@ -65,6 +65,15 @@
       --border: #e5e7eb;
       --shadow-sm: 0 1px 2px rgba(0,0,0,0.06);
       --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
+
+      /* Pares semánticos (bg/fg) usados por badges, track chips e iconos de
+         servicio. Cada uno se redefine bajo [data-theme="dark"] — no volver a
+         hardcodear un hex en esas reglas o el modo oscuro se rompe otra vez. */
+      --sem-green-bg:  #dcfce7; --sem-green-fg:  #15803d; --sem-green-dot: #22c55e;
+      --sem-yellow-bg: #fef9c3; --sem-yellow-fg: #a16207;
+      --sem-purple-bg: #f3e8ff; --sem-purple-fg: #7c3aed;
+      --sem-blue-bg:   #dbeafe; --sem-blue-fg:   #1d4ed8;
+      --sem-gray-bg:   #e5e7eb; --sem-gray-fg:   #4b5563;
     }
 
     [data-theme="dark"] {
@@ -78,6 +87,12 @@
       --border: #232c3b;
       --shadow-sm: 0 1px 2px rgba(0,0,0,0.4);
       --shadow-md: 0 6px 20px rgba(0,0,0,0.55);
+
+      --sem-green-bg:  #0f2a1a; --sem-green-fg:  #4ade80; --sem-green-dot: #22c55e;
+      --sem-yellow-bg: #2c2410; --sem-yellow-fg: #fbbf24;
+      --sem-purple-bg: #241a33; --sem-purple-fg: #c084fc;
+      --sem-blue-bg:   #18233a; --sem-blue-fg:   #60a5fa;
+      --sem-gray-bg:   #1e2634; --sem-gray-fg:   #cbd5e1;
     }
 
     /* Dark-mode overrides for sections with hardcoded inverted colors */
@@ -264,8 +279,8 @@
       display: inline-flex;
       align-items: center;
       gap: 0.5rem;
-      background: #dcfce7;
-      color: #15803d;
+      background: var(--sem-green-bg);
+      color: var(--sem-green-fg);
       font-size: 0.78rem;
       font-weight: 600;
       padding: 0.35rem 0.9rem;
@@ -277,7 +292,7 @@
     .hero-badge::before {
       content: '';
       width: 7px; height: 7px;
-      background: #22c55e;
+      background: var(--sem-green-dot);
       border-radius: 50%;
       flex-shrink: 0;
       animation: pulse-dot 2s infinite;
@@ -539,12 +554,12 @@
       flex-shrink: 0;
     }
 
-    .badge-live   { background: #dcfce7; color: #15803d; }
-    .badge-prod   { background: #dcfce7; color: #15803d; }
-    .badge-mvp    { background: #fef9c3; color: #a16207; }
-    .badge-dev    { background: var(--accent-light); color: var(--accent); }
-    .badge-active { background: #f3e8ff; color: #7c3aed; }
-    .badge-code   { background: #e5e7eb; color: #4b5563; }
+    .badge-live   { background: var(--sem-green-bg);  color: var(--sem-green-fg); }
+    .badge-prod   { background: var(--sem-green-bg);  color: var(--sem-green-fg); }
+    .badge-mvp    { background: var(--sem-yellow-bg); color: var(--sem-yellow-fg); }
+    .badge-dev    { background: var(--accent-light);  color: var(--accent); }
+    .badge-active { background: var(--sem-purple-bg); color: var(--sem-purple-fg); }
+    .badge-code   { background: var(--sem-gray-bg);   color: var(--sem-gray-fg); }
 
     .project-tracks {
       display: flex;
@@ -564,9 +579,9 @@
       line-height: 1.2;
     }
 
-    .track-agentic { background: #dbeafe; color: #1d4ed8; }
-    .track-nlp     { background: #f3e8ff; color: #7c3aed; }
-    .track-ds      { background: #dcfce7; color: #15803d; }
+    .track-agentic { background: var(--sem-blue-bg);   color: var(--sem-blue-fg); }
+    .track-nlp     { background: var(--sem-purple-bg); color: var(--sem-purple-fg); }
+    .track-ds      { background: var(--sem-green-bg);  color: var(--sem-green-fg); }
 
     .project-desc {
       font-size: 0.875rem;
@@ -753,9 +768,9 @@
     }
 
     .service-icon svg { width: 22px; height: 22px; }
-    .service-icon-agentic { background: #dbeafe; color: #1d4ed8; }
-    .service-icon-nlp     { background: #f3e8ff; color: #7c3aed; }
-    .service-icon-ds      { background: #dcfce7; color: #15803d; }
+    .service-icon-agentic { background: var(--sem-blue-bg);   color: var(--sem-blue-fg); }
+    .service-icon-nlp     { background: var(--sem-purple-bg); color: var(--sem-purple-fg); }
+    .service-icon-ds      { background: var(--sem-green-bg);  color: var(--sem-green-fg); }
 
     .service-title {
       font-size: 1.05rem;
@@ -1052,7 +1067,7 @@
     </div>
     <div class="projects-grid">
 
-      <a class="project-card" href="https://cali-1v-barrios.vercel.app" target="_blank" rel="noopener">
+      <a class="project-card" href="https://cali-1v-barrios.vercel.app" target="_blank" rel="noopener" data-tracks="ds">
         <div class="project-tracks">
           <span class="track-chip track-ds" data-i18n="track.ds">Data Science</span>
         </div>
@@ -1071,7 +1086,7 @@
         </div>
       </a>
 
-      <a class="project-card" href="https://narrativas-2026.vercel.app" target="_blank" rel="noopener">
+      <a class="project-card" href="https://narrativas-2026.vercel.app" target="_blank" rel="noopener" data-tracks="ds nlp">
         <div class="project-tracks">
           <span class="track-chip track-ds" data-i18n="track.ds">Data Science</span>
           <span class="track-chip track-nlp" data-i18n="track.nlp">NLP</span>
@@ -1091,7 +1106,7 @@
         </div>
       </a>
 
-      <a class="project-card" href="https://lin-manosfera.vercel.app" target="_blank" rel="noopener">
+      <a class="project-card" href="https://lin-manosfera.vercel.app" target="_blank" rel="noopener" data-tracks="ds nlp">
         <div class="project-tracks">
           <span class="track-chip track-ds" data-i18n="track.ds">Data Science</span>
           <span class="track-chip track-nlp" data-i18n="track.nlp">NLP</span>
@@ -1111,7 +1126,7 @@
         </div>
       </a>
 
-      <a class="project-card" href="https://sgr-interactivedashboard.streamlit.app" target="_blank" rel="noopener">
+      <a class="project-card" href="https://sgr-interactivedashboard.streamlit.app" target="_blank" rel="noopener" data-tracks="ds">
         <div class="project-tracks">
           <span class="track-chip track-ds" data-i18n="track.ds">Data Science</span>
         </div>
@@ -1130,7 +1145,7 @@
         </div>
       </a>
 
-      <a class="project-card" href="https://ama-endline-pcm4jbzyvmekla63l4lwl8.streamlit.app" target="_blank" rel="noopener">
+      <a class="project-card" href="https://ama-endline-pcm4jbzyvmekla63l4lwl8.streamlit.app" target="_blank" rel="noopener" data-tracks="ds agentic">
         <div class="project-tracks">
           <span class="track-chip track-ds" data-i18n="track.ds">Data Science</span>
           <span class="track-chip track-agentic" data-i18n="track.agentic">Agentic</span>
@@ -1150,7 +1165,7 @@
         </div>
       </a>
 
-      <a class="project-card" href="https://ama-bot-monitoring-cvaqwjjdkcsf873xtv3vzu.streamlit.app" target="_blank" rel="noopener">
+      <a class="project-card" href="https://ama-bot-monitoring-cvaqwjjdkcsf873xtv3vzu.streamlit.app" target="_blank" rel="noopener" data-tracks="ds">
         <div class="project-tracks">
           <span class="track-chip track-ds" data-i18n="track.ds">Data Science</span>
         </div>
@@ -1169,7 +1184,7 @@
         </div>
       </a>
 
-      <div class="project-card">
+      <div class="project-card" data-tracks="agentic nlp">
         <div class="project-tracks">
           <span class="track-chip track-agentic" data-i18n="track.agentic">Agentic</span>
           <span class="track-chip track-nlp" data-i18n="track.nlp">NLP</span>
@@ -1189,7 +1204,7 @@
         </div>
       </div>
 
-      <a class="project-card" href="https://github.com/Rodato/archetypeSuite" target="_blank" rel="noopener">
+      <a class="project-card" href="https://github.com/Rodato/archetypeSuite" target="_blank" rel="noopener" data-tracks="agentic ds">
         <div class="project-tracks">
           <span class="track-chip track-agentic" data-i18n="track.agentic">Agentic</span>
           <span class="track-chip track-ds" data-i18n="track.ds">Data Science</span>
@@ -1209,7 +1224,7 @@
         </div>
       </a>
 
-      <a class="project-card" href="https://github.com/Rodato/Aly" target="_blank" rel="noopener">
+      <a class="project-card" href="https://github.com/Rodato/Aly" target="_blank" rel="noopener" data-tracks="agentic nlp">
         <div class="project-tracks">
           <span class="track-chip track-agentic" data-i18n="track.agentic">Agentic</span>
           <span class="track-chip track-nlp" data-i18n="track.nlp">NLP</span>
@@ -1229,7 +1244,7 @@
         </div>
       </a>
 
-      <a class="project-card" href="https://github.com/Rodato/convocatorias-bot" target="_blank" rel="noopener">
+      <a class="project-card" href="https://github.com/Rodato/convocatorias-bot" target="_blank" rel="noopener" data-tracks="agentic nlp">
         <div class="project-tracks">
           <span class="track-chip track-agentic" data-i18n="track.agentic">Agentic</span>
           <span class="track-chip track-nlp" data-i18n="track.nlp">NLP</span>
@@ -1249,7 +1264,7 @@
         </div>
       </a>
 
-      <a class="project-card" href="https://github.com/Rodato/aly-dashboard" target="_blank" rel="noopener">
+      <a class="project-card" href="https://github.com/Rodato/aly-dashboard" target="_blank" rel="noopener" data-tracks="ds">
         <div class="project-tracks">
           <span class="track-chip track-ds" data-i18n="track.ds">Data Science</span>
         </div>
@@ -1268,7 +1283,7 @@
         </div>
       </a>
 
-      <div class="project-card">
+      <div class="project-card" data-tracks="ds agentic">
         <div class="project-tracks">
           <span class="track-chip track-ds" data-i18n="track.ds">Data Science</span>
           <span class="track-chip track-agentic" data-i18n="track.agentic">Agentic</span>
@@ -1288,7 +1303,7 @@
         </div>
       </div>
 
-      <a class="project-card" href="https://github.com/Rodato/agentChatBuilder" target="_blank" rel="noopener">
+      <a class="project-card" href="https://github.com/Rodato/agentChatBuilder" target="_blank" rel="noopener" data-tracks="agentic">
         <div class="project-tracks">
           <span class="track-chip track-agentic" data-i18n="track.agentic">Agentic</span>
         </div>
@@ -1927,6 +1942,13 @@
       const key = el.dataset.i18n;
       if (t[l][key] !== undefined) el.innerHTML = t[l][key];
     });
+    /* Atributos traducibles. data-i18n-alt="key" → el.alt, para las capturas de
+       proyecto (applyLang solo sabía de innerHTML). Si más adelante hace falta
+       title o aria-label, se agregan acá con el mismo patrón. */
+    document.querySelectorAll('[data-i18n-alt]').forEach(el => {
+      const key = el.dataset.i18nAlt;
+      if (t[l][key] !== undefined) el.alt = t[l][key];
+    });
   }
 
   btn.addEventListener('click', () => applyLang(lang === 'en' ? 'es' : 'en'));
@@ -1966,21 +1988,12 @@
   const filterChips = document.querySelectorAll('.filter-chip');
   const projectCards = document.querySelectorAll('.projects-grid .project-card');
 
-  projectCards.forEach(card => {
-    const tracks = [...card.querySelectorAll('.track-chip')].map(c =>
-      c.classList.contains('track-agentic') ? 'agentic' :
-      c.classList.contains('track-nlp')     ? 'nlp' :
-      c.classList.contains('track-ds')      ? 'ds' : ''
-    );
-    card.dataset.tracks = tracks.join(' ');
-  });
-
   filterChips.forEach(chip => {
     chip.addEventListener('click', () => {
       const f = chip.dataset.filter;
       filterChips.forEach(c => c.classList.toggle('active', c === chip));
       projectCards.forEach(card => {
-        const show = f === 'all' || card.dataset.tracks.split(' ').includes(f);
+        const show = f === 'all' || (card.dataset.tracks || '').split(' ').includes(f);
         card.style.display = show ? '' : 'none';
       });
     });

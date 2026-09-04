@@ -79,6 +79,29 @@ Note: `.dev` TLD is on the HSTS preload list → browsers force HTTPS. If the ce
 - Contact section: dark background (inverted)
 - Nav: glassmorphism (backdrop-filter blur); collapses to a hamburger dropdown menu below 640px
 
+## Invariantes (Fase 0 del rediseño, 2026-09-04)
+
+Tres cosas que ANTES eran frágiles y ahora tienen una regla. Romperlas vuelve a
+introducir el bug que arreglaron:
+
+1. **El filtro de proyectos lee `data-tracks` del markup, no los chips.** Cada
+   `.project-card` lleva `data-tracks="agentic nlp"` en su tag de apertura. Antes
+   el JS derivaba eso recorriendo los `.track-chip` del DOM, así que quitarle el
+   chip visible a una card la borraba de todos los filtros. Ahora la etiqueta
+   visible es una decisión puramente visual. **Card nueva ⇒ agregarle
+   `data-tracks`**, o no aparece bajo ningún filtro (el JS ya no revienta, pero
+   la card queda invisible salvo en "All").
+2. **Los colores de badge / track chip / icono de servicio salen de variables
+   `--sem-*`, nunca de un hex.** Hay cinco pares (`green`, `yellow`, `purple`,
+   `blue`, `gray`) declarados en `:root` y redefinidos bajo
+   `[data-theme="dark"]`. Antes esos 9 colores estaban hardcodeados sin ningún
+   override oscuro, así que en modo oscuro los chips pastel quedaban con fondo
+   claro. Un hex nuevo en esas reglas rompe el dark mode otra vez en silencio.
+3. **`applyLang` ya sabe traducir atributos.** `data-i18n="key"` sigue seteando
+   `innerHTML`; `data-i18n-alt="key"` setea `el.alt`. Necesario para que las
+   capturas de proyecto tengan `alt` en ambos idiomas. Para `title` o
+   `aria-label`, agregar el bloque equivalente en `applyLang`.
+
 ## Theming (dark mode)
 
 Light/dark toggle (sun/moon icon) in the nav, alongside the language button. Theme is stored in `localStorage` under `'portfolio-theme'`; on first visit it follows `prefers-color-scheme`. An inline script in `<head>` sets `data-theme` on `<html>` before first paint to avoid a flash of light mode.
